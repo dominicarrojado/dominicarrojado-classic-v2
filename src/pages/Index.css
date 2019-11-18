@@ -35,27 +35,6 @@ Hero
   pointer-events: none;
 }
 
-.page-index .hero::after {
-  content: '';
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  width: 20px;
-  height: 20px;
-  margin: auto;
-  border-width: 2px;
-  border-color: #dddddd #dddddd #dddddd #aaaaaa;
-  border-radius: 50%;
-  border-style: solid;
-  animation: spin 1s ease infinite;
-  transition: opacity 0.2s linear;
-  pointer-events: none;
-}
-
-.page-index .hero.animate::after {
-  opacity: 0;
-}
-
 .page-index .hero > .main {
   width: 100%;
   margin-top: -80px;
@@ -72,11 +51,11 @@ Hero
 .page-index .hero .logo-container::before,
 .page-index .hero .logo-container::after {
   position: absolute;
-  top: -30px;
+  top: -40px;
   color: #ffffff;
   font-size: 300px;
   opacity: 0;
-  transition: opacity 1s linear 0.5s, transform 0.5s ease-in-out 0.5s;
+  transition: opacity 1.25s linear 1s, transform 0.75s ease-in-out 1s;
 }
 
 .page-index .hero.animate .logo-container::before,
@@ -104,7 +83,7 @@ Hero
   z-index: 1;
   opacity: 0;
   transform: translateY(-10px);
-  transition: opacity 1s linear, transform 0.5s ease-in-out;
+  transition: opacity 1.25s linear 0.25s, transform 0.75s ease-in-out 0.25s;
 }
 
 .page-index .hero.animate .logo {
@@ -117,7 +96,7 @@ Hero
   font-weight: 300;
   color: #ffffff;
   transform: translateY(100%);
-  transition: transform 0.3s linear 1s;
+  transition: transform 0.4s linear 1.75s;
 }
 
 .page-index .hero.animate .desc {
@@ -133,7 +112,7 @@ Hero
   text-align: center;
   opacity: 0;
   transform: translateY(-15px);
-  transition: opacity 0.4s linear 1.5s, transform 0.5s ease-in-out 1.5s;
+  transition: opacity 0.5s linear 2.25s, transform 0.5s ease-in-out 2.25s;
 }
 
 .page-index .hero.animate > .btn {
@@ -219,13 +198,12 @@ Sections - Works
 }
 
 .page-index .works li > .img {
-  display: flex;
   width: 60%;
-  position: relative;
-  justify-content: center;
 }
 
 .page-index .works li > .img > img {
+  display: block;
+  margin: 0 auto;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
@@ -242,7 +220,6 @@ Sections - Works
 
 .page-index .works li > .info {
   width: 40%;
-  flex-direction: column;
   padding: 0 70px;
 }
 
@@ -282,35 +259,6 @@ Sections - Works
 
 @media only screen and (max-width: 991px) {
   /*--------------------------------------------------------------
-  Sections - Works
-  --------------------------------------------------------------*/
-  .page-index .works li {
-    flex-direction: column;
-    min-height: 0;
-    margin-bottom: 100px;
-  }
-
-  .page-index .works li > .img,
-  .page-index .works li > .info {
-    width: 100%;
-  }
-
-  .page-index .works li > .info {
-    padding: 40px 0;
-    text-align: center;
-  }
-
-  .page-index .works li > .info > .btns {
-    margin-top: 20px;
-  }
-
-  .page-index .works li > .info > .btns > .btn {
-    margin-bottom: 7px;
-  }
-}
-
-@media only screen and (max-width: 767px) {
-  /*--------------------------------------------------------------
   Hero
   --------------------------------------------------------------*/
   .page-index .hero .logo {
@@ -344,6 +292,42 @@ Sections - Works
   .page-index .hero > .btn > .icon > svg {
     width: 13px;
     height: 13px;
+  }
+
+  /*--------------------------------------------------------------
+  Sections - Works
+  --------------------------------------------------------------*/
+  .page-index .works li {
+    display: block;
+    min-height: 0;
+    margin-bottom: 100px;
+  }
+
+  .page-index .works li > .img,
+  .page-index .works li > .info {
+    width: 100%;
+  }
+
+  .page-index .works li > .info {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .page-index .works li > .info > .btns {
+    margin-top: 20px;
+  }
+
+  .page-index .works li > .info > .btns > .btn {
+    margin-bottom: 7px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /*--------------------------------------------------------------
+  Hero
+  --------------------------------------------------------------*/
+  .page-index .hero > .btn {
+    padding-bottom: 50px;
   }
 
   /*--------------------------------------------------------------
@@ -408,13 +392,6 @@ Sections - Works
   .page-index .hero > .btn > .icon > svg {
     width: 12px;
     height: 12px;
-  }
-
-  /*--------------------------------------------------------------
-  Sections
-  --------------------------------------------------------------*/
-  .page-section {
-    padding: 40px 20px;
   }
 }
 

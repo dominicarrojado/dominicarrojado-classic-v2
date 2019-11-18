@@ -20,7 +20,7 @@ function Index() {
       setAnimate(true);
       setTimeout(
         () => document.body.classList.add('loaded'),
-        window.scrollY === 0 ? 2200 : 0
+        window.scrollY === 0 ? 3000 : 0
       );
     };
   }, []);
