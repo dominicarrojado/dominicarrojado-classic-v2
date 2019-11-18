@@ -326,8 +326,8 @@ Sections - Works
   /*--------------------------------------------------------------
   Hero
   --------------------------------------------------------------*/
-  .page-index .hero > .btn {
-    padding-bottom: 50px;
+  .page-index .hero {
+    height: 80vh;
   }
 
   /*--------------------------------------------------------------
@@ -368,16 +368,16 @@ Sections - Works
 
   .page-index .hero .logo-container::before,
   .page-index .hero .logo-container::after {
-    top: -40px;
-    font-size: 180px;
+    top: -30px;
+    font-size: 160px;
   }
 
   .page-index .hero .logo-container::before {
-    left: -80px;
+    left: -70px;
   }
 
   .page-index .hero .logo-container::after {
-    right: -80px;
+    right: -70px;
   }
 
   .page-index .hero .desc {
@@ -406,16 +406,16 @@ Sections - Works
 
   .page-index .hero .logo-container::before,
   .page-index .hero .logo-container::after {
-    top: -35px;
-    font-size: 150px;
+    top: -30px;
+    font-size: 140px;
   }
 
   .page-index .hero .logo-container::before {
-    left: -70px;
+    left: -60px;
   }
 
   .page-index .hero .logo-container::after {
-    right: -70px;
+    right: -60px;
   }
 
   .page-index .hero .desc {
