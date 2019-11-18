@@ -1,21 +1,41 @@
 {
   "files": {
-    "main.css": "/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/static/js/main.b5cbb0ae.chunk.js",
-    "main.js.map": "/static/js/main.b5cbb0ae.chunk.js.map",
+    "main.css": "/static/css/main.41a8fe0d.chunk.css",
+    "main.js": "/static/js/main.e496bc77.chunk.js",
+    "main.js.map": "/static/js/main.e496bc77.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.bc2394fd.js",
     "runtime-main.js.map": "/static/js/runtime-main.bc2394fd.js.map",
-    "static/js/2.f8458d17.chunk.js": "/static/js/2.f8458d17.chunk.js",
-    "static/js/2.f8458d17.chunk.js.map": "/static/js/2.f8458d17.chunk.js.map",
+    "static/js/2.04a6d5b2.chunk.js": "/static/js/2.04a6d5b2.chunk.js",
+    "static/js/2.04a6d5b2.chunk.js.map": "/static/js/2.04a6d5b2.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.e7174e382ed50aca22147fa2635124df.js": "/precache-manifest.e7174e382ed50aca22147fa2635124df.js",
+    "precache-manifest.d4daf58491b9022dfd6d067772487111.js": "/precache-manifest.d4daf58491b9022dfd6d067772487111.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.5ecd60fb.chunk.css.map": "/static/css/main.5ecd60fb.chunk.css.map"
+    "static/css/main.41a8fe0d.chunk.css.map": "/static/css/main.41a8fe0d.chunk.css.map",
+    "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
+    "static/media/aptamil-build-your-babys-foundation-web-app.png": "/static/media/aptamil-build-your-babys-foundation-web-app.da5d581a.png",
+    "static/media/axa-email-template.png": "/static/media/axa-email-template.6f6d7726.png",
+    "static/media/Index.css": "/static/media/bg-home.42354f1e.jpg",
+    "static/media/cnb-anti-drug-abuse-campaign-web-app.png": "/static/media/cnb-anti-drug-abuse-campaign-web-app.3f1e1789.png",
+    "static/media/food-republic-capsule-surprise-web-app.png": "/static/media/food-republic-capsule-surprise-web-app.1ff14277.png",
+    "static/media/hashtag-interactive-cny-fortune-teller-web-app.png": "/static/media/hashtag-interactive-cny-fortune-teller-web-app.199c9bd0.png",
+    "static/media/hashtag-interactive-holly-jolly-memory-game-web-app.png": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.4b7a2feb.png",
+    "static/media/hashtag-interactive-to-my-valentine-web-app.png": "/static/media/hashtag-interactive-to-my-valentine-web-app.0f58eef8.png",
+    "static/media/hashtag-interactive-website.png": "/static/media/hashtag-interactive-website.794d7a68.png",
+    "static/media/hashtag-interactive-welcome-email-template.png": "/static/media/hashtag-interactive-welcome-email-template.73a0710a.png",
+    "static/media/kronenbourg-website.png": "/static/media/kronenbourg-website.3719f1b3.png",
+    "static/media/m1-email-template.png": "/static/media/m1-email-template.77dbb254.png",
+    "static/media/maybank-fc-barcelona-website.png": "/static/media/maybank-fc-barcelona-website.e5475e89.png",
+    "static/media/qwerk-web-app.png": "/static/media/qwerk-web-app.5da094ba.png",
+    "static/media/razer-7.1-surround-sound-web-app.png": "/static/media/razer-7.1-surround-sound-web-app.c1fcdd47.png",
+    "static/media/razer-developer-portal-web-app.png": "/static/media/razer-developer-portal-web-app.e29bdb42.png",
+    "static/media/razer-id-web-app.png": "/static/media/razer-id-web-app.740ff592.png",
+    "static/media/razer-streamer-companion-web-app.png": "/static/media/razer-streamer-companion-web-app.7fa3ed23.png",
+    "static/media/singtel-data-x-infinity-web-app.png": "/static/media/singtel-data-x-infinity-web-app.cdec79e9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.bc2394fd.js",
-    "static/js/2.f8458d17.chunk.js",
-    "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.b5cbb0ae.chunk.js"
+    "static/js/2.04a6d5b2.chunk.js",
+    "static/css/main.41a8fe0d.chunk.css",
+    "static/js/main.e496bc77.chunk.js"
   ]
 }
