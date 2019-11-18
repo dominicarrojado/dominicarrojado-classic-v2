@@ -1,0 +1,44 @@
+.footer-main {
+  padding: 100px 30px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.footer-main > .social {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-main > .social a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 5px;
+}
+
+.footer-main > .social a > svg {
+  width: 30px;
+  height: 30px;
+  color: #111111;
+  opacity: 0.3;
+  transition: opacity 0.1s linear;
+}
+
+.footer-main > .social a:hover > svg {
+  opacity: 1;
+}
+
+.footer-main > .credits {
+  color: #999999;
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .footer-main > .credits {
+    font-size: 14px;
+  }
+}

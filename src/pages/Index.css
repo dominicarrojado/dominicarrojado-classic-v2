@@ -1,0 +1,452 @@
+.page-index {
+  position: relative;
+}
+
+/*--------------------------------------------------------------
+Hero
+--------------------------------------------------------------*/
+
+.page-index .hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  min-height: 400px;
+  background-color: #777777;
+  background-image: url('./../assets/images/bg-home.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.page-index .hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.page-index .hero::after {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  border-width: 2px;
+  border-color: #dddddd #dddddd #dddddd #aaaaaa;
+  border-radius: 50%;
+  border-style: solid;
+  animation: spin 1s ease infinite;
+  transition: opacity 0.2s linear;
+  pointer-events: none;
+}
+
+.page-index .hero.animate::after {
+  opacity: 0;
+}
+
+.page-index .hero > .main {
+  width: 100%;
+  margin-top: -80px;
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.page-index .hero .logo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.page-index .hero .logo-container::before,
+.page-index .hero .logo-container::after {
+  position: absolute;
+  top: -30px;
+  color: #ffffff;
+  font-size: 300px;
+  opacity: 0;
+  transition: opacity 1s linear 0.5s, transform 0.5s ease-in-out 0.5s;
+}
+
+.page-index .hero.animate .logo-container::before,
+.page-index .hero.animate .logo-container::after {
+  opacity: 0.4;
+  transform: translateX(0);
+}
+
+.page-index .hero .logo-container::before {
+  content: '<';
+  left: -130px;
+  transform: translateX(25px);
+}
+
+.page-index .hero .logo-container::after {
+  content: '>';
+  right: -130px;
+  transform: translateX(-25px);
+}
+
+.page-index .hero .logo {
+  width: 340px;
+  height: 340px;
+  margin-bottom: 15px;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 1s linear, transform 0.5s ease-in-out;
+}
+
+.page-index .hero.animate .logo {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.page-index .hero .desc {
+  font-size: 23px;
+  font-weight: 300;
+  color: #ffffff;
+  transform: translateY(100%);
+  transition: transform 0.3s linear 1s;
+}
+
+.page-index .hero.animate .desc {
+  transform: translateY(0);
+}
+
+.page-index .hero > .btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-15px);
+  transition: opacity 0.4s linear 1.5s, transform 0.5s ease-in-out 1.5s;
+}
+
+.page-index .hero.animate > .btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-index .hero > .btn > .btn-text {
+  margin-bottom: 5px;
+  font-size: 14px;
+  transition: margin-bottom 0.2s linear;
+}
+
+.page-index .hero > .btn > .btn-text:hover {
+  padding-top: 15px;
+  margin-bottom: 0;
+}
+
+.page-index .hero > .btn > .icon > svg {
+  color: #666666;
+  width: 15px;
+  height: 15px;
+  animation: bounce 2s ease infinite;
+  transition: color 0.1s ease-in-out;
+}
+
+.page-index .hero > .btn > .btn-text:hover + .icon > svg {
+  color: #ffffff;
+  animation: none;
+}
+
+/*--------------------------------------------------------------
+Sections
+--------------------------------------------------------------*/
+
+.section-title {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.section-title > .title {
+  color: #111111;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.section-title > .desc {
+  margin-top: 10px;
+}
+
+.section-desc {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.page-section {
+  padding: 100px 30px;
+}
+
+/*--------------------------------------------------------------
+Sections - About Me
+--------------------------------------------------------------*/
+
+.page-index .about-me {
+  background-color: #f9f9f9;
+}
+
+.page-index .about-me .section-title > .desc {
+  max-width: 1000px;
+  margin: 15px auto 0;
+}
+
+/*--------------------------------------------------------------
+Sections - Works
+--------------------------------------------------------------*/
+
+.page-index .works li {
+  display: flex;
+  align-items: center;
+  min-height: 60vh;
+  margin-bottom: 150px;
+}
+
+.page-index .works li > .img {
+  display: flex;
+  width: 60%;
+  position: relative;
+  justify-content: center;
+}
+
+.page-index .works li > .img > img {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.page-index .works li > .img > .lazyload-placeholder {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-width: 4px;
+  border-color: #dddddd #dddddd #dddddd #aaaaaa;
+  border-radius: 50%;
+  border-style: solid;
+  animation: spin 1s ease infinite;
+}
+
+.page-index .works li > .info {
+  width: 40%;
+  flex-direction: column;
+  padding: 0 70px;
+}
+
+.page-index .works li > .info > .title {
+  margin-bottom: 10px;
+  color: #111111;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.page-index .works li > .info > .btns {
+  margin-top: 30px;
+}
+
+.page-index .works li > .info > .btns > .btn {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1199px) {
+  /*--------------------------------------------------------------
+  Sections - Works
+  --------------------------------------------------------------*/
+  .page-index .works li > .info {
+    padding: 0 40px;
+  }
+
+  .page-index .works li > .info > .title {
+    margin-bottom: 5px;
+    font-size: 22px;
+  }
+
+  .page-index .works li > .info > .desc,
+  .page-index .works li > .info > .btns .btn-text {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  /*--------------------------------------------------------------
+  Sections - Works
+  --------------------------------------------------------------*/
+  .page-index .works li {
+    flex-direction: column;
+    min-height: 0;
+    margin-bottom: 100px;
+  }
+
+  .page-index .works li > .img,
+  .page-index .works li > .info {
+    width: 100%;
+  }
+
+  .page-index .works li > .info {
+    padding: 40px 0;
+    text-align: center;
+  }
+
+  .page-index .works li > .info > .btns {
+    margin-top: 20px;
+  }
+
+  .page-index .works li > .info > .btns > .btn {
+    margin-bottom: 7px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  /*--------------------------------------------------------------
+  Hero
+  --------------------------------------------------------------*/
+  .page-index .hero .logo {
+    width: 240px;
+    height: 240px;
+  }
+
+  .page-index .hero .logo-container::before,
+  .page-index .hero .logo-container::after {
+    top: -40px;
+    font-size: 220px;
+  }
+
+  .page-index .hero .logo-container::before {
+    left: -100px;
+  }
+
+  .page-index .hero .logo-container::after {
+    right: -100px;
+  }
+
+  .page-index .hero .desc {
+    font-size: 18px;
+  }
+
+  .page-index .hero > .btn > .btn-text {
+    margin-bottom: 2px;
+    font-size: 12px;
+  }
+
+  .page-index .hero > .btn > .icon > svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  /*--------------------------------------------------------------
+  Sections
+  --------------------------------------------------------------*/
+  .page-section {
+    padding: 70px 30px;
+  }
+
+  .section-title > .title {
+    font-size: 28px;
+  }
+
+  .section-title > .desc {
+    font-size: 16px;
+  }
+
+  /*--------------------------------------------------------------
+  Sections - Works
+  --------------------------------------------------------------*/
+  .page-index .works li {
+    margin-bottom: 50px;
+  }
+
+  .page-index .works li > .info > .title {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /*--------------------------------------------------------------
+  Hero
+  --------------------------------------------------------------*/
+  .page-index .hero .logo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .page-index .hero .logo-container::before,
+  .page-index .hero .logo-container::after {
+    top: -40px;
+    font-size: 180px;
+  }
+
+  .page-index .hero .logo-container::before {
+    left: -80px;
+  }
+
+  .page-index .hero .logo-container::after {
+    right: -80px;
+  }
+
+  .page-index .hero .desc {
+    font-size: 14px;
+  }
+
+  .page-index .hero > .btn > .btn-text {
+    margin-bottom: 2px;
+    font-size: 10px;
+  }
+
+  .page-index .hero > .btn > .icon > svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  /*--------------------------------------------------------------
+  Sections
+  --------------------------------------------------------------*/
+  .page-section {
+    padding: 40px 20px;
+  }
+}
+
+@media only screen and (max-width: 374px) {
+  /*--------------------------------------------------------------
+  Hero
+  --------------------------------------------------------------*/
+  .page-index .hero .logo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .page-index .hero .logo-container::before,
+  .page-index .hero .logo-container::after {
+    top: -35px;
+    font-size: 150px;
+  }
+
+  .page-index .hero .logo-container::before {
+    left: -70px;
+  }
+
+  .page-index .hero .logo-container::after {
+    right: -70px;
+  }
+
+  .page-index .hero .desc {
+    font-size: 12px;
+  }
+
+  .page-index .hero > .btn > .btn-text {
+    margin-bottom: 0;
+    font-size: 8px;
+  }
+}

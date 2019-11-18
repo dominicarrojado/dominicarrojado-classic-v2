@@ -1,13 +1,237 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+/*--------------------------------------------------------------
+Roboto
+--------------------------------------------------------------*/
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'),
+    url('./assets/fonts/Roboto-Light.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Light.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Roboto Light Italic'), local('Roboto-LightItalic'),
+    url('./assets/fonts/Roboto-LightItalic.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-LightItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'),
+    url('./assets/fonts/Roboto-Regular.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Roboto Italic'), local('Roboto-Italic'),
+    url('./assets/fonts/Roboto-Italic.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Italic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'),
+    url('./assets/fonts/Roboto-Medium.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'),
+    url('./assets/fonts/Roboto-MediumItalic.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-MediumItalic.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'),
+    url('./assets/fonts/Roboto-Bold.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Roboto Bold Italic'), local('Roboto-BoldItalic'),
+    url('./assets/fonts/Roboto-BoldItalic.woff2') format('woff2'),
+    url('./assets/fonts/Roboto-BoldItalic.woff') format('woff');
+}
+
+* {
+  font-family: 'Roboto', Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue';
+  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  color: #555555;
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 1.4;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+body.loaded {
+  overflow-y: auto;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+a {
+  color: #555555;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-fluid {
+  width: 100%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-text {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 1px;
+  color: #555555;
+  border-bottom: 1px solid #cccccc;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-text:hover {
+  color: #000000;
+}
+
+.btn-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-bottom: 1px solid #000000;
+  transition: width 0.2s ease-in-out;
+}
+
+.btn-text:hover::after {
+  width: 100%;
+}
+
+.btn-text.btn-white {
+  color: #999999;
+  border-color: #555555;
+}
+
+.btn-text.btn-white:hover {
+  color: #ffffff;
+}
+
+.btn-text.btn-white::after {
+  border-color: #ffffff;
+}
+
+/*--------------------------------------------------------------
+Animations
+--------------------------------------------------------------*/
+
+@keyframes bounce {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-5px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .btn-text {
+    padding-bottom: 0;
+  }
 }

@@ -1,0 +1,23 @@
+.footer-quotes {
+  position: relative;
+  height: 50px;
+  margin-bottom: 40px;
+  transition: height 0.2s ease-in-out;
+}
+
+.footer-quotes > li {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+.footer-quotes > li.show {
+  opacity: 1;
+}
