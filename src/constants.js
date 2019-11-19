@@ -101,7 +101,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://food-republic-capsule-surprise-2017-auekvpyglf.now.sh/',
+        url: 'https://food-republic-capsule-surprise.herokuapp.com/',
       },
     ],
     img: foodRepublicCapsuleSurpriseImg,
@@ -113,8 +113,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url:
-          'https://aptamil-build-your-babys-foundation-2017-nqgruqlevj.now.sh/',
+        url: 'https://aptamil-bybftbosa.herokuapp.com/',
       },
     ],
     img: aptamilBuildYourBabysFoundationImg,
@@ -131,13 +130,6 @@ export const WORKS = [
     ],
     img: kronenbourgImg,
   },
-  // {
-  //   title: 'Singtel: Data x Infinity Slideshow',
-  //   desc:
-  //     'Slideshow of images from Singtel: Data x Infinity App to be displayed on a wide screen.',
-  //   url: 'https://anti-drug-app-slideshow-2017-dgxfjnneej.now.sh/',
-  //   img: '',
-  // },
   {
     title: 'Singtel: Data x Infinity',
     desc:
@@ -145,18 +137,15 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://singtel-event-app-2017-qqwkfqpjaj.now.sh/',
+        url: 'https://singtel-data-x-infinity.herokuapp.com/',
+      },
+      {
+        title: 'View Slideshow',
+        url: 'https://singtel-data-x-infinity-ss.herokuapp.com/',
       },
     ],
     img: singtelDataXInfinityImg,
   },
-  // {
-  //   title: 'CNB: Anti Drug Abuse Campaign Slideshow',
-  //   desc:
-  //     'Slideshow of pledges from CNB: Anti Drug Abuse Campaign App to be displayed on a wide screen.',
-  //   url: 'https://anti-drug-app-slideshow-2017-dgxfjnneej.now.sh/',
-  //   img: '',
-  // },
   {
     title: 'CNB: Anti Drug Abuse Campaign',
     desc:
@@ -164,7 +153,11 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://anti-drug-app-2017-tkxzbueqpv.now.sh/',
+        url: 'https://cnb-adac.herokuapp.com/',
+      },
+      {
+        title: 'View Slideshow',
+        url: 'https://cnb-adac-ss.herokuapp.com/',
       },
     ],
     img: cnbAntiDrugAbuseCampaignImg,
@@ -188,7 +181,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://vday-card-2017-react-qhthsyqden.now.sh/',
+        url: 'https://hashtag-interactive-tmv.herokuapp.com/',
       },
     ],
     img: hashtagInteractiveToMyValentineImg,
@@ -200,7 +193,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://cny-fortune-teller-2017-tukrbyzsir.now.sh/',
+        url: 'https://hashtag-interactive-cny.herokuapp.com/',
       },
     ],
     img: hashtagInteractiveCnyFortuneTellerImg,
@@ -211,7 +204,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://hashtag-christmas-game-2016-react-xfkynmlhsp.now.sh/',
+        url: 'https://hashtag-interactive-christmas.herokuapp.com/',
       },
     ],
     img: hashtagInteractiveHollyJollyMemoryGameImg,
