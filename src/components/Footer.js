@@ -1,13 +1,17 @@
 import React, { Fragment, useRef, useState } from 'react';
-import { SOCIAL_LINKS } from '../constants';
-import LinkedInIcon from '../icons/LinkedInIcon';
-import GitHubIcon from '../icons/GitHubIcon';
-import EnvelopeIcon from '../icons/EnvelopeIcon';
+
 import { copyTextToClipboard } from '../lib/dom';
 
 import './Footer.css';
-import Tooltip from './Tooltip';
+
 import FooterQuotes from './FooterQuotes';
+import LinkedInIcon from '../icons/LinkedInIcon';
+import GitHubIcon from '../icons/GitHubIcon';
+import EnvelopeIcon from '../icons/EnvelopeIcon';
+import Tooltip from './Tooltip';
+
+import { SOCIAL_LINKS } from '../constants';
+import { trackOutboundLink } from '../lib/google-anayltics';
 
 function Footer() {
   return (
@@ -30,7 +34,7 @@ function SocialItem({ social }) {
   const [showTooltip, setShowTooltip] = useState(false);
   let target = '_blank';
   let icon;
-  let onClick;
+  let onClick = () => {};
 
   switch (social.name) {
     case 'linkedin':
@@ -83,7 +87,10 @@ function SocialItem({ social }) {
       <a
         href={social.url}
         target={target}
-        onClick={onClick}
+        onClick={e => {
+          trackOutboundLink(e);
+          onClick(e);
+        }}
         onMouseEnter={() => {
           clearTimeout(timeoutRef.current);
           setShowTooltip(false);

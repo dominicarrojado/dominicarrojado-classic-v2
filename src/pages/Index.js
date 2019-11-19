@@ -1,11 +1,17 @@
 import React, { useRef, useState, useEffect } from 'react';
 import LazyLoad from 'react-lazyload';
+
+import { trackOutboundLink } from '../lib/google-anayltics';
+
 import './Index.css';
-import Logo from '../components/Logo';
-import Footer from '../components/Footer';
-import { COMPANY_URL, WORKS } from '../constants';
-import ArrowDownIcon from '../icons/ArrowDownIcon';
+
 import HeroImg from './../assets/images/bg-home.jpg';
+
+import Logo from '../icons/Logo';
+import Footer from '../components/Footer';
+import ArrowDownIcon from '../icons/ArrowDownIcon';
+
+import { COMPANY_URL, WORKS } from '../constants';
 
 function Index() {
   const aboutMe = useRef();
@@ -18,10 +24,7 @@ function Index() {
     heroImg.src = HeroImg;
     heroImg.onload = () => {
       setAnimate(true);
-      setTimeout(
-        () => document.body.classList.add('loaded'),
-        window.scrollY === 0 ? 3000 : 0
-      );
+      setTimeout(() => document.body.classList.add('loaded'), 3000);
     };
   }, []);
 
@@ -62,6 +65,7 @@ function Index() {
             I'm currently based in Singapore and working at{' '}
             <a
               href={COMPANY_URL}
+              onClick={trackOutboundLink}
               target="_blank"
               className="btn-text"
               rel="noopener noreferrer"
@@ -94,6 +98,7 @@ function Index() {
                     <div key={index} className="btn">
                       <a
                         href={item.url}
+                        onClick={trackOutboundLink}
                         className="btn-text"
                         target="_blank"
                         rel="noopener noreferrer"
