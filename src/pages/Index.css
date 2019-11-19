@@ -334,7 +334,7 @@ Sections - Works
   Sections
   --------------------------------------------------------------*/
   .page-section {
-    padding: 70px 30px;
+    padding: 70px 15px;
   }
 
   .section-title > .title {
@@ -350,6 +350,10 @@ Sections - Works
   --------------------------------------------------------------*/
   .page-index .works li {
     margin-bottom: 50px;
+  }
+
+  .page-index .works li:last-child {
+    margin-bottom: 0;
   }
 
   .page-index .works li > .info > .title {
