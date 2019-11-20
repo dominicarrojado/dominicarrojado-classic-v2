@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
+import React, { useRef, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import './Tooltip.css';
@@ -6,7 +6,7 @@ import './Tooltip.css';
 const TIMEOUT = 200; // CSS transition timeout
 const MAX_WIDTH = 300;
 
-function Tooltip({ isMounted, trigger, children }) {
+function Tooltip({ className, trigger, children }) {
   const tooltip = useRef();
   const [style, setStyle] = useState({});
   const tooltipMain = useCallback(
@@ -40,20 +40,12 @@ function Tooltip({ isMounted, trigger, children }) {
     timeoutRef.current = setTimeout(() => setShouldRender(false), TIMEOUT);
   }
 
-  useEffect(() => {
-    if (isMounted) {
-      showTooltip();
-    } else {
-      hideTooltip();
-    }
-  }, [isMounted]);
-
   return (
     <div
       ref={tooltip}
       onMouseEnter={trigger === 'hover' ? showTooltip : undefined}
       onMouseLeave={trigger === 'hover' ? hideTooltip : undefined}
-      className={`tooltip ${show ? 'show' : ''}`}
+      className={`tooltip ${show ? 'show' : ''} ${className}`}
     >
       {shouldRender ? (
         <div style={style} className="wrapper">

@@ -16,8 +16,10 @@
   padding: 0 20px;
   opacity: 0;
   transition: opacity 0.2s linear;
+  pointer-events: none;
 }
 
 .footer-quotes > li.show {
   opacity: 1;
+  pointer-events: auto;
 }

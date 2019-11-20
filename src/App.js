@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Index from './pages/Index';
+import PreLoader from './components/PreLoader';
 
 export default function App() {
-  return <Index />;
+  return (
+    <Fragment>
+      <Index />
+      <PreLoader />
+    </Fragment>
+  );
 }

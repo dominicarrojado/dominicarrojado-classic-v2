@@ -1,12 +1,13 @@
 export function trackOutboundLink(e) {
-  if (typeof window.ga !== 'function') {
+  if (
+    typeof window.gtag !== 'function' ||
+    process.env.NODE_ENV !== 'production'
+  ) {
     return;
   }
 
-  window.ga('send', 'event', {
-    eventCategory: 'Outbound Link',
-    eventAction: 'click',
-    eventLabel: e.currentTarget.href,
-    transport: 'beacon',
+  window.gtag('event', 'click', {
+    event_category: 'outbound_link',
+    event_label: e.currentTarget.href,
   });
 }

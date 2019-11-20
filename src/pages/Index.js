@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import LazyLoad from 'react-lazyload';
+import MoveTo from 'moveto';
 
 import { trackOutboundLink } from '../lib/google-anayltics';
 
@@ -13,18 +14,25 @@ import ArrowDownIcon from '../icons/ArrowDownIcon';
 
 import { COMPANY_URL, WORKS } from '../constants';
 
+const moveTo = new MoveTo({ duration: 50 });
+
 function Index() {
   const aboutMe = useRef();
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
+    // Lock the scroll during animation when scroll is at the top
+    if (window.scrollY === 0) {
+      document.body.classList.add('locked');
+    }
+
     // Only start animation once hero image is loaded
     const heroImg = new Image();
 
     heroImg.src = HeroImg;
     heroImg.onload = () => {
       setAnimate(true);
-      setTimeout(() => document.body.classList.add('loaded'), 3000);
+      setTimeout(() => document.body.classList.remove('locked'), 3200);
     };
   }, []);
 
@@ -35,13 +43,15 @@ function Index() {
           <div className="logo-container">
             <Logo className="logo" />
           </div>
-          <h1 className="desc">Dominic Arrojado · Senior Software Engineer</h1>
+          <div className="desc-container">
+            <h1 className="desc">
+              Dominic Arrojado · Senior Software Engineer
+            </h1>
+          </div>
         </div>
         <div className="btn">
           <span
-            onClick={() =>
-              aboutMe.current.scrollIntoView({ behavior: 'smooth' })
-            }
+            onClick={() => moveTo.move(aboutMe.current)}
             className="btn-text btn-white"
           >
             Scroll Down
