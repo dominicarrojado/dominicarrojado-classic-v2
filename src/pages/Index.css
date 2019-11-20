@@ -204,6 +204,7 @@ Sections - Works
 .page-index .works li > .img {
   position: relative;
   width: 60%;
+  min-height: 150px;
 }
 
 .page-index .works li > .img > img {
@@ -358,6 +359,12 @@ Sections - Works
     margin-bottom: 50px;
   }
 
+  .page-index .works li > .img::after {
+    width: 30px;
+    height: 30px;
+    border-width: 3px;
+  }
+
   .page-index .works li:last-child {
     margin-bottom: 0;
   }
@@ -404,6 +411,15 @@ Sections - Works
   .page-index .hero > .btn > .icon > svg {
     width: 12px;
     height: 12px;
+  }
+
+  /*--------------------------------------------------------------
+  Sections - Works
+  --------------------------------------------------------------*/
+  .page-index .works li > .img::after {
+    width: 25px;
+    height: 25px;
+    border-width: 2px;
   }
 }
 
