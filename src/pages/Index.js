@@ -14,7 +14,7 @@ import ArrowDownIcon from '../icons/ArrowDownIcon';
 
 import { COMPANY_URL, WORKS } from '../constants';
 
-const moveTo = new MoveTo({ duration: 50 });
+const moveTo = new MoveTo({ duration: 100 });
 
 function Index() {
   const aboutMe = useRef();

@@ -1,5 +1,6 @@
 .page-index {
   position: relative;
+  height: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -13,7 +14,7 @@ Hero
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   padding: 100px 0;
   background-color: #777777;
   background-image: url('./../assets/images/bg-home.jpg');
@@ -335,13 +336,6 @@ Sections - Works
 }
 
 @media only screen and (max-width: 767px) {
-  /*--------------------------------------------------------------
-  Hero
-  --------------------------------------------------------------*/
-  .page-index .hero {
-    height: 88vh;
-  }
-
   /*--------------------------------------------------------------
   Sections
   --------------------------------------------------------------*/
