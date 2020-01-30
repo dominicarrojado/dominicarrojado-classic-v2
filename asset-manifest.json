@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.cb203601.chunk.css",
-    "main.js": "/static/js/main.9334c989.chunk.js",
-    "main.js.map": "/static/js/main.9334c989.chunk.js.map",
+    "main.css": "/static/css/main.6e4f290b.chunk.css",
+    "main.js": "/static/js/main.cb928455.chunk.js",
+    "main.js.map": "/static/js/main.cb928455.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.bc2394fd.js",
     "runtime-main.js.map": "/static/js/runtime-main.bc2394fd.js.map",
-    "static/js/2.d3fb8f0d.chunk.js": "/static/js/2.d3fb8f0d.chunk.js",
-    "static/js/2.d3fb8f0d.chunk.js.map": "/static/js/2.d3fb8f0d.chunk.js.map",
+    "static/js/2.1e2fdca7.chunk.js": "/static/js/2.1e2fdca7.chunk.js",
+    "static/js/2.1e2fdca7.chunk.js.map": "/static/js/2.1e2fdca7.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.bfdcf13fa3f271f1d4684bcc9178e001.js": "/precache-manifest.bfdcf13fa3f271f1d4684bcc9178e001.js",
+    "precache-manifest.bca715cfa9eac73ddb7aa43019ee134a.js": "/precache-manifest.bca715cfa9eac73ddb7aa43019ee134a.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.cb203601.chunk.css.map": "/static/css/main.cb203601.chunk.css.map",
+    "static/css/main.6e4f290b.chunk.css.map": "/static/css/main.6e4f290b.chunk.css.map",
     "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
     "static/media/aptamil-build-your-babys-foundation-web-app.png": "/static/media/aptamil-build-your-babys-foundation-web-app.da5d581a.png",
     "static/media/axa-email-template.png": "/static/media/axa-email-template.6f6d7726.png",
@@ -27,6 +27,7 @@
     "static/media/maybank-fc-barcelona-website.png": "/static/media/maybank-fc-barcelona-website.e5475e89.png",
     "static/media/qwerk-web-app.png": "/static/media/qwerk-web-app.5da094ba.png",
     "static/media/razer-7.1-surround-sound-web-app.png": "/static/media/razer-7.1-surround-sound-web-app.c1fcdd47.png",
+    "static/media/razer-chroma-studio-web-app.png": "/static/media/razer-chroma-studio-web-app.8c330be9.png",
     "static/media/razer-developer-portal-web-app.png": "/static/media/razer-developer-portal-web-app.e29bdb42.png",
     "static/media/razer-id-web-app.png": "/static/media/razer-id-web-app.740ff592.png",
     "static/media/razer-streamer-companion-web-app.png": "/static/media/razer-streamer-companion-web-app.7fa3ed23.png",
@@ -34,8 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.bc2394fd.js",
-    "static/js/2.d3fb8f0d.chunk.js",
-    "static/css/main.cb203601.chunk.css",
-    "static/js/main.9334c989.chunk.js"
+    "static/js/2.1e2fdca7.chunk.js",
+    "static/css/main.6e4f290b.chunk.css",
+    "static/js/main.cb928455.chunk.js"
   ]
 }

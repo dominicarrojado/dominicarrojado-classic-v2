@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "06541221e6adf96fa9693ee777299490",
+    "revision": "9bff9ca979d591629f81a9b416519884",
     "url": "/index.html"
   },
   {
-    "revision": "173e66242cca6cb67a53",
-    "url": "/static/css/main.cb203601.chunk.css"
+    "revision": "fd90cf6da3f41d545f03",
+    "url": "/static/css/main.6e4f290b.chunk.css"
   },
   {
-    "revision": "158d4a1f56520f89086d",
-    "url": "/static/js/2.d3fb8f0d.chunk.js"
+    "revision": "3f3989a17e2f29266f76",
+    "url": "/static/js/2.1e2fdca7.chunk.js"
   },
   {
-    "revision": "173e66242cca6cb67a53",
-    "url": "/static/js/main.9334c989.chunk.js"
+    "revision": "fd90cf6da3f41d545f03",
+    "url": "/static/js/main.cb928455.chunk.js"
   },
   {
     "revision": "7f02d02d7456f456b0e3",
@@ -142,6 +142,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "c1fcdd47bbd0fccd9b71871aaf89c19c",
     "url": "/static/media/razer-7.1-surround-sound-web-app.c1fcdd47.png"
+  },
+  {
+    "revision": "8c330be9bfe1f11456b68d459dcc9b92",
+    "url": "/static/media/razer-chroma-studio-web-app.8c330be9.png"
   },
   {
     "revision": "e29bdb420f2e50128370374aab1f75b1",
