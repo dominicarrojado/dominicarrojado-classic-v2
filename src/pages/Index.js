@@ -109,6 +109,7 @@ function Index() {
                       <a
                         href={item.url}
                         onClick={trackOutboundLink}
+                        onContextMenu={trackOutboundLink}
                         className="btn-text"
                         target="_blank"
                         rel="noopener noreferrer"

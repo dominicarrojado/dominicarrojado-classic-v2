@@ -1,3 +1,4 @@
+import razerChromaStudioImg from './assets/images/works/razer-chroma-studio-web-app.png';
 import razerStreamerCompanionAppImg from './assets/images/works/razer-streamer-companion-web-app.png';
 import razerSurroundSoundImg from './assets/images/works/razer-7.1-surround-sound-web-app.png';
 import razerIdImg from './assets/images/works/razer-id-web-app.png';
@@ -22,6 +23,18 @@ export const COMPANY_NAME = 'Razer';
 export const COMPANY_POSITION = 'Senior Software Engineer';
 
 export const WORKS = [
+  {
+    title: 'Razer Chroma Studio Web',
+    desc:
+      'A module of Razer Synapse recreated in web that allows you to create various lighting effects and synchronize across multiple devices, while allowing you to follow the exact placement of your devices on your desktop.',
+    urls: [
+      {
+        title: 'Watch Demo',
+        url: 'https://youtu.be/bEFkHdjRaK0',
+      },
+    ],
+    img: razerChromaStudioImg,
+  },
   {
     title: 'Razer Streamer Companion App',
     desc:
