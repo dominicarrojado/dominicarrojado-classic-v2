@@ -30,7 +30,7 @@ export const WORKS = [
     urls: [
       {
         title: 'Watch Demo',
-        url: 'https://youtu.be/bEFkHdjRaK0',
+        url: 'https://youtu.be/kFBe_wSwIMQ',
       },
     ],
     img: razerChromaStudioImg,
