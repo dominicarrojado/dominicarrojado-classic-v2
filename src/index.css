@@ -104,10 +104,7 @@ body {
   line-height: 1.4;
   background-color: #ffffff;
   overflow-y: auto;
-}
-
-body.locked {
-  overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 button {

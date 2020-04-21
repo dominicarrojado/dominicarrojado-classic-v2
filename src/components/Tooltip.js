@@ -63,10 +63,12 @@ function Tooltip({ className, trigger, children }) {
 }
 
 Tooltip.defaultProps = {
+  className: '',
   trigger: 'hover',
 };
 
 Tooltip.propTypes = {
+  className: PropTypes.string,
   trigger: PropTypes.string,
   children: PropTypes.node,
 };

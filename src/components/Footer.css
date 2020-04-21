@@ -5,7 +5,10 @@
 }
 
 .footer-main > .social {
-  margin-bottom: 15px;
+  position: fixed;
+  bottom: 15px;
+  right: 30px;
+  z-index: 1000;
   display: flex;
   justify-content: center;
 }
@@ -18,23 +21,53 @@
   width: 50px;
   height: 50px;
   margin: 0 5px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.page-index .hero.animate ~ .footer-main > .social a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.footer-main > .social li:nth-child(2) > a {
+  transition-delay: 0.15s;
+}
+
+.footer-main > .social li:nth-child(3) > a {
+  transition-delay: 0.3s;
 }
 
 .footer-main > .social a > svg {
   width: 30px;
   height: 30px;
-  color: #111111;
-  opacity: 0.3;
-  transition: opacity 0.1s linear;
+  color: #cccccc;
+  transition: color 0.1s linear;
 }
 
 .footer-main > .social a:hover > svg {
-  opacity: 1;
+  color: #999999;
 }
 
 .footer-main > .credits {
   color: #999999;
   font-size: 16px;
+}
+
+@media only screen and (max-width: 991px) {
+  .footer-main > .social {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-bottom: 15px;
+  }
+
+  .footer-main > .social a {
+    transition: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media only screen and (max-width: 767px) {

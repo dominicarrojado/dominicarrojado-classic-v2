@@ -6,8 +6,6 @@ import { trackOutboundLink } from '../lib/google-anayltics';
 
 import './Index.css';
 
-import HeroImg from './../assets/images/bg-home.jpg';
-
 import Logo from '../icons/Logo';
 import Footer from '../components/Footer';
 import ArrowDownIcon from '../icons/ArrowDownIcon';
@@ -17,33 +15,39 @@ import { COMPANY_URL, WORKS } from '../constants';
 const moveTo = new MoveTo({ duration: 100 });
 
 function Index() {
+  const heroImg = useRef();
+  const heroLogo = useRef();
+  const heroDesc = useRef();
   const aboutMe = useRef();
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    // Lock the scroll during animation when scroll is at the top
-    if (window.scrollY === 0) {
-      document.body.classList.add('locked');
-    }
-
-    // Only start animation once hero image is loaded
-    const heroImg = new Image();
-
-    heroImg.src = HeroImg;
-    heroImg.onload = () => {
+    window.addEventListener('load', () => {
       setAnimate(true);
-      setTimeout(() => document.body.classList.remove('locked'), 3200);
-    };
+    });
+
+    // Parallax
+    window.addEventListener('scroll', () => {
+      heroImg.current.style.backgroundPositionY = `${
+        window.pageYOffset * 0.3
+      }px`;
+
+      const opacity = 1 - (window.scrollY / document.body.scrollHeight) * 20;
+
+      heroLogo.current.style.opacity = opacity;
+      heroDesc.current.style.opacity = opacity;
+    });
   }, []);
 
   return (
     <div className="page-index">
       <section className={`hero ${animate ? 'animate' : ''}`}>
+        <div ref={heroImg} className="img"></div>
         <div className="main">
-          <div className="logo-container">
+          <div ref={heroLogo} className="logo-container">
             <Logo className="logo" />
           </div>
-          <div className="desc-container">
+          <div ref={heroDesc} className="desc-container">
             <h1 className="desc">
               Dominic Arrojado · Senior Software Engineer
             </h1>
