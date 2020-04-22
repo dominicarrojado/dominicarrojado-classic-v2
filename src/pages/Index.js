@@ -30,9 +30,13 @@ function Index() {
 
     // Parallax
     window.addEventListener('scroll', () => {
-      heroImg.current.style.backgroundPositionY = `${
-        window.pageYOffset * 0.3
-      }px`;
+      if (window.scrollY > window.innerHeight) {
+        return;
+      }
+
+      heroImg.current.style.transform = `translate3d(0, ${
+        window.pageYOffset * 0.2
+      }px, 0) scale(1.1)`;
 
       const opacity = 1 - (window.scrollY / document.body.scrollHeight) * 20;
 

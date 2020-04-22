@@ -41,9 +41,11 @@ Hero
   background-image: url('./../assets/images/bg-home.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top center;
+  background-position: center;
   opacity: 0;
-  transition: opacity 0.5s linear;
+  transform: scale(1.1);
+  will-change: transform;
+  transition: opacity 0.5s linear, transform 0.4s cubic-bezier(0, 0, 0, 1);
 }
 
 .page-index .hero.animate > .img {
