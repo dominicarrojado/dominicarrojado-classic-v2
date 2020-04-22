@@ -22,9 +22,11 @@ function Index() {
   const [animate, setAnimate] = useState(false);
 
   useEffect(() => {
-    window.addEventListener('load', () => {
+    if (document.readyState === 'complete') {
       setAnimate(true);
-    });
+    } else {
+      window.addEventListener('load', () => setAnimate(true));
+    }
 
     // Parallax
     window.addEventListener('scroll', () => {
