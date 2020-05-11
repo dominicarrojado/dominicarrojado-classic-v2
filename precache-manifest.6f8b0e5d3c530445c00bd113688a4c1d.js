@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "510580e2eb66995afd9c04f3b9b5fc70",
+    "revision": "f44546ac21ac09a3407e2df9c1c7ca59",
     "url": "/index.html"
   },
   {
-    "revision": "908a341bb2371b068ecd",
-    "url": "/static/css/main.f2567111.chunk.css"
+    "revision": "ea868312bbbe64fabc44",
+    "url": "/static/css/main.7f295dbb.chunk.css"
   },
   {
     "revision": "bcca0adfabaff198ebf6",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.c21f7655.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "908a341bb2371b068ecd",
-    "url": "/static/js/main.0f074a85.chunk.js"
+    "revision": "ea868312bbbe64fabc44",
+    "url": "/static/js/main.eac50469.chunk.js"
   },
   {
     "revision": "e3f33dca076445ab320b",
@@ -96,8 +96,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/axa-email-template.6f6d7726.png"
   },
   {
-    "revision": "42354f1efeb645c503dd56ffb0e82384",
-    "url": "/static/media/bg-home.42354f1e.jpg"
+    "revision": "3fa4654e364e7afbebde67c7fa346343",
+    "url": "/static/media/bg-pattern.3fa4654e.gif"
   },
   {
     "revision": "3f1e1789d1dd1a66d153413b86cddd08",
