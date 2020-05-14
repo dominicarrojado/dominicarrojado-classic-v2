@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
-// To pre-load all assets for offline use
+// To pre-load all assets after page load
 function PreLoader() {
-  return (
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    if (document.readyState === 'complete') {
+      setMounted(true);
+    } else {
+      window.addEventListener('load', () => setMounted(true));
+    }
+  }, []);
+
+  return mounted ? (
     <div
       style={{
         position: 'absolute',
@@ -16,7 +26,7 @@ function PreLoader() {
       <span className="font-weight-400" />
       <span className="font-weight-bold" />
     </div>
-  );
+  ) : null;
 }
 
 export default PreLoader;
