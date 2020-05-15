@@ -100,7 +100,7 @@ function Index() {
       <section className="works page-section ">
         <div className="section-title">
           <h2 className="title">My Projects</h2>
-          <div className="desc">A bunch of things I've done so far</div>
+          <div className="desc">A bunch of things I've done so far.</div>
         </div>
         <ul>
           {WORKS.map((work, index) => (

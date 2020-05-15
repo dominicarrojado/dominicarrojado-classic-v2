@@ -1,3 +1,4 @@
+import razerTrainingModeVirusEditionImg from './assets/images/works/razer-training-mode-virus-edition-app.png';
 import razerChromaStudioImg from './assets/images/works/razer-chroma-studio-web-app.png';
 import razerStreamerCompanionAppImg from './assets/images/works/razer-streamer-companion-web-app.png';
 import razerSurroundSoundImg from './assets/images/works/razer-7.1-surround-sound-web-app.png';
@@ -23,6 +24,17 @@ export const COMPANY_NAME = 'Razer';
 export const COMPANY_POSITION = 'Senior Software Engineer';
 
 export const WORKS = [
+  {
+    title: 'Razer Training Mode: Virus Edition',
+    desc: 'Whack-a-mole mini-game where you whack viruses instead of moles.',
+    urls: [
+      {
+        title: 'View Game',
+        url: 'https://dominicarrojado.com/razer-mouse-accuracy-game/',
+      },
+    ],
+    img: razerTrainingModeVirusEditionImg,
+  },
   {
     title: 'Razer Chroma Studio Web',
     desc:
