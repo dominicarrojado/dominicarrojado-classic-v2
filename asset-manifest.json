@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.7f295dbb.chunk.css",
-    "main.js": "/static/js/main.f4393a47.chunk.js",
-    "main.js.map": "/static/js/main.f4393a47.chunk.js.map",
+    "main.css": "/static/css/main.93d20fae.chunk.css",
+    "main.js": "/static/js/main.7edae5e2.chunk.js",
+    "main.js.map": "/static/js/main.7edae5e2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ef2925ba.js",
     "runtime-main.js.map": "/static/js/runtime-main.ef2925ba.js.map",
-    "static/js/2.c21f7655.chunk.js": "/static/js/2.c21f7655.chunk.js",
-    "static/js/2.c21f7655.chunk.js.map": "/static/js/2.c21f7655.chunk.js.map",
+    "static/js/2.36747a3b.chunk.js": "/static/js/2.36747a3b.chunk.js",
+    "static/js/2.36747a3b.chunk.js.map": "/static/js/2.36747a3b.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.cb6e796cc4e4cc666ee4be01cec7a7c1.js": "/precache-manifest.cb6e796cc4e4cc666ee4be01cec7a7c1.js",
+    "precache-manifest.27506bd3374afdc6c63eee6288dd227a.js": "/precache-manifest.27506bd3374afdc6c63eee6288dd227a.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.7f295dbb.chunk.css.map": "/static/css/main.7f295dbb.chunk.css.map",
-    "static/js/2.c21f7655.chunk.js.LICENSE.txt": "/static/js/2.c21f7655.chunk.js.LICENSE.txt",
+    "static/css/main.93d20fae.chunk.css.map": "/static/css/main.93d20fae.chunk.css.map",
+    "static/js/2.36747a3b.chunk.js.LICENSE.txt": "/static/js/2.36747a3b.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
     "static/media/aptamil-build-your-babys-foundation-web-app.png": "/static/media/aptamil-build-your-babys-foundation-web-app.da5d581a.png",
     "static/media/axa-email-template.png": "/static/media/axa-email-template.6f6d7726.png",
@@ -32,12 +32,13 @@
     "static/media/razer-developer-portal-web-app.png": "/static/media/razer-developer-portal-web-app.e29bdb42.png",
     "static/media/razer-id-web-app.png": "/static/media/razer-id-web-app.740ff592.png",
     "static/media/razer-streamer-companion-web-app.png": "/static/media/razer-streamer-companion-web-app.7fa3ed23.png",
+    "static/media/razer-training-mode-virus-edition-app.png": "/static/media/razer-training-mode-virus-edition-app.515f3c58.png",
     "static/media/singtel-data-x-infinity-web-app.png": "/static/media/singtel-data-x-infinity-web-app.cdec79e9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ef2925ba.js",
-    "static/js/2.c21f7655.chunk.js",
-    "static/css/main.7f295dbb.chunk.css",
-    "static/js/main.f4393a47.chunk.js"
+    "static/js/2.36747a3b.chunk.js",
+    "static/css/main.93d20fae.chunk.css",
+    "static/js/main.7edae5e2.chunk.js"
   ]
 }
