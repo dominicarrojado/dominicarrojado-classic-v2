@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e8159e2768e2361d09ec02e0827a67e9",
+    "revision": "a8602b3080cb3f498e440e2179f17668",
     "url": "/index.html"
   },
   {
-    "revision": "cc47d9ab07d278dbae21",
-    "url": "/static/css/main.7f295dbb.chunk.css"
+    "revision": "484de6eda67c5fb9eb52",
+    "url": "/static/css/main.93d20fae.chunk.css"
   },
   {
-    "revision": "bcca0adfabaff198ebf6",
-    "url": "/static/js/2.c21f7655.chunk.js"
+    "revision": "f1fe491e1a2005a5c9a2",
+    "url": "/static/js/2.36747a3b.chunk.js"
   },
   {
     "revision": "fdf2af3f2014f6785ed086e04684bf71",
-    "url": "/static/js/2.c21f7655.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.36747a3b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "cc47d9ab07d278dbae21",
-    "url": "/static/js/main.f4393a47.chunk.js"
+    "revision": "484de6eda67c5fb9eb52",
+    "url": "/static/js/main.7edae5e2.chunk.js"
   },
   {
     "revision": "e3f33dca076445ab320b",
@@ -162,6 +162,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "7fa3ed2312798775f759a91d6fd7bf38",
     "url": "/static/media/razer-streamer-companion-web-app.7fa3ed23.png"
+  },
+  {
+    "revision": "515f3c58bcf7e5dd6cff2a748a6427ed",
+    "url": "/static/media/razer-training-mode-virus-edition-app.515f3c58.png"
   },
   {
     "revision": "cdec79e971ef45757d6626a185b5c14c",
