@@ -72,18 +72,6 @@ export const WORKS = [
     img: razerSurroundSoundImg,
   },
   {
-    title: 'Razer ID',
-    desc:
-      'Profile management and authentication service tool for all Razer services. Built for web, desktop and mobile.',
-    urls: [
-      {
-        title: 'View Web App',
-        url: 'https://razerid.razer.com/',
-      },
-    ],
-    img: razerIdImg,
-  },
-  {
     title: 'Razer Developer Portal',
     desc:
       'A portal for third-party developers to manage their projects that uses Razer ID API.',
@@ -94,6 +82,18 @@ export const WORKS = [
       },
     ],
     img: razerDeveloperPortalImg,
+  },
+  {
+    title: 'Razer ID',
+    desc:
+      'Profile management and authentication service tool for all Razer services. Built for web, desktop and mobile.',
+    urls: [
+      {
+        title: 'View Web App',
+        url: 'https://razerid.razer.com/',
+      },
+    ],
+    img: razerIdImg,
   },
   {
     title: 'Qwerk',
@@ -114,7 +114,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Website',
-        url: 'https://dominicarrojado.github.io/maybank-fc-barcelona-website/',
+        url: 'https://dominicarrojado.com/maybank-fc-barcelona-website/',
       },
     ],
     img: maybankFcBarcelonaImg,
@@ -150,7 +150,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Website',
-        url: 'https://dominicarrojado.github.io/kronenbourg-website/',
+        url: 'https://dominicarrojado.com/kronenbourg-website/',
       },
     ],
     img: kronenbourgImg,
@@ -240,8 +240,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Email Template',
-        url:
-          'https://dominicarrojado.github.io/hashtag-interactive-welcome-edm/',
+        url: 'https://dominicarrojado.com/hashtag-interactive-welcome-edm/',
       },
     ],
     img: hashtagInteractiveWelcomeEmailImg,
@@ -253,19 +252,19 @@ export const WORKS = [
     urls: [
       {
         title: 'View Data Passport I',
-        url: 'https://dominicarrojado.github.io/m1-data-passport-edm/',
+        url: 'https://dominicarrojado.com/m1-data-passport-edm/',
       },
       {
         title: 'View Data Passport II',
-        url: 'https://dominicarrojado.github.io/m1-data-passport-2-edm/',
+        url: 'https://dominicarrojado.com/m1-data-passport-2-edm/',
       },
       {
         title: 'View Data Passport III',
-        url: 'https://dominicarrojado.github.io/m1-data-passport-3-edm/',
+        url: 'https://dominicarrojado.com/m1-data-passport-3-edm/',
       },
       {
         title: 'View Data Passport IV',
-        url: 'https://dominicarrojado.github.io/m1-data-passport-4-edm/',
+        url: 'https://dominicarrojado.com/m1-data-passport-4-edm/',
       },
     ],
     img: m1EmailImg,
@@ -277,31 +276,31 @@ export const WORKS = [
     urls: [
       {
         title: 'View Smart Travel I',
-        url: 'https://dominicarrojado.github.io/axa-smart-travel-edm/',
+        url: 'https://dominicarrojado.com/axa-smart-travel-edm/',
       },
       {
         title: 'View Smart Travel II',
-        url: 'https://dominicarrojado.github.io/axa-smart-travel-2-edm/',
+        url: 'https://dominicarrojado.com/axa-smart-travel-2-edm/',
       },
       {
         title: "View Mother's Day",
-        url: 'https://dominicarrojado.github.io/axa-mothers-day-edm/',
+        url: 'https://dominicarrojado.com/axa-mothers-day-edm/',
       },
       {
         title: 'View Shield',
-        url: 'https://dominicarrojado.github.io/axa-shield-edm/',
+        url: 'https://dominicarrojado.com/axa-shield-edm/',
       },
       {
         title: 'View SmartHome',
-        url: 'https://dominicarrojado.github.io/axa-smart-home-edm/',
+        url: 'https://dominicarrojado.com/axa-smart-home-edm/',
       },
       {
         title: 'View Singtel Partnership',
-        url: 'https://dominicarrojado.github.io/axa-singtel-edm/',
+        url: 'https://dominicarrojado.com/axa-singtel-edm/',
       },
       {
         title: 'View September Promo',
-        url: 'https://dominicarrojado.github.io/axa-september-promo-edm/',
+        url: 'https://dominicarrojado.com/axa-september-promo-edm/',
       },
     ],
     img: axaEmailImg,
