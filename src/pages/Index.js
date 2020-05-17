@@ -38,7 +38,11 @@ function Index() {
         window.pageYOffset * 0.2
       }px, 0)`;
 
-      const opacity = 1 - (window.scrollY / document.body.scrollHeight) * 20;
+      const { offsetTop, clientHeight } = heroDesc.current;
+      const opacity = Math.max(
+        1 - window.scrollY / (offsetTop + clientHeight),
+        0
+      );
 
       heroLogo.current.style.opacity = opacity;
       heroDesc.current.style.opacity = opacity;
