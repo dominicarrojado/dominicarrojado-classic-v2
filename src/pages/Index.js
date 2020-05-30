@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import LazyLoad from 'react-lazyload';
 import MoveTo from 'moveto';
 
-import { trackOutboundLink } from '../lib/google-anayltics';
+import { trackOutboundLink } from '../lib/google-analytics';
 
 import './Index.css';
 

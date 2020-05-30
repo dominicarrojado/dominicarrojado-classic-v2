@@ -1,6 +1,7 @@
 import React, { Fragment, useRef, useState } from 'react';
 
 import { copyTextToClipboard } from '../lib/dom';
+import { trackOutboundLink } from '../lib/google-analytics';
 
 import './Footer.css';
 
@@ -11,7 +12,6 @@ import EnvelopeIcon from '../icons/EnvelopeIcon';
 import Tooltip from './Tooltip';
 
 import { SOCIAL_LINKS } from '../constants';
-import { trackOutboundLink } from '../lib/google-anayltics';
 
 function Footer() {
   return (

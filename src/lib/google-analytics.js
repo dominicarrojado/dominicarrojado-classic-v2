@@ -1,8 +1,7 @@
+import { isLocalhost } from '../serviceWorker';
+
 export function trackOutboundLink(e) {
-  if (
-    typeof window.gtag !== 'function' ||
-    process.env.NODE_ENV !== 'production'
-  ) {
+  if (typeof window.gtag !== 'function' || isLocalhost) {
     return;
   }
 
