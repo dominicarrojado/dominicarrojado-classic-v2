@@ -60,11 +60,18 @@ function Index() {
       setWorkInView('');
 
       let newWorkInView;
+      let nodeImg;
 
       for (const node of works.current.children) {
+        nodeImg = node.querySelector('.img');
+
+        if (!nodeImg) {
+          continue;
+        }
+
         if (
-          node.offsetTop >= scrollY &&
-          node.offsetTop + node.offsetHeight <= scrollY + innerHeight
+          nodeImg.offsetTop >= scrollY &&
+          nodeImg.offsetTop + nodeImg.offsetHeight <= scrollY + innerHeight
         ) {
           newWorkInView = node.id;
           break;

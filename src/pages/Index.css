@@ -213,9 +213,10 @@ Sections - Works
 }
 
 .page-index .works li > .img {
+  display: flex;
+  justify-content: center;
   width: 60%;
   min-height: 150px;
-  text-align: center;
 }
 
 .page-index .works li > .img > .wrapper {
