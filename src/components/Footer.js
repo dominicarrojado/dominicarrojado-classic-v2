@@ -5,10 +5,11 @@ import { trackOutboundLink } from '../lib/google-analytics';
 
 import './Footer.css';
 
+import { ReactComponent as LinkedInIcon } from '../assets/images/icons/linkedin-brands.svg';
+import { ReactComponent as GitHubIcon } from '../assets/images/icons/github-brands.svg';
+import { ReactComponent as EnvelopeIcon } from '../assets/images/icons/envelope-regular.svg';
+
 import FooterQuotes from './FooterQuotes';
-import LinkedInIcon from '../icons/LinkedInIcon';
-import GitHubIcon from '../icons/GitHubIcon';
-import EnvelopeIcon from '../icons/EnvelopeIcon';
 import Tooltip from './Tooltip';
 
 import { SOCIAL_LINKS } from '../constants';

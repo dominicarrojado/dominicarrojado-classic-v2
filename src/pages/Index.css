@@ -51,7 +51,7 @@ Hero
 
 .page-index .hero .logo-container {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   transition: opacity 0.1s linear;
 }
 
@@ -87,6 +87,7 @@ Hero
 .page-index .hero .logo {
   width: 340px;
   height: 340px;
+  color: #ffffff;
   margin-bottom: 15px;
   z-index: 1;
   opacity: 0;
@@ -212,15 +213,34 @@ Sections - Works
 }
 
 .page-index .works li > .img {
-  position: relative;
   width: 60%;
   min-height: 150px;
+  text-align: center;
 }
 
-.page-index .works li > .img > img {
+.page-index .works li > .img > .wrapper {
+  display: inline-flex;
+  position: relative;
+}
+
+.page-index .works li > .img .static {
   display: block;
   margin: 0 auto;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.page-index .works li > .img .gif {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s linear;
+}
+
+.page-index .works li > .img .gif.show {
+  opacity: 1;
 }
 
 .page-index .works li > .img::after {
@@ -254,6 +274,24 @@ Sections - Works
   font-weight: bold;
 }
 
+.page-index .works li > .info > .title > .icon {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  margin-top: -6px;
+  margin-right: 10px;
+}
+
+.page-index .works li > .info > .title > .icon > .fa-star {
+  width: 25px;
+  height: 25px;
+  color: #ffaf1a;
+}
+
+.page-index .works li > .info > .title > .icon > .tooltip .main {
+  margin-bottom: 5px;
+}
+
 .page-index .works li > .info > .btns {
   margin-top: 30px;
 }
@@ -273,6 +311,11 @@ Sections - Works
   .page-index .works li > .info > .title {
     margin-bottom: 5px;
     font-size: 22px;
+  }
+
+  .page-index .works li > .info > .title > .icon > .fa-star {
+    width: 22px;
+    height: 22px;
   }
 
   .page-index .works li > .info > .desc,
@@ -381,6 +424,11 @@ Sections - Works
 
   .page-index .works li > .info > .title {
     font-size: 20px;
+  }
+
+  .page-index .works li > .info > .title > .icon > .fa-star {
+    width: 20px;
+    height: 20px;
   }
 }
 

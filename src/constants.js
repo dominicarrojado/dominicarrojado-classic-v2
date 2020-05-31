@@ -1,10 +1,17 @@
 import razerTrainingModeVirusEditionImg from './assets/images/works/razer-training-mode-virus-edition-app.png';
+import razerTrainingModeVirusEditionGif from './assets/images/works/razer-training-mode-virus-edition-app.gif';
 import razerChromaStudioImg from './assets/images/works/razer-chroma-studio-web-app.png';
+import razerChromaStudioGif from './assets/images/works/razer-chroma-studio-web-app.gif';
 import razerStreamerCompanionAppImg from './assets/images/works/razer-streamer-companion-web-app.png';
+import razerStreamerCompanionAppGif from './assets/images/works/razer-streamer-companion-web-app.gif';
 import razerSurroundSoundImg from './assets/images/works/razer-7.1-surround-sound-web-app.png';
-import razerIdImg from './assets/images/works/razer-id-web-app.png';
+import razerSurroundSoundGif from './assets/images/works/razer-7.1-surround-sound-web-app.gif';
 import razerDeveloperPortalImg from './assets/images/works/razer-developer-portal-web-app.png';
+import razerDeveloperPortalGif from './assets/images/works/razer-developer-portal-web-app.gif';
+import razerIdImg from './assets/images/works/razer-id-web-app.png';
+import razerIdGif from './assets/images/works/razer-id-web-app.gif';
 import qwerkImg from './assets/images/works/qwerk-web-app.png';
+import qwerkGif from './assets/images/works/qwerk-web-app.gif';
 import maybankFcBarcelonaImg from './assets/images/works/maybank-fc-barcelona-website.png';
 import foodRepublicCapsuleSurpriseImg from './assets/images/works/food-republic-capsule-surprise-web-app.png';
 import aptamilBuildYourBabysFoundationImg from './assets/images/works/aptamil-build-your-babys-foundation-web-app.png';
@@ -34,6 +41,7 @@ export const WORKS = [
       },
     ],
     img: razerTrainingModeVirusEditionImg,
+    gif: razerTrainingModeVirusEditionGif,
   },
   {
     title: 'Razer Chroma Studio Web',
@@ -46,6 +54,8 @@ export const WORKS = [
       },
     ],
     img: razerChromaStudioImg,
+    gif: razerChromaStudioGif,
+    starred: true,
   },
   {
     title: 'Razer Streamer Companion App',
@@ -58,6 +68,7 @@ export const WORKS = [
       },
     ],
     img: razerStreamerCompanionAppImg,
+    gif: razerStreamerCompanionAppGif,
   },
   {
     title: 'Razer 7.1 Surround Sound',
@@ -70,6 +81,7 @@ export const WORKS = [
       },
     ],
     img: razerSurroundSoundImg,
+    gif: razerSurroundSoundGif,
   },
   {
     title: 'Razer Developer Portal',
@@ -82,6 +94,7 @@ export const WORKS = [
       },
     ],
     img: razerDeveloperPortalImg,
+    gif: razerDeveloperPortalGif,
   },
   {
     title: 'Razer ID',
@@ -94,6 +107,7 @@ export const WORKS = [
       },
     ],
     img: razerIdImg,
+    gif: razerIdGif,
   },
   {
     title: 'Qwerk',
@@ -106,6 +120,8 @@ export const WORKS = [
       },
     ],
     img: qwerkImg,
+    gif: qwerkGif,
+    starred: true,
   },
   {
     title: 'Maybank: FC Barcelona',

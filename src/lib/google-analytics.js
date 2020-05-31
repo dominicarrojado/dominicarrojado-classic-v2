@@ -10,3 +10,14 @@ export function trackOutboundLink(e) {
     event_label: e.currentTarget.href,
   });
 }
+
+export function trackHover(label) {
+  if (typeof window.gtag !== 'function' || isLocalhost) {
+    return;
+  }
+
+  window.gtag('event', 'hover', {
+    event_category: 'user_interaction',
+    event_label: label,
+  });
+}
