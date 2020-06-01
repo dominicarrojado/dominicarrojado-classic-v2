@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c663763c.chunk.css",
-    "main.js": "/static/js/main.c221b2c0.chunk.js",
-    "main.js.map": "/static/js/main.c221b2c0.chunk.js.map",
+    "main.css": "/static/css/main.1a98858a.chunk.css",
+    "main.js": "/static/js/main.348c9319.chunk.js",
+    "main.js.map": "/static/js/main.348c9319.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ef2925ba.js",
     "runtime-main.js.map": "/static/js/runtime-main.ef2925ba.js.map",
     "static/js/2.00f01b32.chunk.js": "/static/js/2.00f01b32.chunk.js",
     "static/js/2.00f01b32.chunk.js.map": "/static/js/2.00f01b32.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0c6ae6cf3a678ccfecbd33ea23e26702.js": "/precache-manifest.0c6ae6cf3a678ccfecbd33ea23e26702.js",
+    "precache-manifest.dc4a69dc9665e79d5ab23664bdc2803d.js": "/precache-manifest.dc4a69dc9665e79d5ab23664bdc2803d.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.c663763c.chunk.css.map": "/static/css/main.c663763c.chunk.css.map",
+    "static/css/main.1a98858a.chunk.css.map": "/static/css/main.1a98858a.chunk.css.map",
     "static/js/2.00f01b32.chunk.js.LICENSE.txt": "/static/js/2.00f01b32.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
     "static/media/aptamil-build-your-babys-foundation-web-app.png": "/static/media/aptamil-build-your-babys-foundation-web-app.da5d581a.png",
@@ -35,8 +35,8 @@
     "static/media/qwerk-web-app.gif": "/static/media/qwerk-web-app.cba954ba.gif",
     "static/media/razer-7.1-surround-sound-web-app.png": "/static/media/razer-7.1-surround-sound-web-app.47318441.png",
     "static/media/razer-7.1-surround-sound-web-app.gif": "/static/media/razer-7.1-surround-sound-web-app.c897b68d.gif",
-    "static/media/razer-chroma-studio-web-app.gif": "/static/media/razer-chroma-studio-web-app.2cabdcf5.gif",
-    "static/media/razer-chroma-studio-web-app.png": "/static/media/razer-chroma-studio-web-app.57669441.png",
+    "static/media/razer-chroma-studio-web-app.gif": "/static/media/razer-chroma-studio-web-app.36eedd76.gif",
+    "static/media/razer-chroma-studio-web-app.png": "/static/media/razer-chroma-studio-web-app.e6d3553b.png",
     "static/media/razer-developer-portal-web-app.gif": "/static/media/razer-developer-portal-web-app.baddc159.gif",
     "static/media/razer-developer-portal-web-app.png": "/static/media/razer-developer-portal-web-app.c2c029d4.png",
     "static/media/razer-id-web-app.gif": "/static/media/razer-id-web-app.fad17e78.gif",
@@ -51,7 +51,7 @@
   "entrypoints": [
     "static/js/runtime-main.ef2925ba.js",
     "static/js/2.00f01b32.chunk.js",
-    "static/css/main.c663763c.chunk.css",
-    "static/js/main.c221b2c0.chunk.js"
+    "static/css/main.1a98858a.chunk.css",
+    "static/js/main.348c9319.chunk.js"
   ]
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ef53582b6fd637a1852fb03c72e7ec75",
+    "revision": "f345eb4056d5b28a1cd1ffc667de78ea",
     "url": "/index.html"
   },
   {
-    "revision": "7bd0166d2eb8521c482c",
-    "url": "/static/css/main.c663763c.chunk.css"
+    "revision": "1725cbbf9fbd60fdb4b1",
+    "url": "/static/css/main.1a98858a.chunk.css"
   },
   {
     "revision": "b14eba017ffbb28888dd",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.00f01b32.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "7bd0166d2eb8521c482c",
-    "url": "/static/js/main.c221b2c0.chunk.js"
+    "revision": "1725cbbf9fbd60fdb4b1",
+    "url": "/static/js/main.348c9319.chunk.js"
   },
   {
     "revision": "e3f33dca076445ab320b",
@@ -176,12 +176,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/razer-7.1-surround-sound-web-app.c897b68d.gif"
   },
   {
-    "revision": "2cabdcf55db07f01b73c73bfbb52e19c",
-    "url": "/static/media/razer-chroma-studio-web-app.2cabdcf5.gif"
+    "revision": "36eedd7644437466d92f4a64075d781f",
+    "url": "/static/media/razer-chroma-studio-web-app.36eedd76.gif"
   },
   {
-    "revision": "57669441e43214483552928f46412f84",
-    "url": "/static/media/razer-chroma-studio-web-app.57669441.png"
+    "revision": "e6d3553b2114dfda9a532603ec8df773",
+    "url": "/static/media/razer-chroma-studio-web-app.e6d3553b.png"
   },
   {
     "revision": "baddc159dcb919b405e1299c99bfff0b",
