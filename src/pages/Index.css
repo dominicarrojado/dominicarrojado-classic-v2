@@ -20,7 +20,8 @@ Hero
   overflow: hidden;
 }
 
-.page-index .hero > .img {
+.page-index .hero > .img,
+.page-index .hero > .loader {
   position: absolute;
   top: 0;
   left: 0;
@@ -40,6 +41,21 @@ Hero
 
 .page-index .hero.animate > .img {
   opacity: 1;
+}
+
+.page-index .hero > .loader,
+.page-index .works li > .img::after {
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  border-width: 4px;
+  border-color: transparent transparent transparent #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  pointer-events: none;
+  animation: spin 1s ease infinite;
 }
 
 .page-index .hero > .main {
@@ -247,19 +263,8 @@ Sections - Works
   content: '';
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
-  margin: auto;
-  border-width: 4px;
-  border-color: #dddddd #dddddd #dddddd #aaaaaa;
-  border-radius: 50%;
-  border-style: solid;
-  pointer-events: none;
   z-index: -1;
-  animation: spin 1s ease infinite;
 }
 
 .page-index .works li > .info {
@@ -412,6 +417,7 @@ Sections - Works
     margin-bottom: 50px;
   }
 
+  .page-index .hero > .loader,
   .page-index .works li > .img::after {
     width: 30px;
     height: 30px;
@@ -474,6 +480,7 @@ Sections - Works
   /*--------------------------------------------------------------
   Sections - Works
   --------------------------------------------------------------*/
+  .page-index .hero > .loader,
   .page-index .works li > .img::after {
     width: 25px;
     height: 25px;

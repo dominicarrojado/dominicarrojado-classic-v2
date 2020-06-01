@@ -92,6 +92,7 @@ function Index() {
     <div className="page-index">
       <section className={`hero ${animate ? 'animate' : ''}`}>
         <div ref={heroImg} className="img"></div>
+        {!animate ? <div className="loader" /> : null}
         <div className="main">
           <div ref={heroLogo} className="logo-container">
             <Logo className="logo" />
