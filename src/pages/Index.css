@@ -51,11 +51,14 @@ Hero
   height: 40px;
   margin: auto;
   border-width: 4px;
-  border-color: transparent transparent transparent #ffffff;
   border-radius: 50%;
   border-style: solid;
   pointer-events: none;
   animation: spin 1s ease infinite;
+}
+
+.page-index .hero > .loader {
+  border-color: transparent transparent transparent #ffffff;
 }
 
 .page-index .hero > .main {
@@ -229,10 +232,20 @@ Sections - Works
 }
 
 .page-index .works li > .img {
+  position: relative;
   display: flex;
   justify-content: center;
   width: 60%;
   min-height: 150px;
+}
+
+.page-index .works li > .img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-color: #dddddd #dddddd #dddddd #aaaaaa;
+  z-index: -1;
 }
 
 .page-index .works li > .img > .wrapper {
@@ -257,15 +270,6 @@ Sections - Works
 
 .page-index .works li > .img .gif.show {
   opacity: 1;
-}
-
-.page-index .works li > .img::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-color: #dddddd #dddddd #dddddd #aaaaaa;
-  z-index: -1;
 }
 
 .page-index .works li > .info {
