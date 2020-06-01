@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
+import { CSSTransition } from 'react-transition-group';
 import LazyLoad from 'react-lazyload';
 import MoveTo from 'moveto';
 
+import { getImageData } from '../lib/dom';
 import { trackOutboundLink, trackHover } from '../lib/google-analytics';
 
 import './Index.css';
@@ -23,7 +25,7 @@ function Index() {
   const works = useRef();
   const moveTo = useRef();
   const gifLoadedRef = useRef();
-  const [animate, setAnimate] = useState(false);
+  const [windowLoaded, setWindowLoaded] = useState(false);
   const [imgLoaded, setImgLoaded] = useState({});
   const [gifLoaded, setGifLoaded] = useState({});
   const [workInView, setWorkInView] = useState();
@@ -32,9 +34,9 @@ function Index() {
     moveTo.current = new MoveTo({ duration: 100 });
 
     if (document.readyState === 'complete') {
-      setAnimate(true);
+      setWindowLoaded(true);
     } else {
-      window.addEventListener('load', () => setAnimate(true));
+      window.addEventListener('load', () => setWindowLoaded(true));
     }
 
     let timeoutWorkInView;
@@ -90,9 +92,9 @@ function Index() {
 
   return (
     <div className="page-index">
-      <section className={`hero ${animate ? 'animate' : ''}`}>
+      <section className={`hero ${windowLoaded ? 'animate' : ''}`}>
         <div ref={heroImg} className="img"></div>
-        {!animate ? <div className="loader" /> : null}
+        {!windowLoaded ? <div className="spinner" /> : null}
         <div className="main">
           <div ref={heroLogo} className="logo-container">
             <Logo className="logo" />
@@ -155,41 +157,56 @@ function Index() {
             return (
               <li key={id} id={id} data-brand={work.brand}>
                 <div className="img">
-                  <div className="wrapper">
-                    <LazyLoad offset={window.innerHeight}>
-                      <img
-                        src={work.img}
-                        alt={work.title}
-                        className="static"
-                        draggable={false}
-                        onLoad={
-                          work.gif
-                            ? () =>
-                                setImgLoaded({
-                                  ...imgLoaded,
-                                  [id]: true,
-                                })
-                            : null
-                        }
-                      />
-                    </LazyLoad>
-                    {work.gif && imgLoaded[id] ? (
-                      <img
-                        src={work.gif}
-                        alt={`${work.title} GIF`}
-                        className={`gif ${
-                          workInView === id && gifLoaded[id] ? 'show' : ''
-                        }`}
-                        draggable={false}
-                        onLoad={() =>
-                          setGifLoaded({
-                            ...gifLoaded,
-                            [id]: true,
-                          })
-                        }
-                      />
-                    ) : null}
-                  </div>
+                  {windowLoaded ? (
+                    <div className="wrapper">
+                      <LazyLoad offset={window.innerHeight}>
+                        <img
+                          src={work.img}
+                          alt={work.title}
+                          className="static"
+                          draggable={false}
+                          onLoad={() => {
+                            setImgLoaded({
+                              ...imgLoaded,
+                              [id]: true,
+                            });
+
+                            if (work.gif) {
+                              try {
+                                getImageData(work.gif).then(res => {
+                                  setGifLoaded({
+                                    ...gifLoadedRef.current,
+                                    [id]: true,
+                                  });
+                                });
+                              } catch (err) {
+                                console.error(err.message);
+                              }
+                            }
+                          }}
+                        />
+                      </LazyLoad>
+                      {work.gif && gifLoaded[id] ? (
+                        <CSSTransition
+                          in={workInView === id}
+                          timeout={300}
+                          classNames="gif"
+                          mountOnEnter
+                          unmountOnExit
+                        >
+                          <img
+                            src={work.gif}
+                            alt={`${work.title} GIF`}
+                            draggable={false}
+                            className="gif"
+                          />
+                        </CSSTransition>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  {!windowLoaded || !imgLoaded || true ? (
+                    <div className="spinner"></div>
+                  ) : null}
                 </div>
                 <div className="info">
                   <div className="title">

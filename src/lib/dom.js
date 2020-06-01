@@ -1,3 +1,13 @@
+export function getImageData(url) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+
+    img.onload = () => resolve(img);
+    img.onerror = reject;
+    img.src = url;
+  });
+}
+
 export function copyTextToClipboard(text) {
   const input = document.createElement('input');
 
