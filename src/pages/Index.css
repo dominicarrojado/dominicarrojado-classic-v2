@@ -264,6 +264,7 @@ Sections - Works
   position: absolute;
   top: 0;
   left: 0;
+  border-color: #dddddd #dddddd #dddddd #aaaaaa;
   z-index: -1;
 }
 
