@@ -13,18 +13,31 @@ import razerIdGif from './assets/images/works/razer-id-web-app.gif';
 import qwerkImg from './assets/images/works/qwerk-web-app.png';
 import qwerkGif from './assets/images/works/qwerk-web-app.gif';
 import maybankFcBarcelonaImg from './assets/images/works/maybank-fc-barcelona-website.png';
+import maybankFcBarcelonaGif from './assets/images/works/maybank-fc-barcelona-website.gif';
 import foodRepublicCapsuleSurpriseImg from './assets/images/works/food-republic-capsule-surprise-web-app.png';
+import foodRepublicCapsuleSurpriseGif from './assets/images/works/food-republic-capsule-surprise-web-app.gif';
 import aptamilBuildYourBabysFoundationImg from './assets/images/works/aptamil-build-your-babys-foundation-web-app.png';
+import aptamilBuildYourBabysFoundationGif from './assets/images/works/aptamil-build-your-babys-foundation-web-app.gif';
 import kronenbourgImg from './assets/images/works/kronenbourg-website.png';
+import kronenbourgGif from './assets/images/works/kronenbourg-website.gif';
 import singtelDataXInfinityImg from './assets/images/works/singtel-data-x-infinity-web-app.png';
+import singtelDataXInfinityGif from './assets/images/works/singtel-data-x-infinity-web-app.gif';
 import cnbAntiDrugAbuseCampaignImg from './assets/images/works/cnb-anti-drug-abuse-campaign-web-app.png';
+import cnbAntiDrugAbuseCampaignGif from './assets/images/works/cnb-anti-drug-abuse-campaign-web-app.gif';
 import hashtagInteractiveImg from './assets/images/works/hashtag-interactive-website.png';
+import hashtagInteractiveGif from './assets/images/works/hashtag-interactive-website.gif';
 import hashtagInteractiveToMyValentineImg from './assets/images/works/hashtag-interactive-to-my-valentine-web-app.png';
+import hashtagInteractiveToMyValentineGif from './assets/images/works/hashtag-interactive-to-my-valentine-web-app.gif';
 import hashtagInteractiveCnyFortuneTellerImg from './assets/images/works/hashtag-interactive-cny-fortune-teller-web-app.png';
+import hashtagInteractiveCnyFortuneTellerGif from './assets/images/works/hashtag-interactive-cny-fortune-teller-web-app.gif';
 import hashtagInteractiveHollyJollyMemoryGameImg from './assets/images/works/hashtag-interactive-holly-jolly-memory-game-web-app.png';
+import hashtagInteractiveHollyJollyMemoryGameGif from './assets/images/works/hashtag-interactive-holly-jolly-memory-game-web-app.gif';
 import hashtagInteractiveWelcomeEmailImg from './assets/images/works/hashtag-interactive-welcome-email-template.png';
+import hashtagInteractiveWelcomeEmailGif from './assets/images/works/hashtag-interactive-welcome-email-template.gif';
 import m1EmailImg from './assets/images/works/m1-email-template.png';
+import m1EmailGif from './assets/images/works/m1-email-template.gif';
 import axaEmailImg from './assets/images/works/axa-email-template.png';
+import axaEmailGif from './assets/images/works/axa-email-template.gif';
 
 export const COMPANY_URL = 'https://www.razer.com/';
 export const COMPANY_NAME = 'Razer';
@@ -134,6 +147,7 @@ export const WORKS = [
       },
     ],
     img: maybankFcBarcelonaImg,
+    gif: maybankFcBarcelonaGif,
   },
   {
     title: 'Food Republic: Capsule Surprise',
@@ -146,6 +160,7 @@ export const WORKS = [
       },
     ],
     img: foodRepublicCapsuleSurpriseImg,
+    gif: foodRepublicCapsuleSurpriseGif,
   },
   {
     title: "Aptamil: Build Your Baby's Foundation to be One Step Ahead",
@@ -158,6 +173,7 @@ export const WORKS = [
       },
     ],
     img: aptamilBuildYourBabysFoundationImg,
+    gif: aptamilBuildYourBabysFoundationGif,
   },
   {
     title: 'Kronenbourg 1664',
@@ -170,6 +186,7 @@ export const WORKS = [
       },
     ],
     img: kronenbourgImg,
+    gif: kronenbourgGif,
   },
   {
     title: 'Singtel: Data x Infinity',
@@ -186,6 +203,7 @@ export const WORKS = [
       },
     ],
     img: singtelDataXInfinityImg,
+    gif: singtelDataXInfinityGif,
   },
   {
     title: 'CNB: Anti Drug Abuse Campaign',
@@ -202,6 +220,7 @@ export const WORKS = [
       },
     ],
     img: cnbAntiDrugAbuseCampaignImg,
+    gif: cnbAntiDrugAbuseCampaignGif,
   },
   {
     title: 'Hashtag Interactive',
@@ -214,6 +233,7 @@ export const WORKS = [
       },
     ],
     img: hashtagInteractiveImg,
+    gif: hashtagInteractiveGif,
   },
   {
     title: 'To My Valentine',
@@ -226,6 +246,7 @@ export const WORKS = [
       },
     ],
     img: hashtagInteractiveToMyValentineImg,
+    gif: hashtagInteractiveToMyValentineGif,
   },
   {
     title: 'CNY: Fortune Teller',
@@ -238,6 +259,7 @@ export const WORKS = [
       },
     ],
     img: hashtagInteractiveCnyFortuneTellerImg,
+    gif: hashtagInteractiveCnyFortuneTellerGif,
   },
   {
     title: 'Holly Jolly Memory Game',
@@ -249,6 +271,7 @@ export const WORKS = [
       },
     ],
     img: hashtagInteractiveHollyJollyMemoryGameImg,
+    gif: hashtagInteractiveHollyJollyMemoryGameGif,
   },
   {
     title: 'Welcome to Hashtag!',
@@ -260,6 +283,7 @@ export const WORKS = [
       },
     ],
     img: hashtagInteractiveWelcomeEmailImg,
+    gif: hashtagInteractiveWelcomeEmailGif,
   },
   {
     title: 'M1 Email Templates',
@@ -284,6 +308,7 @@ export const WORKS = [
       },
     ],
     img: m1EmailImg,
+    gif: m1EmailGif,
   },
   {
     title: 'AXA Email Templates',
@@ -320,6 +345,7 @@ export const WORKS = [
       },
     ],
     img: axaEmailImg,
+    gif: axaEmailGif,
   },
 ];
 
