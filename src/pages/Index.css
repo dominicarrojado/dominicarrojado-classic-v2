@@ -10,7 +10,7 @@
   border-width: 4px;
   border-radius: 50%;
   border-style: solid;
-  border-color: #dddddd #dddddd #dddddd #aaaaaa;
+  border-color: transparent transparent transparent #aaaaaa;
   pointer-events: none;
   animation: spin 1s ease infinite;
 }
@@ -60,7 +60,7 @@ Hero
 }
 
 .page-index .hero > .spinner {
-  border-color: transparent transparent transparent #ffffff;
+  border-left-color: #ffffff;
 }
 
 .page-index .hero > .main {
@@ -293,12 +293,20 @@ Sections - Works
   font-weight: bold;
 }
 
-.page-index .works li > .info > .title > .icon {
+.page-index .works li > .info > .title > .icon,
+.page-index .works li > .info > .title > .spinner-container {
   position: relative;
   display: inline-flex;
   vertical-align: middle;
   margin-top: -6px;
+}
+
+.page-index .works li > .info > .title > .icon {
   margin-right: 10px;
+}
+
+.page-index .works li > .info > .title > .spinner-container {
+  margin-left: 15px;
 }
 
 .page-index .works li > .info > .title > .icon > .fa-star {
@@ -309,6 +317,18 @@ Sections - Works
 
 .page-index .works li > .info > .title > .icon > .tooltip .main {
   margin-bottom: 5px;
+}
+
+.page-index .works li > .info > .title > .spinner-container > .tooltip .main {
+  margin-bottom: 10px;
+}
+
+.page-index .works li > .info > .title .spinner {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-width: 3px;
+  border-left-color: #111111;
 }
 
 .page-index .works li > .info > .btns {

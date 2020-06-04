@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import LazyLoad from 'react-lazyload';
 import MoveTo from 'moveto';
 
-import { getImageData } from '../lib/dom';
+import { getImageDataFromResponse } from '../lib/axios';
 import { trackOutboundLink, trackHover } from '../lib/google-analytics';
 
 import './Index.css';
@@ -17,6 +17,10 @@ import Footer from '../components/Footer';
 import { COMPANY_URL, WORKS } from '../constants';
 import Tooltip from '../components/Tooltip';
 
+let source;
+let timeoutShowGIF;
+let timeoutShowSpinner;
+
 function Index() {
   const heroImg = useRef();
   const heroLogo = useRef();
@@ -24,11 +28,14 @@ function Index() {
   const aboutMe = useRef();
   const works = useRef();
   const moveTo = useRef();
-  const gifLoadedRef = useRef();
+  const imgLoadedRef = useRef();
+  const gifDataRef = useRef();
   const [windowLoaded, setWindowLoaded] = useState(false);
+  const [showGIF, setShowGIF] = useState(false);
+  const [showSpinner, setShowSpinner] = useState(false);
   const [imgLoaded, setImgLoaded] = useState({});
-  const [gifLoaded, setGifLoaded] = useState({});
-  const [workInView, setWorkInView] = useState();
+  const [gifData, setGifData] = useState({});
+  const [workInView, setWorkInView] = useState('');
 
   useEffect(() => {
     moveTo.current = new MoveTo({ duration: 100 });
@@ -59,10 +66,20 @@ function Index() {
 
       // Playing GIF of works
       clearTimeout(timeoutWorkInView);
+      clearTimeout(timeoutShowGIF);
+      clearTimeout(timeoutShowSpinner);
       setWorkInView('');
+      setShowGIF(false);
+      setShowSpinner(false);
+
+      if (source) {
+        source.cancel();
+        source = null;
+      }
 
       let newWorkInView;
       let nodeImg;
+      let nodeGif;
 
       for (const node of works.current.children) {
         nodeImg = node.querySelector('.img');
@@ -76,19 +93,61 @@ function Index() {
           nodeImg.offsetTop + nodeImg.offsetHeight <= scrollY + innerHeight
         ) {
           newWorkInView = node.id;
+          nodeGif = node.dataset.gif;
           break;
         }
       }
 
       if (newWorkInView) {
-        timeoutWorkInView = setTimeout(() => setWorkInView(newWorkInView), 500);
+        timeoutWorkInView = setTimeout(() => {
+          setWorkInView(newWorkInView);
+          getGifData(newWorkInView, nodeGif);
+          timeoutShowSpinner = setTimeout(() => setShowSpinner(true), 300); // Delay showing of spinner in case it loads within 300ms
+        }, 500);
       }
     });
   }, []);
 
   useEffect(() => {
-    gifLoadedRef.current = gifLoaded;
-  }, [gifLoaded]);
+    imgLoadedRef.current = imgLoaded;
+  }, [imgLoaded]);
+
+  useEffect(() => {
+    gifDataRef.current = gifData;
+  }, [gifData]);
+
+  async function getGifData(id, url) {
+    try {
+      const axios = (await import('axios')).default;
+      const hasGifData = gifDataRef.current[id];
+
+      if (hasGifData) {
+        return setShowGIF(true);
+      }
+
+      let hasImage = document.querySelector(`#${id} img.static`);
+      hasImage = hasImage ? hasImage.complete : false;
+
+      if (!hasImage) {
+        return;
+      }
+
+      source = axios.CancelToken.source();
+
+      const res = await axios(url, {
+        responseType: 'arraybuffer',
+        cancelToken: source.token,
+      });
+
+      setGifData({
+        ...gifDataRef.current,
+        [id]: getImageDataFromResponse(res),
+      });
+      timeoutShowGIF = setTimeout(() => setShowGIF(true), 100); // Give buffer time for animation after getting GIF data
+    } catch (err) {
+      console.error(err.message || err);
+    }
+  }
 
   return (
     <div className="page-index">
@@ -155,7 +214,7 @@ function Index() {
             const id = `work-${index}`;
 
             return (
-              <li key={id} id={id} data-brand={work.brand}>
+              <li key={id} id={id} data-gif={work.gif}>
                 <div className="img">
                   {windowLoaded ? (
                     <div className="wrapper">
@@ -167,35 +226,22 @@ function Index() {
                           draggable={false}
                           onLoad={() => {
                             setImgLoaded({
-                              ...imgLoaded,
+                              ...imgLoadedRef.current,
                               [id]: true,
                             });
-
-                            if (work.gif) {
-                              try {
-                                getImageData(work.gif).then(res => {
-                                  setGifLoaded({
-                                    ...gifLoadedRef.current,
-                                    [id]: true,
-                                  });
-                                });
-                              } catch (err) {
-                                console.error(err.message);
-                              }
-                            }
                           }}
                         />
                       </LazyLoad>
-                      {work.gif && gifLoaded[id] ? (
+                      {work.gif && gifData[id] ? (
                         <CSSTransition
-                          in={workInView === id}
+                          in={showGIF && workInView === id}
                           timeout={300}
                           classNames="gif"
                           mountOnEnter
                           unmountOnExit
                         >
                           <img
-                            src={work.gif}
+                            src={gifData[id]}
                             alt={`${work.title} GIF`}
                             draggable={false}
                             className="gif"
@@ -222,6 +268,12 @@ function Index() {
                       </div>
                     ) : null}
                     {work.title}
+                    {showSpinner && workInView === id && !gifData[id] ? (
+                      <div className="spinner-container">
+                        <div className="spinner"></div>
+                        <Tooltip>Loading GIF...</Tooltip>
+                      </div>
+                    ) : null}
                   </div>
                   <div className="desc">{work.desc}</div>
                   <div className="btns">
