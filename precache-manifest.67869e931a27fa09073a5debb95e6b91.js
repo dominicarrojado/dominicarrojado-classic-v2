@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "88be1ffded449ac641dab2d1f825e07a",
+    "revision": "8ef38aa5c48e40bad43a3d07377aa054",
     "url": "/index.html"
   },
   {
-    "revision": "e11d7382f341f9c7e4b2",
-    "url": "/static/css/main.24ae1c3a.chunk.css"
+    "revision": "6f8b94da5228b7a09c31",
+    "url": "/static/css/main.8319baf2.chunk.css"
   },
   {
-    "revision": "e8d43a88ac1ba359b377",
-    "url": "/static/js/2.222459ef.chunk.js"
+    "revision": "c0ee531897d705dba4f7",
+    "url": "/static/js/2.0d34b01f.chunk.js"
   },
   {
-    "revision": "fdf2af3f2014f6785ed086e04684bf71",
-    "url": "/static/js/2.222459ef.chunk.js.LICENSE.txt"
+    "revision": "cf0cdd02b9cdbf85a5fb96759d43faa2",
+    "url": "/static/js/2.0d34b01f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e11d7382f341f9c7e4b2",
-    "url": "/static/js/main.4e82140d.chunk.js"
+    "revision": "024833cfcb902cd29da3",
+    "url": "/static/js/3.08fc59c4.chunk.js"
   },
   {
-    "revision": "e3f33dca076445ab320b",
-    "url": "/static/js/runtime-main.ef2925ba.js"
+    "revision": "6f8b94da5228b7a09c31",
+    "url": "/static/js/main.657fd406.chunk.js"
+  },
+  {
+    "revision": "a151f7c6bc9e323995eb",
+    "url": "/static/js/runtime-main.838bf244.js"
   },
   {
     "revision": "037d830416495def72b7881024c14b7b",
@@ -148,12 +152,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/hashtag-interactive-cny-fortune-teller-web-app.bd447533.gif"
   },
   {
-    "revision": "36094a52b0029fa90ce1dbc92d4f201d",
-    "url": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.36094a52.gif"
+    "revision": "9ed7a6763a3c8283a882312b386f54ae",
+    "url": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.9ed7a676.png"
   },
   {
-    "revision": "691f1bedd0c869d04029582d67671f0a",
-    "url": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.691f1bed.png"
+    "revision": "bfc4e4c5deecb51f7ff0964c8f0f36c0",
+    "url": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.bfc4e4c5.gif"
   },
   {
     "revision": "60f2b53002309be487d96cd8af92cae2",
