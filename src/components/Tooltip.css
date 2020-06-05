@@ -8,8 +8,15 @@
 
 .tooltip > .wrapper {
   position: absolute;
-  bottom: 100%;
   pointer-events: none;
+}
+
+.tooltip.top > .wrapper {
+  bottom: 100%;
+}
+
+.tooltip.right > .wrapper {
+  left: 100%;
 }
 
 .tooltip .main {
@@ -21,14 +28,21 @@
   white-space: nowrap;
   background-color: #000000;
   opacity: 0;
-  transform: translateY(3px);
   transition: opacity 0.15s linear, transform 0.2s ease-in-out;
+}
+
+.tooltip.top .main {
+  transform: translateY(4px);
+}
+
+.tooltip.right .main {
+  transform: translateX(-4px);
 }
 
 .tooltip.show .main,
 .tooltip.force-show .main {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0, 0);
 }
 
 @media only screen and (max-width: 767px) {

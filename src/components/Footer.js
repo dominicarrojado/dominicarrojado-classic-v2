@@ -61,8 +61,8 @@ function SocialItem({ social }) {
       icon = (
         <Fragment>
           <EnvelopeIcon />
-          <Tooltip className={showTooltip ? 'force-show' : ''}>
-            {!showTooltip ? social.title : 'Copied Email to Clipboard!'}
+          <Tooltip isMounted={showTooltip}>
+            {!showTooltip ? social.title : 'Copied!'}
           </Tooltip>
         </Fragment>
       );

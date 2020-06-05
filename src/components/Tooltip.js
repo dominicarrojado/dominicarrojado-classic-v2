@@ -1,4 +1,4 @@
-import React, { useRef, useState, useCallback } from 'react';
+import React, { useRef, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 
 import './Tooltip.css';
@@ -6,18 +6,20 @@ import './Tooltip.css';
 const TIMEOUT = 200; // CSS transition timeout
 const MAX_WIDTH = 300;
 
-function Tooltip({ className, trigger, children }) {
+function Tooltip({ isMounted, position, className, children }) {
   const tooltip = useRef();
   const [style, setStyle] = useState({});
   const tooltipMain = useCallback(
     node => {
       if (node !== null) {
         const newWidth = Math.min(node.offsetWidth, MAX_WIDTH);
+        const newStyle = { width: newWidth };
 
-        setStyle({
-          width: newWidth,
-          left: (newWidth / 2 - tooltip.current.offsetWidth / 2) * -1, // Center tooltip
-        });
+        if (position === 'top') {
+          newStyle.left = (newWidth / 2 - tooltip.current.offsetWidth / 2) * -1; // Center tooltip
+        }
+
+        setStyle(newStyle);
       }
     },
 
@@ -27,6 +29,14 @@ function Tooltip({ className, trigger, children }) {
   const timeoutRef = useRef();
   const [shouldRender, setShouldRender] = useState(false);
   const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    if (isMounted) {
+      showTooltip();
+    } else {
+      hideTooltip();
+    }
+  }, [isMounted]);
 
   function showTooltip() {
     clearTimeout(timeoutRef.current);
@@ -43,9 +53,11 @@ function Tooltip({ className, trigger, children }) {
   return (
     <div
       ref={tooltip}
-      onMouseEnter={trigger === 'hover' ? showTooltip : undefined}
-      onMouseLeave={trigger === 'hover' ? hideTooltip : undefined}
-      className={`tooltip ${show ? 'show' : ''} ${className}`}
+      onMouseEnter={showTooltip}
+      onMouseLeave={hideTooltip}
+      className={`tooltip ${position} ${isMounted ? 'force-' : ''}${
+        show ? 'show' : ''
+      } ${className}`}
     >
       {shouldRender ? (
         <div style={style} className="wrapper">
@@ -64,12 +76,13 @@ function Tooltip({ className, trigger, children }) {
 
 Tooltip.defaultProps = {
   className: '',
-  trigger: 'hover',
+  position: 'top',
 };
 
 Tooltip.propTypes = {
+  isMounted: PropTypes.bool,
   className: PropTypes.string,
-  trigger: PropTypes.string,
+  position: PropTypes.string,
   children: PropTypes.node,
 };
 

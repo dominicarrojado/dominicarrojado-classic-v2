@@ -298,6 +298,10 @@ Sections - Works
   border-left-color: #ffffff;
 }
 
+.page-index .works li > .img .spinner-container > .tooltip .main {
+  margin-left: 25px;
+}
+
 .page-index .works li > .info {
   width: 40%;
   padding: 0 70px;
@@ -477,6 +481,10 @@ Sections - Works
   .page-index .works li > .img .spinner-container > .spinner {
     width: 24px;
     height: 24px;
+  }
+
+  .page-index .works li > .img .spinner-container > .tooltip {
+    display: none;
   }
 
   .page-index .works li > .info > .title {

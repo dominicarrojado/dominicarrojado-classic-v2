@@ -211,7 +211,7 @@ function Index() {
                 <div className="img">
                   {windowLoaded ? (
                     <div className="wrapper">
-                      <LazyLoad offset={window.innerHeight}>
+                      <LazyLoad offset={window.innerHeight} once>
                         <img
                           src={work.img}
                           alt={work.title}
@@ -250,6 +250,7 @@ function Index() {
                       workInView === id ? (
                         <div className="spinner-container">
                           <div className="spinner"></div>
+                          <Tooltip position="right">Loading GIF...</Tooltip>
                         </div>
                       ) : null}
                     </div>
