@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fcbb99a9c171987d3fe3d04e28c06def",
+    "revision": "0391a72c7c2378666e92d0ddd099e07a",
     "url": "/index.html"
   },
   {
-    "revision": "1586cd8fe6537cc41b65",
-    "url": "/static/css/main.bd9aae62.chunk.css"
+    "revision": "9359264d7d4d57a41b20",
+    "url": "/static/css/main.d79c572b.chunk.css"
   },
   {
     "revision": "c0ee531897d705dba4f7",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.08fc59c4.chunk.js"
   },
   {
-    "revision": "1586cd8fe6537cc41b65",
-    "url": "/static/js/main.657fd406.chunk.js"
+    "revision": "9359264d7d4d57a41b20",
+    "url": "/static/js/main.42c81bcf.chunk.js"
   },
   {
     "revision": "a151f7c6bc9e323995eb",
@@ -156,8 +156,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.9ed7a676.png"
   },
   {
-    "revision": "bfc4e4c5deecb51f7ff0964c8f0f36c0",
-    "url": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.bfc4e4c5.gif"
+    "revision": "a91dcf1dd47381f3c747097b072a4ea5",
+    "url": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.a91dcf1d.gif"
   },
   {
     "revision": "60f2b53002309be487d96cd8af92cae2",
