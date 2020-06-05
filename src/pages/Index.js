@@ -244,14 +244,17 @@ function Index() {
                           />
                         </CSSTransition>
                       ) : null}
-                      {showSpinner && workInView === id && !gifData[id] ? (
+                      {imgLoaded[id] &&
+                      !gifData[id] &&
+                      showSpinner &&
+                      workInView === id ? (
                         <div className="spinner-container">
                           <div className="spinner"></div>
                         </div>
                       ) : null}
                     </div>
                   ) : null}
-                  {!windowLoaded || !imgLoaded || true ? (
+                  {!windowLoaded || !imgLoaded[id] ? (
                     <div className="spinner"></div>
                   ) : null}
                 </div>
