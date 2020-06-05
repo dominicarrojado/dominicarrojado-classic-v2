@@ -281,6 +281,23 @@ Sections - Works
   transition: opacity 0.2s linear;
 }
 
+.page-index .works li > .img .spinner-container {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.page-index .works li > .img .spinner-container > .spinner {
+  width: 30px;
+  height: 30px;
+  border-left-color: #ffffff;
+}
+
 .page-index .works li > .info {
   width: 40%;
   padding: 0 70px;
@@ -293,20 +310,12 @@ Sections - Works
   font-weight: bold;
 }
 
-.page-index .works li > .info > .title > .icon,
-.page-index .works li > .info > .title > .spinner-container {
+.page-index .works li > .info > .title > .icon {
   position: relative;
   display: inline-flex;
   vertical-align: middle;
   margin-top: -6px;
-}
-
-.page-index .works li > .info > .title > .icon {
   margin-right: 10px;
-}
-
-.page-index .works li > .info > .title > .spinner-container {
-  margin-left: 15px;
 }
 
 .page-index .works li > .info > .title > .icon > .fa-star {
@@ -317,18 +326,6 @@ Sections - Works
 
 .page-index .works li > .info > .title > .icon > .tooltip .main {
   margin-bottom: 5px;
-}
-
-.page-index .works li > .info > .title > .spinner-container > .tooltip .main {
-  margin-bottom: 10px;
-}
-
-.page-index .works li > .info > .title .spinner {
-  position: relative;
-  width: 24px;
-  height: 24px;
-  border-width: 3px;
-  border-left-color: #111111;
 }
 
 .page-index .works li > .info > .btns {
@@ -343,6 +340,17 @@ Sections - Works
   /*--------------------------------------------------------------
   Sections - Works
   --------------------------------------------------------------*/
+  .page-index .works li > .img .spinner-container {
+    width: 34px;
+    height: 34px;
+  }
+
+  .page-index .works li > .img .spinner-container > .spinner {
+    width: 28px;
+    height: 28px;
+    border-width: 3px;
+  }
+
   .page-index .works li > .info {
     padding: 0 40px;
   }
@@ -352,8 +360,7 @@ Sections - Works
     font-size: 22px;
   }
 
-  .page-index .works li > .info > .title > .icon > .fa-star,
-  .page-index .works li > .info > .title .spinner {
+  .page-index .works li > .info > .title > .icon > .fa-star {
     width: 22px;
     height: 22px;
   }
@@ -462,18 +469,23 @@ Sections - Works
     margin-bottom: 0;
   }
 
+  .page-index .works li > .img .spinner-container {
+    width: 30px;
+    height: 30px;
+  }
+
+  .page-index .works li > .img .spinner-container > .spinner {
+    width: 24px;
+    height: 24px;
+  }
+
   .page-index .works li > .info > .title {
     font-size: 20px;
   }
 
-  .page-index .works li > .info > .title > .icon > .fa-star,
-  .page-index .works li > .info > .title .spinner {
+  .page-index .works li > .info > .title > .icon > .fa-star {
     width: 20px;
     height: 20px;
-  }
-
-  .page-index .works li > .info > .title .spinner {
-    border-width: 2px;
   }
 }
 
@@ -520,6 +532,20 @@ Sections - Works
   .page-index .hero > .btn > .icon > svg {
     width: 12px;
     height: 12px;
+  }
+
+  /*--------------------------------------------------------------
+  Sections - Works
+  --------------------------------------------------------------*/
+  .page-index .works li > .img .spinner-container {
+    width: 26px;
+    height: 26px;
+  }
+
+  .page-index .works li > .img .spinner-container > .spinner {
+    width: 20px;
+    height: 20px;
+    border-width: 2px;
   }
 }
 
