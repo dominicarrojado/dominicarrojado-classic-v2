@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.bd9aae62.chunk.css",
-    "main.js": "/static/js/main.657fd406.chunk.js",
-    "main.js.map": "/static/js/main.657fd406.chunk.js.map",
+    "main.css": "/static/css/main.d79c572b.chunk.css",
+    "main.js": "/static/js/main.42c81bcf.chunk.js",
+    "main.js.map": "/static/js/main.42c81bcf.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.838bf244.js",
     "runtime-main.js.map": "/static/js/runtime-main.838bf244.js.map",
     "static/js/2.0d34b01f.chunk.js": "/static/js/2.0d34b01f.chunk.js",
@@ -10,9 +10,9 @@
     "static/js/3.08fc59c4.chunk.js": "/static/js/3.08fc59c4.chunk.js",
     "static/js/3.08fc59c4.chunk.js.map": "/static/js/3.08fc59c4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.c5afca2822839796af6f432f80e65b16.js": "/precache-manifest.c5afca2822839796af6f432f80e65b16.js",
+    "precache-manifest.a230760042d8e97a61ae168dec1566a9.js": "/precache-manifest.a230760042d8e97a61ae168dec1566a9.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.bd9aae62.chunk.css.map": "/static/css/main.bd9aae62.chunk.css.map",
+    "static/css/main.d79c572b.chunk.css.map": "/static/css/main.d79c572b.chunk.css.map",
     "static/js/2.0d34b01f.chunk.js.LICENSE.txt": "/static/js/2.0d34b01f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
     "static/media/aptamil-build-your-babys-foundation-web-app.gif": "/static/media/aptamil-build-your-babys-foundation-web-app.9d203f7c.gif",
@@ -31,7 +31,7 @@
     "static/media/hashtag-interactive-cny-fortune-teller-web-app.png": "/static/media/hashtag-interactive-cny-fortune-teller-web-app.281c9131.png",
     "static/media/hashtag-interactive-cny-fortune-teller-web-app.gif": "/static/media/hashtag-interactive-cny-fortune-teller-web-app.bd447533.gif",
     "static/media/hashtag-interactive-holly-jolly-memory-game-web-app.png": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.9ed7a676.png",
-    "static/media/hashtag-interactive-holly-jolly-memory-game-web-app.gif": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.bfc4e4c5.gif",
+    "static/media/hashtag-interactive-holly-jolly-memory-game-web-app.gif": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.a91dcf1d.gif",
     "static/media/hashtag-interactive-to-my-valentine-web-app.gif": "/static/media/hashtag-interactive-to-my-valentine-web-app.60f2b530.gif",
     "static/media/hashtag-interactive-to-my-valentine-web-app.png": "/static/media/hashtag-interactive-to-my-valentine-web-app.e9353ed7.png",
     "static/media/hashtag-interactive-website.png": "/static/media/hashtag-interactive-website.6f549114.png",
@@ -66,7 +66,7 @@
   "entrypoints": [
     "static/js/runtime-main.838bf244.js",
     "static/js/2.0d34b01f.chunk.js",
-    "static/css/main.bd9aae62.chunk.css",
-    "static/js/main.657fd406.chunk.js"
+    "static/css/main.d79c572b.chunk.css",
+    "static/js/main.42c81bcf.chunk.js"
   ]
 }
