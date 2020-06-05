@@ -16,7 +16,6 @@ import Footer from '../components/Footer';
 import Tooltip from '../components/Tooltip';
 
 import { COMPANY_URL, WORKS } from '../constants';
-import { GLOBAL_VARS } from '../variables';
 
 function Index() {
   const heroImg = useRef();
@@ -25,12 +24,30 @@ function Index() {
   const aboutMe = useRef();
   const works = useRef();
   const moveTo = useRef();
+  const timeoutsRef = useRef({});
+  const imgLoadedRef = useRef({});
+  const gifDataRef = useRef({});
+  const workInViewRef = useRef();
+  const gettingGifRef = useRef();
+  const sourceRef = useRef();
   const [windowLoaded, setWindowLoaded] = useState(false);
   const [showGIF, setShowGIF] = useState(false);
   const [showSpinner, setShowSpinner] = useState(false);
-  const [imgLoaded, setImgLoaded] = useState({});
-  const [gifData, setGifData] = useState({});
-  const [workInView, setWorkInView] = useState('');
+  const [imgLoaded, _setImgLoaded] = useState({});
+  const [gifData, _setGifData] = useState({});
+  const [workInView, _setWorkInView] = useState('');
+  const setImgLoaded = data => {
+    imgLoadedRef.current = data;
+    _setImgLoaded(data);
+  };
+  const setGifData = data => {
+    gifDataRef.current = data;
+    _setGifData(data);
+  };
+  const setWorkInView = data => {
+    workInViewRef.current = data;
+    _setWorkInView(data);
+  };
 
   useEffect(() => {
     moveTo.current = new MoveTo({ duration: 100 });
@@ -58,21 +75,12 @@ function Index() {
       }
 
       // Auto-play GIF
-      clearTimeout(GLOBAL_VARS.timeoutWorkInView);
-      clearTimeout(GLOBAL_VARS.timeoutShowGIF);
-      clearTimeout(GLOBAL_VARS.timeoutShowSpinner);
+      clearTimeout(timeoutsRef.current.timeoutWorkInView);
+      clearTimeout(timeoutsRef.current.timeoutShowGIF);
+      clearTimeout(timeoutsRef.current.timeoutShowSpinner);
       setWorkInView('');
       setShowGIF(false);
       setShowSpinner(false);
-
-      // Cancel GIF download
-      if (
-        GLOBAL_VARS.source &&
-        Object.keys(GLOBAL_VARS.imgLoaded).length !== WORKS.length // If all images have been loaded, then just continue to download GIF
-      ) {
-        GLOBAL_VARS.source.cancel();
-        GLOBAL_VARS.source = null;
-      }
 
       let newWorkInView;
       let nodeImg;
@@ -98,47 +106,67 @@ function Index() {
       if (newWorkInView) {
         getGifData(newWorkInView, nodeGif);
 
-        GLOBAL_VARS.timeoutWorkInView = setTimeout(() => {
+        timeoutsRef.current.timeoutWorkInView = setTimeout(() => {
           setWorkInView(newWorkInView);
 
           // Delay showing of spinner in case GIF loads within 300ms
-          GLOBAL_VARS.timeoutShowSpinner = setTimeout(
+          timeoutsRef.current.timeoutShowSpinner = setTimeout(
             () => setShowSpinner(true),
             300
           );
         }, 500);
       }
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   async function getGifData(id, url) {
+    let axios;
+
     try {
-      const axios = (await import('axios')).default;
-
-      if (GLOBAL_VARS.gifData[id]) {
-        return setShowGIF(true);
-      }
-
-      if (!GLOBAL_VARS.imgLoaded[id]) {
+      if (gettingGifRef.current === id || !imgLoadedRef.current[id]) {
         return;
       }
 
-      GLOBAL_VARS.source = axios.CancelToken.source();
+      if (gifDataRef.current[id]) {
+        return setShowGIF(true);
+      }
+
+      // Cancel GIF download if it's not the same work in view anymore
+      if (gettingGifRef.current !== id && sourceRef.current) {
+        sourceRef.current.cancel();
+        sourceRef.current = null;
+      }
+
+      gettingGifRef.current = id;
+
+      axios = (await import('axios')).default;
+      const source = axios.CancelToken.source();
+      sourceRef.current = source;
 
       const res = await axios(url, {
         responseType: 'arraybuffer',
-        cancelToken: GLOBAL_VARS.source.token,
+        cancelToken: source.token,
       });
-      const newGifData = {
-        ...GLOBAL_VARS.gifData,
-        [id]: getImageDataFromResponse(res),
-      };
 
-      setGifData(newGifData);
-      GLOBAL_VARS.gifData = newGifData;
-      GLOBAL_VARS.timeoutShowGIF = setTimeout(() => setShowGIF(true), 100); // Give buffer time for animation after getting GIF data
+      setGifData({
+        ...gifDataRef.current,
+        [id]: getImageDataFromResponse(res),
+      });
+      gettingGifRef.current = '';
+
+      // Give buffer time for animation after getting GIF data
+      timeoutsRef.current.timeoutShowGIF = setTimeout(
+        () => setShowGIF(true),
+        100
+      );
     } catch (err) {
-      console.error(err.message || err);
+      console.error(err);
+
+      if (!axios || !axios.isCancel(err)) {
+        gettingGifRef.current = '';
+      }
     }
   }
 
@@ -218,13 +246,14 @@ function Index() {
                           className="static"
                           draggable={false}
                           onLoad={() => {
-                            const newImgLoaded = {
-                              ...GLOBAL_VARS.imgLoaded,
+                            setImgLoaded({
+                              ...imgLoadedRef.current,
                               [id]: true,
-                            };
+                            });
 
-                            setImgLoaded(newImgLoaded);
-                            GLOBAL_VARS.imgLoaded = newImgLoaded;
+                            if (workInViewRef.current === id) {
+                              getGifData(id, work.gif);
+                            }
                           }}
                         />
                       </LazyLoad>
@@ -248,7 +277,12 @@ function Index() {
                       !gifData[id] &&
                       showSpinner &&
                       workInView === id ? (
-                        <div className="spinner-container">
+                        <div
+                          onMouseEnter={() =>
+                            trackHover(`Loading GIF (${work.title})`)
+                          }
+                          className="spinner-container"
+                        >
                           <div className="spinner"></div>
                           <Tooltip position="right">Loading GIF...</Tooltip>
                         </div>
