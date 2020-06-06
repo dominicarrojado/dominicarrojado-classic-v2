@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f42fa6998ea4d08ef2484eeb065c0c3f",
+    "revision": "53f237d2e32829bfe017b2f92d3c0b47",
     "url": "/index.html"
   },
   {
-    "revision": "fa80b73149894ed9fb36",
-    "url": "/static/css/main.d0bf5e91.chunk.css"
+    "revision": "a71d0782944dcba66e73",
+    "url": "/static/css/main.75229320.chunk.css"
   },
   {
     "revision": "c0ee531897d705dba4f7",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.08fc59c4.chunk.js"
   },
   {
-    "revision": "fa80b73149894ed9fb36",
-    "url": "/static/js/main.b092afdf.chunk.js"
+    "revision": "a71d0782944dcba66e73",
+    "url": "/static/js/main.f34643ab.chunk.js"
   },
   {
     "revision": "a151f7c6bc9e323995eb",
@@ -100,8 +100,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/aptamil-build-your-babys-foundation-web-app.ba8070b6.png"
   },
   {
-    "revision": "7b65d66b76ad9446ba48289633c8b49d",
-    "url": "/static/media/arrow-down-solid.7b65d66b.svg"
+    "revision": "dcbbc3e172fd3382968337480b61c13e",
+    "url": "/static/media/arrow-down-solid.dcbbc3e1.svg"
   },
   {
     "revision": "1df5d8dc543b9cb136d7fb751719c28d",
@@ -112,8 +112,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/axa-email-template.b61e346c.gif"
   },
   {
-    "revision": "3fa4654e364e7afbebde67c7fa346343",
-    "url": "/static/media/bg-pattern.3fa4654e.gif"
+    "revision": "e6edf3cc417276addcf5058de1598d12",
+    "url": "/static/media/bg-pattern.e6edf3cc.png"
   },
   {
     "revision": "841676a14423c91fab1947fc7957c8fb",
@@ -124,12 +124,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/cnb-anti-drug-abuse-campaign-web-app.c6303e4f.gif"
   },
   {
-    "revision": "c81a55d6e063b2d587d6ad2b2b3ac432",
-    "url": "/static/media/dominic-arrojado.c81a55d6.svg"
+    "revision": "6c6d36ca92f6b83fa39abcce34e55b4d",
+    "url": "/static/media/dominic-arrojado.6c6d36ca.svg"
   },
   {
-    "revision": "1a9020c337be1b3a6556473307bb9a9f",
-    "url": "/static/media/envelope-regular.1a9020c3.svg"
+    "revision": "2b6b6620109295094276f7c94d2ab9b4",
+    "url": "/static/media/envelope-regular.2b6b6620.svg"
   },
   {
     "revision": "d7af9ba8838e0489f9c49f2ae2fb26da",
@@ -140,8 +140,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/food-republic-capsule-surprise-web-app.eadd10bc.png"
   },
   {
-    "revision": "ec5bc1b3148ca464a3a3e17af89c3ead",
-    "url": "/static/media/github-brands.ec5bc1b3.svg"
+    "revision": "156c3d3b88d0d08b35eda9fc5e2fb728",
+    "url": "/static/media/github-brands.156c3d3b.svg"
   },
   {
     "revision": "bd4475334a749d731322a3efdf797a31",
@@ -192,8 +192,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/kronenbourg-website.d0e91284.gif"
   },
   {
-    "revision": "d9049f461eb3dd661b7f77c6e56e7593",
-    "url": "/static/media/linkedin-brands.d9049f46.svg"
+    "revision": "3d4e0d5993252da96d6e71322a579595",
+    "url": "/static/media/linkedin-brands.3d4e0d59.svg"
   },
   {
     "revision": "25bc31f2103c4eb2413919158f59622a",
@@ -276,7 +276,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/singtel-data-x-infinity-web-app.439959e4.gif"
   },
   {
-    "revision": "f10a25eb07f2740619c9d181f900f2c6",
-    "url": "/static/media/star-solid.f10a25eb.svg"
+    "revision": "bbd2bd472ff238d27c51bbd3565232bf",
+    "url": "/static/media/star-solid.bbd2bd47.svg"
   }
 ]);
