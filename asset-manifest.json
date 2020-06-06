@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.d0bf5e91.chunk.css",
-    "main.js": "/static/js/main.b092afdf.chunk.js",
-    "main.js.map": "/static/js/main.b092afdf.chunk.js.map",
+    "main.css": "/static/css/main.75229320.chunk.css",
+    "main.js": "/static/js/main.f34643ab.chunk.js",
+    "main.js.map": "/static/js/main.f34643ab.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.838bf244.js",
     "runtime-main.js.map": "/static/js/runtime-main.838bf244.js.map",
     "static/js/2.0d34b01f.chunk.js": "/static/js/2.0d34b01f.chunk.js",
@@ -10,24 +10,24 @@
     "static/js/3.08fc59c4.chunk.js": "/static/js/3.08fc59c4.chunk.js",
     "static/js/3.08fc59c4.chunk.js.map": "/static/js/3.08fc59c4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6d9e8b379357d708f8943a4df305c671.js": "/precache-manifest.6d9e8b379357d708f8943a4df305c671.js",
+    "precache-manifest.bb62c10b8424b7eb63be477c035ba138.js": "/precache-manifest.bb62c10b8424b7eb63be477c035ba138.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.d0bf5e91.chunk.css.map": "/static/css/main.d0bf5e91.chunk.css.map",
+    "static/css/main.75229320.chunk.css.map": "/static/css/main.75229320.chunk.css.map",
     "static/js/2.0d34b01f.chunk.js.LICENSE.txt": "/static/js/2.0d34b01f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
     "static/media/aptamil-build-your-babys-foundation-web-app.gif": "/static/media/aptamil-build-your-babys-foundation-web-app.9d203f7c.gif",
     "static/media/aptamil-build-your-babys-foundation-web-app.png": "/static/media/aptamil-build-your-babys-foundation-web-app.ba8070b6.png",
-    "static/media/arrow-down-solid.7b65d66b.svg": "/static/media/arrow-down-solid.7b65d66b.svg",
+    "static/media/arrow-down-solid.dcbbc3e1.svg": "/static/media/arrow-down-solid.dcbbc3e1.svg",
     "static/media/axa-email-template.png": "/static/media/axa-email-template.1df5d8dc.png",
     "static/media/axa-email-template.gif": "/static/media/axa-email-template.b61e346c.gif",
-    "static/media/Index.css": "/static/media/bg-pattern.3fa4654e.gif",
+    "static/media/Index.css": "/static/media/bg-pattern.e6edf3cc.png",
     "static/media/cnb-anti-drug-abuse-campaign-web-app.png": "/static/media/cnb-anti-drug-abuse-campaign-web-app.841676a1.png",
     "static/media/cnb-anti-drug-abuse-campaign-web-app.gif": "/static/media/cnb-anti-drug-abuse-campaign-web-app.c6303e4f.gif",
-    "static/media/dominic-arrojado.c81a55d6.svg": "/static/media/dominic-arrojado.c81a55d6.svg",
-    "static/media/envelope-regular.1a9020c3.svg": "/static/media/envelope-regular.1a9020c3.svg",
+    "static/media/dominic-arrojado.6c6d36ca.svg": "/static/media/dominic-arrojado.6c6d36ca.svg",
+    "static/media/envelope-regular.2b6b6620.svg": "/static/media/envelope-regular.2b6b6620.svg",
     "static/media/food-republic-capsule-surprise-web-app.gif": "/static/media/food-republic-capsule-surprise-web-app.d7af9ba8.gif",
     "static/media/food-republic-capsule-surprise-web-app.png": "/static/media/food-republic-capsule-surprise-web-app.eadd10bc.png",
-    "static/media/github-brands.ec5bc1b3.svg": "/static/media/github-brands.ec5bc1b3.svg",
+    "static/media/github-brands.156c3d3b.svg": "/static/media/github-brands.156c3d3b.svg",
     "static/media/hashtag-interactive-cny-fortune-teller-web-app.gif": "/static/media/hashtag-interactive-cny-fortune-teller-web-app.bd447533.gif",
     "static/media/hashtag-interactive-cny-fortune-teller-web-app.png": "/static/media/hashtag-interactive-cny-fortune-teller-web-app.f34a3e5d.png",
     "static/media/hashtag-interactive-holly-jolly-memory-game-web-app.png": "/static/media/hashtag-interactive-holly-jolly-memory-game-web-app.25e92ad2.png",
@@ -40,7 +40,7 @@
     "static/media/hashtag-interactive-welcome-email-template.gif": "/static/media/hashtag-interactive-welcome-email-template.5e5f8b4c.gif",
     "static/media/kronenbourg-website.png": "/static/media/kronenbourg-website.947963a5.png",
     "static/media/kronenbourg-website.gif": "/static/media/kronenbourg-website.d0e91284.gif",
-    "static/media/linkedin-brands.d9049f46.svg": "/static/media/linkedin-brands.d9049f46.svg",
+    "static/media/linkedin-brands.3d4e0d59.svg": "/static/media/linkedin-brands.3d4e0d59.svg",
     "static/media/m1-email-template.png": "/static/media/m1-email-template.25bc31f2.png",
     "static/media/m1-email-template.gif": "/static/media/m1-email-template.db185d65.gif",
     "static/media/maybank-fc-barcelona-website.gif": "/static/media/maybank-fc-barcelona-website.b347144b.gif",
@@ -61,12 +61,12 @@
     "static/media/razer-training-mode-virus-edition-app.gif": "/static/media/razer-training-mode-virus-edition-app.d8083dd2.gif",
     "static/media/singtel-data-x-infinity-web-app.png": "/static/media/singtel-data-x-infinity-web-app.206e4e89.png",
     "static/media/singtel-data-x-infinity-web-app.gif": "/static/media/singtel-data-x-infinity-web-app.439959e4.gif",
-    "static/media/star-solid.f10a25eb.svg": "/static/media/star-solid.f10a25eb.svg"
+    "static/media/star-solid.bbd2bd47.svg": "/static/media/star-solid.bbd2bd47.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.838bf244.js",
     "static/js/2.0d34b01f.chunk.js",
-    "static/css/main.d0bf5e91.chunk.css",
-    "static/js/main.b092afdf.chunk.js"
+    "static/css/main.75229320.chunk.css",
+    "static/js/main.f34643ab.chunk.js"
   ]
 }
