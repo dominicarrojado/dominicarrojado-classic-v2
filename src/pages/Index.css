@@ -46,7 +46,7 @@ Hero
 }
 
 .page-index .hero > .img {
-  background-image: url('./../assets/images/bg-pattern.gif');
+  background-image: url('./../assets/images/bg-pattern.png');
   background-repeat: repeat;
   background-position: center 0;
   opacity: 0;
@@ -322,7 +322,7 @@ Sections - Works
   margin-right: 10px;
 }
 
-.page-index .works li > .info > .title > .icon > .fa-star {
+.page-index .works li > .info > .title > .icon > svg {
   width: 25px;
   height: 25px;
   color: #ffaf1a;
@@ -364,7 +364,7 @@ Sections - Works
     font-size: 22px;
   }
 
-  .page-index .works li > .info > .title > .icon > .fa-star {
+  .page-index .works li > .info > .title > .icon > svg {
     width: 22px;
     height: 22px;
   }
@@ -491,7 +491,7 @@ Sections - Works
     font-size: 20px;
   }
 
-  .page-index .works li > .info > .title > .icon > .fa-star {
+  .page-index .works li > .info > .title > .icon > svg {
     width: 20px;
     height: 20px;
   }
