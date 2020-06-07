@@ -14,6 +14,7 @@ import { ReactComponent as StarIcon } from '../assets/images/icons/star-solid.sv
 
 import Footer from '../components/Footer';
 import Tooltip from '../components/Tooltip';
+import ProgressCircle from '../components/ProgressCircle';
 
 import { COMPANY_URL, WORKS } from '../constants';
 
@@ -36,6 +37,7 @@ function Index() {
   const [imgLoaded, _setImgLoaded] = useState({});
   const [gifData, _setGifData] = useState({});
   const [workInView, _setWorkInView] = useState('');
+  const [progress, setProgress] = useState(0);
   const setImgLoaded = data => {
     imgLoadedRef.current = data;
     _setImgLoaded(data);
@@ -78,9 +80,7 @@ function Index() {
       clearTimeout(timeoutsRef.current.timeoutWorkInView);
       clearTimeout(timeoutsRef.current.timeoutShowGIF);
       clearTimeout(timeoutsRef.current.timeoutShowSpinner);
-      setWorkInView('');
       setShowGIF(false);
-      setShowSpinner(false);
 
       let newWorkInView;
       let nodeImg;
@@ -124,9 +124,14 @@ function Index() {
 
   // Cancel GIF download if it's not the same work in view anymore
   function cancelDownloadGifData(newId) {
-    if (sourceRef.current && downloadingGifRef.current !== newId) {
+    const currentId = downloadingGifRef.current;
+
+    if (sourceRef.current && currentId !== newId) {
       sourceRef.current.cancel();
       sourceRef.current = null;
+      setWorkInView('');
+      setShowSpinner(false);
+      setProgress(0);
     }
   }
 
@@ -151,6 +156,8 @@ function Index() {
       const res = await axios(url, {
         responseType: 'arraybuffer',
         cancelToken: source.token,
+        onDownloadProgress: e =>
+          setProgress(Math.round((e.loaded / e.total) * 100)),
       });
 
       setGifData({
@@ -286,9 +293,20 @@ function Index() {
                           onMouseEnter={() =>
                             trackHover(`Loading GIF (${work.title})`)
                           }
-                          className="spinner-container"
+                          className="progress-container"
                         >
-                          <div className="spinner"></div>
+                          {progress !== 0 ? (
+                            <ProgressCircle
+                              key={`progress-${id}`}
+                              progress={progress}
+                            />
+                          ) : (
+                            <ProgressCircle
+                              key={`progress-spin-${id}`}
+                              progress={25}
+                              className="spinning"
+                            />
+                          )}
                           <Tooltip position="right">Loading GIF...</Tooltip>
                         </div>
                       ) : null}

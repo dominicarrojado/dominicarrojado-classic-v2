@@ -281,24 +281,23 @@ Sections - Works
   transition: opacity 0.2s linear;
 }
 
-.page-index .works li > .img .spinner-container {
+.page-index .works li > .img .progress-container {
   position: absolute;
   top: 15px;
   right: 15px;
-  width: 36px;
-  height: 36px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.3);
-  z-index: 2;
 }
 
-.page-index .works li > .img .spinner-container > .spinner {
-  width: 30px;
-  height: 30px;
-  border-left-color: #ffffff;
+.page-index .works li > .img .progress-circle {
+  display: block;
 }
 
-.page-index .works li > .img .spinner-container > .tooltip .main {
+.page-index .works li > .img .progress-circle.spinning {
+  animation: spin 1s ease infinite;
+}
+
+.page-index .works li > .img .progress-container > .tooltip .main {
   margin-left: 25px;
 }
 
@@ -344,17 +343,6 @@ Sections - Works
   /*--------------------------------------------------------------
   Sections - Works
   --------------------------------------------------------------*/
-  .page-index .works li > .img .spinner-container {
-    width: 34px;
-    height: 34px;
-  }
-
-  .page-index .works li > .img .spinner-container > .spinner {
-    width: 28px;
-    height: 28px;
-    border-width: 3px;
-  }
-
   .page-index .works li > .info {
     padding: 0 40px;
   }
@@ -473,20 +461,6 @@ Sections - Works
     margin-bottom: 0;
   }
 
-  .page-index .works li > .img .spinner-container {
-    width: 30px;
-    height: 30px;
-  }
-
-  .page-index .works li > .img .spinner-container > .spinner {
-    width: 24px;
-    height: 24px;
-  }
-
-  .page-index .works li > .img .spinner-container > .tooltip {
-    display: none;
-  }
-
   .page-index .works li > .info > .title {
     font-size: 20px;
   }
@@ -540,20 +514,6 @@ Sections - Works
   .page-index .hero > .btn > .icon > svg {
     width: 12px;
     height: 12px;
-  }
-
-  /*--------------------------------------------------------------
-  Sections - Works
-  --------------------------------------------------------------*/
-  .page-index .works li > .img .spinner-container {
-    width: 26px;
-    height: 26px;
-  }
-
-  .page-index .works li > .img .spinner-container > .spinner {
-    width: 20px;
-    height: 20px;
-    border-width: 2px;
   }
 }
 
