@@ -28,7 +28,7 @@ function Index() {
   const imgLoadedRef = useRef({});
   const gifDataRef = useRef({});
   const workInViewRef = useRef();
-  const gettingGifRef = useRef();
+  const downloadingGifRef = useRef();
   const sourceRef = useRef();
   const [windowLoaded, setWindowLoaded] = useState(false);
   const [showGIF, setShowGIF] = useState(false);
@@ -104,10 +104,11 @@ function Index() {
       }
 
       if (newWorkInView) {
-        getGifData(newWorkInView, nodeGif);
+        cancelDownloadGifData(newWorkInView);
 
         timeoutsRef.current.timeoutWorkInView = setTimeout(() => {
           setWorkInView(newWorkInView);
+          downloadGifData(newWorkInView, nodeGif);
 
           // Delay showing of spinner in case GIF loads within 300ms
           timeoutsRef.current.timeoutShowSpinner = setTimeout(
@@ -121,11 +122,19 @@ function Index() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  async function getGifData(id, url) {
+  // Cancel GIF download if it's not the same work in view anymore
+  function cancelDownloadGifData(newId) {
+    if (sourceRef.current && downloadingGifRef.current !== newId) {
+      sourceRef.current.cancel();
+      sourceRef.current = null;
+    }
+  }
+
+  async function downloadGifData(id, url) {
     let axios;
 
     try {
-      if (gettingGifRef.current === id || !imgLoadedRef.current[id]) {
+      if (downloadingGifRef.current === id || !imgLoadedRef.current[id]) {
         return;
       }
 
@@ -133,13 +142,7 @@ function Index() {
         return setShowGIF(true);
       }
 
-      // Cancel GIF download if it's not the same work in view anymore
-      if (gettingGifRef.current !== id && sourceRef.current) {
-        sourceRef.current.cancel();
-        sourceRef.current = null;
-      }
-
-      gettingGifRef.current = id;
+      downloadingGifRef.current = id;
 
       axios = (await import('axios')).default;
       const source = axios.CancelToken.source();
@@ -154,18 +157,19 @@ function Index() {
         ...gifDataRef.current,
         [id]: getImageDataFromResponse(res),
       });
-      gettingGifRef.current = '';
+      downloadingGifRef.current = '';
 
-      // Give buffer time for animation after getting GIF data
+      // Give buffer time for animation after downloading GIF data
       timeoutsRef.current.timeoutShowGIF = setTimeout(
         () => setShowGIF(true),
         100
       );
     } catch (err) {
-      console.error(err);
-
-      if (!axios || !axios.isCancel(err)) {
-        gettingGifRef.current = '';
+      if (axios && axios.isCancel(err)) {
+        console.error(`Cancel GIF download - ${id}, ${url}`);
+        downloadingGifRef.current = '';
+      } else {
+        console.error(err);
       }
     }
   }
@@ -252,7 +256,8 @@ function Index() {
                             });
 
                             if (workInViewRef.current === id) {
-                              getGifData(id, work.gif);
+                              cancelDownloadGifData(id);
+                              downloadGifData(id, work.gif);
                             }
                           }}
                         />
