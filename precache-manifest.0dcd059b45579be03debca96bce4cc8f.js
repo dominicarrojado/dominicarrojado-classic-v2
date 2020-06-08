@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "56375a731519bf0a4a41135015bc0a3d",
+    "revision": "8bab5fa3848271ce239c3bfa9fc1ea2e",
     "url": "/index.html"
   },
   {
-    "revision": "f7ba957ffa0b2d90dd9b",
+    "revision": "9f16d149261a932f59fa",
     "url": "/static/css/main.e26f4cb4.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/3.08fc59c4.chunk.js"
   },
   {
-    "revision": "f7ba957ffa0b2d90dd9b",
-    "url": "/static/js/main.97f38f93.chunk.js"
+    "revision": "9f16d149261a932f59fa",
+    "url": "/static/js/main.83bcb864.chunk.js"
   },
   {
     "revision": "a151f7c6bc9e323995eb",
@@ -172,8 +172,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/hashtag-interactive-website.873c09a3.png"
   },
   {
-    "revision": "ec00057e7e52f25ca7a784880dba19b9",
-    "url": "/static/media/hashtag-interactive-website.ec00057e.gif"
+    "revision": "d1b92b6a2ffbdad819105213b87eab5b",
+    "url": "/static/media/hashtag-interactive-website.d1b92b6a.gif"
   },
   {
     "revision": "419c5dd8af02e798fa2d3631b0c761e2",
@@ -212,12 +212,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/maybank-fc-barcelona-website.b4dc1d1b.png"
   },
   {
-    "revision": "47245a2c75ece3df3c5eb64b33cac5b1",
-    "url": "/static/media/qwerk-web-app.47245a2c.png"
+    "revision": "347dea6d0b65448b6768c9abc40af846",
+    "url": "/static/media/qwerk-web-app.347dea6d.gif"
   },
   {
-    "revision": "7c8d945c2b577e89084091a8623ecb31",
-    "url": "/static/media/qwerk-web-app.7c8d945c.gif"
+    "revision": "47245a2c75ece3df3c5eb64b33cac5b1",
+    "url": "/static/media/qwerk-web-app.47245a2c.png"
   },
   {
     "revision": "0f840c2f9888bc7d3e3ac6784e6f2a4a",
