@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.e26f4cb4.chunk.css",
-    "main.js": "/static/js/main.97f38f93.chunk.js",
-    "main.js.map": "/static/js/main.97f38f93.chunk.js.map",
+    "main.js": "/static/js/main.83bcb864.chunk.js",
+    "main.js.map": "/static/js/main.83bcb864.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.838bf244.js",
     "runtime-main.js.map": "/static/js/runtime-main.838bf244.js.map",
     "static/js/2.0d34b01f.chunk.js": "/static/js/2.0d34b01f.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.08fc59c4.chunk.js": "/static/js/3.08fc59c4.chunk.js",
     "static/js/3.08fc59c4.chunk.js.map": "/static/js/3.08fc59c4.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d3e820492b968d68d5042a77bbc2231e.js": "/precache-manifest.d3e820492b968d68d5042a77bbc2231e.js",
+    "precache-manifest.0dcd059b45579be03debca96bce4cc8f.js": "/precache-manifest.0dcd059b45579be03debca96bce4cc8f.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.e26f4cb4.chunk.css.map": "/static/css/main.e26f4cb4.chunk.css.map",
     "static/js/2.0d34b01f.chunk.js.LICENSE.txt": "/static/js/2.0d34b01f.chunk.js.LICENSE.txt",
@@ -35,7 +35,7 @@
     "static/media/hashtag-interactive-to-my-valentine-web-app.png": "/static/media/hashtag-interactive-to-my-valentine-web-app.34eb28c7.png",
     "static/media/hashtag-interactive-to-my-valentine-web-app.gif": "/static/media/hashtag-interactive-to-my-valentine-web-app.611b3ff7.gif",
     "static/media/hashtag-interactive-website.png": "/static/media/hashtag-interactive-website.873c09a3.png",
-    "static/media/hashtag-interactive-website.gif": "/static/media/hashtag-interactive-website.ec00057e.gif",
+    "static/media/hashtag-interactive-website.gif": "/static/media/hashtag-interactive-website.d1b92b6a.gif",
     "static/media/hashtag-interactive-welcome-email-template.png": "/static/media/hashtag-interactive-welcome-email-template.419c5dd8.png",
     "static/media/hashtag-interactive-welcome-email-template.gif": "/static/media/hashtag-interactive-welcome-email-template.f2eae3ff.gif",
     "static/media/kronenbourg-website.png": "/static/media/kronenbourg-website.947963a5.png",
@@ -45,8 +45,8 @@
     "static/media/m1-email-template.gif": "/static/media/m1-email-template.47cc5740.gif",
     "static/media/maybank-fc-barcelona-website.gif": "/static/media/maybank-fc-barcelona-website.b1668c6a.gif",
     "static/media/maybank-fc-barcelona-website.png": "/static/media/maybank-fc-barcelona-website.b4dc1d1b.png",
+    "static/media/qwerk-web-app.gif": "/static/media/qwerk-web-app.347dea6d.gif",
     "static/media/qwerk-web-app.png": "/static/media/qwerk-web-app.47245a2c.png",
-    "static/media/qwerk-web-app.gif": "/static/media/qwerk-web-app.7c8d945c.gif",
     "static/media/razer-7.1-surround-sound-web-app.gif": "/static/media/razer-7.1-surround-sound-web-app.0f840c2f.gif",
     "static/media/razer-7.1-surround-sound-web-app.png": "/static/media/razer-7.1-surround-sound-web-app.7a0e00b7.png",
     "static/media/razer-chroma-studio-web-app.gif": "/static/media/razer-chroma-studio-web-app.a4000a32.gif",
@@ -67,6 +67,6 @@
     "static/js/runtime-main.838bf244.js",
     "static/js/2.0d34b01f.chunk.js",
     "static/css/main.e26f4cb4.chunk.css",
-    "static/js/main.97f38f93.chunk.js"
+    "static/js/main.83bcb864.chunk.js"
   ]
 }
