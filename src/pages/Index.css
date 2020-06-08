@@ -281,23 +281,36 @@ Sections - Works
   transition: opacity 0.2s linear;
 }
 
-.page-index .works li > .img .progress-container {
+.page-index .works li > .img .spinner-container {
   position: absolute;
   top: 15px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  text-align: center;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
 }
 
-.page-index .works li > .img .progress-circle {
-  display: block;
+.page-index .works li > .img .spinner-container > .spinner {
+  width: 36px;
+  height: 36px;
+  border-left-color: #ffffff;
 }
 
-.page-index .works li > .img .progress-circle.spinning {
-  animation: spin 1s ease infinite;
+.page-index .works li > .img .spinner-container > .text {
+  padding-top: 1px;
+  padding-left: 1px;
+  color: #ffffff;
+  font-size: 14px;
+  user-select: none;
 }
 
-.page-index .works li > .img .progress-container > .tooltip .main {
+.page-index .works li > .img .spinner-container > .tooltip .main {
   margin-left: 25px;
 }
 
@@ -514,6 +527,23 @@ Sections - Works
   .page-index .hero > .btn > .icon > svg {
     width: 12px;
     height: 12px;
+  }
+
+  /*--------------------------------------------------------------
+  Sections - Works
+  --------------------------------------------------------------*/
+  .page-index .works li > .img .spinner-container {
+    width: 36px;
+    height: 36px;
+  }
+
+  .page-index .works li > .img .spinner-container > .spinner {
+    width: 30px;
+    height: 30px;
+  }
+
+  .page-index .works li > .img .spinner-container > .text {
+    font-size: 12px;
   }
 }
 

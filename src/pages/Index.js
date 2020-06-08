@@ -14,7 +14,6 @@ import { ReactComponent as StarIcon } from '../assets/images/icons/star-solid.sv
 
 import Footer from '../components/Footer';
 import Tooltip from '../components/Tooltip';
-import ProgressCircle from '../components/ProgressCircle';
 
 import { COMPANY_URL, WORKS } from '../constants';
 
@@ -293,20 +292,10 @@ function Index() {
                           onMouseEnter={() =>
                             trackHover(`Loading GIF (${work.title})`)
                           }
-                          className="progress-container"
+                          className="spinner-container"
                         >
-                          {progress !== 0 ? (
-                            <ProgressCircle
-                              key={`progress-${id}`}
-                              progress={progress}
-                            />
-                          ) : (
-                            <ProgressCircle
-                              key={`progress-spin-${id}`}
-                              progress={25}
-                              className="spinning"
-                            />
-                          )}
+                          <div className="spinner" />
+                          <div className="text">{progress}</div>
                           <Tooltip position="right">Loading GIF...</Tooltip>
                         </div>
                       ) : null}

@@ -29,6 +29,7 @@
   background-color: #000000;
   opacity: 0;
   transition: opacity 0.15s linear, transform 0.2s ease-in-out;
+  user-select: none;
 }
 
 .tooltip.top .main {
