@@ -39,9 +39,13 @@ import m1EmailGif from './assets/images/works/m1-email-template.gif';
 import axaEmailImg from './assets/images/works/axa-email-template.png';
 import axaEmailGif from './assets/images/works/axa-email-template.gif';
 
-export const COMPANY_URL = 'https://www.razer.com/';
+export const CURRENT_LOCATION = 'Singapore';
 export const COMPANY_NAME = 'Razer';
+export const COMPANY_URL = 'https://www.razer.com/';
 export const COMPANY_POSITION = 'Senior Software Engineer';
+
+export const SET_WORK_IN_VIEW_TIMEOUT = 500;
+export const DOWNLOAD_GIF_SPINNER_TIMEOUT = 300;
 
 export const WORKS = [
   {

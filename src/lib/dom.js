@@ -16,7 +16,7 @@ export function copyTextToClipboard(text) {
     document.execCommand('copy');
     copied = true;
   } catch (err) {
-    console.error(err);
+    console.error('Error on copy text to clipboard:', err);
     copied = false;
   }
 

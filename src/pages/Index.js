@@ -1,10 +1,13 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import LazyLoad from 'react-lazyload';
-import MoveTo from 'moveto';
 
 import { getImageDataFromResponse } from '../lib/axios';
-import { trackOutboundLink, trackHover } from '../lib/google-analytics';
+import {
+  trackEvent,
+  trackOutboundLink,
+  trackHover,
+} from '../lib/google-analytics';
 
 import './Index.css';
 
@@ -15,7 +18,15 @@ import { ReactComponent as StarIcon } from '../assets/images/icons/star-solid.sv
 import Footer from '../components/Footer';
 import Tooltip from '../components/Tooltip';
 
-import { COMPANY_URL, WORKS } from '../constants';
+import {
+  CURRENT_LOCATION,
+  COMPANY_NAME,
+  COMPANY_URL,
+  COMPANY_POSITION,
+  SET_WORK_IN_VIEW_TIMEOUT,
+  DOWNLOAD_GIF_SPINNER_TIMEOUT,
+  WORKS,
+} from '../constants';
 
 function Index() {
   const heroImg = useRef();
@@ -51,12 +62,22 @@ function Index() {
   };
 
   useEffect(() => {
-    moveTo.current = new MoveTo({ duration: 100 });
+    function onLoad() {
+      setWindowLoaded(true);
+
+      // Dynamically import MoveTo
+      import('moveto')
+        .then(
+          ({ default: MoveTo }) =>
+            (moveTo.current = new MoveTo({ duration: 100 }))
+        )
+        .catch(err => console.error('Error on MoveTo import:', err));
+    }
 
     if (document.readyState === 'complete') {
-      setWindowLoaded(true);
+      onLoad();
     } else {
-      window.addEventListener('load', () => setWindowLoaded(true));
+      window.addEventListener('load', onLoad);
     }
 
     window.addEventListener('scroll', () => {
@@ -83,7 +104,6 @@ function Index() {
 
       let newWorkInView;
       let nodeImg;
-      let nodeGif;
 
       for (const node of works.current.children) {
         nodeImg = node.querySelector('.img');
@@ -96,25 +116,24 @@ function Index() {
           nodeImg.offsetTop >= scrollY &&
           nodeImg.offsetTop + nodeImg.offsetHeight <= scrollY + innerHeight
         ) {
-          newWorkInView = node.id;
-          nodeGif = node.dataset.gif;
+          newWorkInView = node.dataset;
           break;
         }
       }
 
       if (newWorkInView) {
-        cancelDownloadGifData(newWorkInView);
+        cancelDownloadWorkGIF(newWorkInView.id);
 
         timeoutsRef.current.timeoutWorkInView = setTimeout(() => {
           setWorkInView(newWorkInView);
-          downloadGifData(newWorkInView, nodeGif);
+          downloadWorkGIF(newWorkInView);
 
-          // Delay showing of spinner in case GIF loads within 300ms
+          // Delay showing of spinner in case GIF loads within the timeout
           timeoutsRef.current.timeoutShowSpinner = setTimeout(
             () => setShowSpinner(true),
-            300
+            DOWNLOAD_GIF_SPINNER_TIMEOUT
           );
-        }, 500);
+        }, SET_WORK_IN_VIEW_TIMEOUT);
       }
     });
 
@@ -122,7 +141,7 @@ function Index() {
   }, []);
 
   // Cancel GIF download if it's not the same work in view anymore
-  function cancelDownloadGifData(newId) {
+  function cancelDownloadWorkGIF(newId) {
     const currentId = downloadingGifRef.current;
 
     if (sourceRef.current && currentId !== newId) {
@@ -134,7 +153,8 @@ function Index() {
     }
   }
 
-  async function downloadGifData(id, url) {
+  async function downloadWorkGIF(work) {
+    const { id, gif } = work;
     let axios;
 
     try {
@@ -152,7 +172,7 @@ function Index() {
       const source = axios.CancelToken.source();
       sourceRef.current = source;
 
-      const res = await axios(url, {
+      const res = await axios(gif, {
         responseType: 'arraybuffer',
         cancelToken: source.token,
         onDownloadProgress: e =>
@@ -170,12 +190,19 @@ function Index() {
         () => setShowGIF(true),
         100
       );
+
+      trackEvent({
+        action: 'gif_auto_play_start',
+        category: 'gif_auto_play',
+        event_label: `Downloaded GIF - ${work.title}`,
+        nonInteraction: true,
+      });
     } catch (err) {
       if (axios && axios.isCancel(err)) {
-        console.error(`Cancel GIF download - ${id}, ${url}`);
+        console.warn(`Cancel Work GIF download: ${gif}`);
         downloadingGifRef.current = '';
       } else {
-        console.error(err);
+        console.error('Error on Work GIF download:', err);
       }
     }
   }
@@ -190,16 +217,22 @@ function Index() {
             <Logo className="logo" />
           </div>
           <div ref={heroDesc} className="desc-container">
-            <h1 className="desc">
-              Dominic Arrojado · Senior Software Engineer
-            </h1>
+            <h1 className="desc">Dominic Arrojado · {COMPANY_POSITION}</h1>
           </div>
         </div>
         <div className="btn">
           <span
-            onClick={() =>
-              moveTo.current && moveTo.current.move(aboutMe.current)
-            }
+            onClick={() => {
+              if (moveTo.current) {
+                moveTo.current.move(aboutMe.current);
+
+                trackEvent({
+                  action: 'click',
+                  category: 'user_interaction',
+                  event_label: 'Scroll Down',
+                });
+              }
+            }}
             className="btn-text btn-white"
           >
             Scroll Down
@@ -220,7 +253,7 @@ function Index() {
             applications.
             <br />
             <br />
-            I'm currently based in Singapore and working at{' '}
+            I'm currently based in {CURRENT_LOCATION} and working at{' '}
             <a
               href={COMPANY_URL}
               onClick={trackOutboundLink}
@@ -228,9 +261,9 @@ function Index() {
               className="btn-text"
               rel="noopener noreferrer"
             >
-              Razer
+              {COMPANY_NAME}
             </a>{' '}
-            as a Senior Software Engineer.
+            as a {COMPANY_POSITION}.
           </div>
         </div>
       </section>
@@ -245,7 +278,12 @@ function Index() {
             const id = `work-${index}`;
 
             return (
-              <li key={id} id={id} data-gif={work.gif}>
+              <li
+                key={id}
+                data-id={id}
+                data-gif={work.gif}
+                data-title={work.title}
+              >
                 <div className="img">
                   {windowLoaded ? (
                     <div className="wrapper">
@@ -261,16 +299,19 @@ function Index() {
                               [id]: true,
                             });
 
-                            if (workInViewRef.current === id) {
-                              cancelDownloadGifData(id);
-                              downloadGifData(id, work.gif);
+                            if (
+                              workInViewRef.current &&
+                              workInViewRef.current === id
+                            ) {
+                              cancelDownloadWorkGIF(id);
+                              downloadWorkGIF(work);
                             }
                           }}
                         />
                       </LazyLoad>
                       {work.gif && gifData[id] ? (
                         <CSSTransition
-                          in={showGIF && workInView === id}
+                          in={showGIF && workInView && workInView.id === id}
                           timeout={300}
                           classNames="gif"
                           mountOnEnter
@@ -287,16 +328,17 @@ function Index() {
                       {imgLoaded[id] &&
                       !gifData[id] &&
                       showSpinner &&
-                      workInView === id ? (
+                      workInView &&
+                      workInView.id === id ? (
                         <div
                           onMouseEnter={() =>
-                            trackHover(`Loading GIF (${work.title})`)
+                            trackHover(`Downloading GIF - ${work.title}`)
                           }
                           className="spinner-container"
                         >
                           <div className="spinner" />
                           <div className="text">{progress}</div>
-                          <Tooltip position="right">Loading GIF...</Tooltip>
+                          <Tooltip position="right">Downloading GIF...</Tooltip>
                         </div>
                       ) : null}
                     </div>
@@ -310,7 +352,7 @@ function Index() {
                     {work.starred ? (
                       <div
                         onMouseEnter={() =>
-                          trackHover(`Best Project (${work.title})`)
+                          trackHover(`Best Project - ${work.title}`)
                         }
                         className="icon"
                       >

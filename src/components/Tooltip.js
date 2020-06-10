@@ -31,6 +31,10 @@ function Tooltip({ isMounted, position, className, children }) {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
+
+  useEffect(() => {
     if (isMounted) {
       showTooltip();
     } else {
