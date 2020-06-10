@@ -194,7 +194,7 @@ function Index() {
       trackEvent({
         action: 'gif_auto_play_start',
         category: 'gif_auto_play',
-        event_label: `Downloaded GIF - ${work.title}`,
+        label: `Downloaded GIF - ${work.title}`,
         nonInteraction: true,
       });
     } catch (err) {
@@ -229,7 +229,7 @@ function Index() {
                 trackEvent({
                   action: 'click',
                   category: 'user_interaction',
-                  event_label: 'Scroll Down',
+                  label: 'Scroll Down',
                 });
               }
             }}

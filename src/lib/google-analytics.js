@@ -16,7 +16,7 @@ export function trackOutboundLink(e) {
   trackEvent({
     action: 'click',
     category: 'outbound_link',
-    event_label: e.currentTarget.href,
+    label: e.currentTarget.href,
   });
 }
 
@@ -24,6 +24,6 @@ export function trackHover(label) {
   trackEvent({
     action: 'hover',
     category: 'user_interaction',
-    event_label: label,
+    label: label,
   });
 }
