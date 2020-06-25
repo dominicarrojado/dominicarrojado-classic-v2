@@ -1,3 +1,5 @@
+import thxSpatialAudioImg from './assets/images/works/thx-spatial-audio-web-app.png';
+import thxSpatialAudioGif from './assets/images/works/thx-spatial-audio-web-app.gif';
 import razerTrainingModeVirusEditionImg from './assets/images/works/razer-training-mode-virus-edition-app.png';
 import razerTrainingModeVirusEditionGif from './assets/images/works/razer-training-mode-virus-edition-app.gif';
 import razerChromaStudioImg from './assets/images/works/razer-chroma-studio-web-app.png';
@@ -48,6 +50,19 @@ export const SET_WORK_IN_VIEW_TIMEOUT = 500;
 export const DOWNLOAD_GIF_SPINNER_TIMEOUT = 300;
 
 export const WORKS = [
+  {
+    title: 'THX Spatial Audio',
+    desc:
+      'Web-based desktop application that delivers advanced 7.1 surround sound with pinpoint positional accuracy to make your game come alive.',
+    urls: [
+      {
+        title: 'View Page',
+        url: 'https://www.razer.com/thx-spatial-audio',
+      },
+    ],
+    img: thxSpatialAudioImg,
+    gif: thxSpatialAudioGif,
+  },
   {
     title: 'Razer Training Mode: Virus Edition',
     desc: 'Whack-a-mole mini-game where you whack viruses instead of moles.',

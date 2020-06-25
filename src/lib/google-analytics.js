@@ -22,8 +22,8 @@ export function trackOutboundLink(e) {
 
 export function trackHover(label) {
   trackEvent({
+    label,
     action: 'hover',
     category: 'user_interaction',
-    label: label,
   });
 }
