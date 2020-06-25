@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.e26f4cb4.chunk.css",
-    "main.js": "/static/js/main.5c85c34c.chunk.js",
-    "main.js.map": "/static/js/main.5c85c34c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.afcd0eda.js",
-    "runtime-main.js.map": "/static/js/runtime-main.afcd0eda.js.map",
-    "static/js/2.ca1b2114.chunk.js": "/static/js/2.ca1b2114.chunk.js",
-    "static/js/2.ca1b2114.chunk.js.map": "/static/js/2.ca1b2114.chunk.js.map",
-    "static/js/3.4316c5ca.chunk.js": "/static/js/3.4316c5ca.chunk.js",
-    "static/js/3.4316c5ca.chunk.js.map": "/static/js/3.4316c5ca.chunk.js.map",
-    "static/js/4.a65211ba.chunk.js": "/static/js/4.a65211ba.chunk.js",
-    "static/js/4.a65211ba.chunk.js.map": "/static/js/4.a65211ba.chunk.js.map",
+    "main.css": "/static/css/main.beb80908.chunk.css",
+    "main.js": "/static/js/main.7aa05afd.chunk.js",
+    "main.js.map": "/static/js/main.7aa05afd.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.08904d4a.js",
+    "runtime-main.js.map": "/static/js/runtime-main.08904d4a.js.map",
+    "static/js/2.8fc34999.chunk.js": "/static/js/2.8fc34999.chunk.js",
+    "static/js/2.8fc34999.chunk.js.map": "/static/js/2.8fc34999.chunk.js.map",
+    "static/js/3.27e6172d.chunk.js": "/static/js/3.27e6172d.chunk.js",
+    "static/js/3.27e6172d.chunk.js.map": "/static/js/3.27e6172d.chunk.js.map",
+    "static/js/4.39271e9b.chunk.js": "/static/js/4.39271e9b.chunk.js",
+    "static/js/4.39271e9b.chunk.js.map": "/static/js/4.39271e9b.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.f580ad982a2c435ee439fc0e9bd7d7db.js": "/precache-manifest.f580ad982a2c435ee439fc0e9bd7d7db.js",
+    "precache-manifest.4bb36d6b75cb045e2aa2a29f38b7c88e.js": "/precache-manifest.4bb36d6b75cb045e2aa2a29f38b7c88e.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.e26f4cb4.chunk.css.map": "/static/css/main.e26f4cb4.chunk.css.map",
-    "static/js/2.ca1b2114.chunk.js.LICENSE.txt": "/static/js/2.ca1b2114.chunk.js.LICENSE.txt",
-    "static/js/4.a65211ba.chunk.js.LICENSE.txt": "/static/js/4.a65211ba.chunk.js.LICENSE.txt",
+    "static/css/main.beb80908.chunk.css.map": "/static/css/main.beb80908.chunk.css.map",
+    "static/js/2.8fc34999.chunk.js.LICENSE.txt": "/static/js/2.8fc34999.chunk.js.LICENSE.txt",
+    "static/js/4.39271e9b.chunk.js.LICENSE.txt": "/static/js/4.39271e9b.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
     "static/media/aptamil-build-your-babys-foundation-web-app.gif": "/static/media/aptamil-build-your-babys-foundation-web-app.8e07f270.gif",
     "static/media/aptamil-build-your-babys-foundation-web-app.png": "/static/media/aptamil-build-your-babys-foundation-web-app.ba8070b6.png",
@@ -64,12 +64,14 @@
     "static/media/razer-training-mode-virus-edition-app.gif": "/static/media/razer-training-mode-virus-edition-app.f2725e62.gif",
     "static/media/singtel-data-x-infinity-web-app.png": "/static/media/singtel-data-x-infinity-web-app.206e4e89.png",
     "static/media/singtel-data-x-infinity-web-app.gif": "/static/media/singtel-data-x-infinity-web-app.d7916068.gif",
-    "static/media/star-solid.bbd2bd47.svg": "/static/media/star-solid.bbd2bd47.svg"
+    "static/media/star-solid.bbd2bd47.svg": "/static/media/star-solid.bbd2bd47.svg",
+    "static/media/thx-spatial-audio-web-app.png": "/static/media/thx-spatial-audio-web-app.8973bcfa.png",
+    "static/media/thx-spatial-audio-web-app.gif": "/static/media/thx-spatial-audio-web-app.bb4d6309.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.afcd0eda.js",
-    "static/js/2.ca1b2114.chunk.js",
-    "static/css/main.e26f4cb4.chunk.css",
-    "static/js/main.5c85c34c.chunk.js"
+    "static/js/runtime-main.08904d4a.js",
+    "static/js/2.8fc34999.chunk.js",
+    "static/css/main.beb80908.chunk.css",
+    "static/js/main.7aa05afd.chunk.js"
   ]
 }
