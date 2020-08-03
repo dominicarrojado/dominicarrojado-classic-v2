@@ -1,6 +1,25 @@
 import { isLocalhost } from '../serviceWorker';
 
-export function trackEvent(data) {
+declare global {
+  interface Window {
+    gtag: (type: string, action: string, data: GTagData) => void;
+  }
+}
+
+interface Event {
+  action: string;
+  category: string;
+  label: string;
+  nonInteraction?: boolean;
+}
+
+interface GTagData {
+  event_category: string;
+  event_label: string;
+  non_interaction: boolean;
+}
+
+export function trackEvent(data: Event) {
   if (typeof window.gtag !== 'function' || isLocalhost) {
     return;
   }
@@ -12,7 +31,7 @@ export function trackEvent(data) {
   });
 }
 
-export function trackOutboundLink(e) {
+export function trackOutboundLink(e: { currentTarget: { href: string } }) {
   trackEvent({
     action: 'click',
     category: 'outbound_link',
@@ -20,7 +39,7 @@ export function trackOutboundLink(e) {
   });
 }
 
-export function trackHover(label) {
+export function trackHover(label: string) {
   trackEvent({
     label,
     action: 'hover',

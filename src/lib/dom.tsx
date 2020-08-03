@@ -1,5 +1,5 @@
-export function copyTextToClipboard(text) {
-  const input = document.createElement('input');
+export function copyTextToClipboard(text: string) {
+  const input: HTMLInputElement = document.createElement('input');
 
   // Input text and append to body
   input.value = text;

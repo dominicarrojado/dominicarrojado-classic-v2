@@ -13,10 +13,22 @@
 
 .tooltip.top > .wrapper {
   bottom: 100%;
+  margin-bottom: 6px;
+}
+
+.tooltip.bottom > .wrapper {
+  top: 100%;
+  margin-top: 6px;
 }
 
 .tooltip.right > .wrapper {
   left: 100%;
+  margin-left: 6px;
+}
+
+.tooltip.left > .wrapper {
+  right: 100%;
+  margin-right: 6px;
 }
 
 .tooltip .main {
@@ -38,6 +50,14 @@
 
 .tooltip.right .main {
   transform: translateX(-4px);
+}
+
+.tooltip.bottom .main {
+  transform: translateY(-4px);
+}
+
+.tooltip.left .main {
+  transform: translateX(4px);
 }
 
 .tooltip.show .main,

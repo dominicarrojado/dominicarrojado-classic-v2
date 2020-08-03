@@ -1,0 +1,8 @@
+.about-me {
+  background-color: #f9f9f9;
+}
+
+.about-me .section-title > .desc {
+  max-width: 1000px;
+  margin: 15px auto 0;
+}
