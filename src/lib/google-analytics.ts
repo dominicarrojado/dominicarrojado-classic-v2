@@ -19,8 +19,8 @@ interface GTagData {
   non_interaction: boolean;
 }
 
-export function trackEvent(data: Event) {
-  if (typeof window.gtag !== 'function' || isLocalhost) {
+export function trackEvent(data: Event, forced?: boolean) {
+  if (typeof window.gtag !== 'function' || (isLocalhost && !forced)) {
     return;
   }
 
@@ -31,18 +31,27 @@ export function trackEvent(data: Event) {
   });
 }
 
-export function trackOutboundLink(e: { currentTarget: { href: string } }) {
-  trackEvent({
-    action: 'click',
-    category: 'outbound_link',
-    label: e.currentTarget.href,
-  });
+export function trackOutboundLink(
+  e: { currentTarget: { href: string } },
+  forced?: boolean
+) {
+  trackEvent(
+    {
+      action: 'click',
+      category: 'outbound_link',
+      label: e.currentTarget.href,
+    },
+    forced
+  );
 }
 
-export function trackHover(label: string) {
-  trackEvent({
-    label,
-    action: 'hover',
-    category: 'user_interaction',
-  });
+export function trackHover(label: string, forced?: boolean) {
+  trackEvent(
+    {
+      label,
+      action: 'hover',
+      category: 'user_interaction',
+    },
+    forced
+  );
 }
