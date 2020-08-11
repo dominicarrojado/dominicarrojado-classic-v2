@@ -1,8 +1,9 @@
 interface Response {
   headers: {
-    'content-type': string;
+    [key: string]: string;
   };
-  data: BinaryType;
+  data: string;
+  [key: string]: any;
 }
 
 export function getImageDataFromResponse(res: Response) {

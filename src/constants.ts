@@ -1,50 +1,4 @@
-import thxSpatialAudioImg from './assets/images/works/thx-spatial-audio-web-app.png';
-import thxSpatialAudioGif from './assets/images/works/thx-spatial-audio-web-app.gif';
-import razerTrainingModeVirusEditionImg from './assets/images/works/razer-training-mode-virus-edition-app.png';
-import razerTrainingModeVirusEditionGif from './assets/images/works/razer-training-mode-virus-edition-app.gif';
-import razerChromaStudioImg from './assets/images/works/razer-chroma-studio-web-app.png';
-import razerChromaStudioGif from './assets/images/works/razer-chroma-studio-web-app.gif';
-import razerStreamerCompanionAppImg from './assets/images/works/razer-streamer-companion-web-app.png';
-import razerStreamerCompanionAppGif from './assets/images/works/razer-streamer-companion-web-app.gif';
-import razerSurroundSoundImg from './assets/images/works/razer-7.1-surround-sound-web-app.png';
-import razerSurroundSoundGif from './assets/images/works/razer-7.1-surround-sound-web-app.gif';
-import razerDeveloperPortalImg from './assets/images/works/razer-developer-portal-web-app.png';
-import razerDeveloperPortalGif from './assets/images/works/razer-developer-portal-web-app.gif';
-import razerIdImg from './assets/images/works/razer-id-web-app.png';
-import razerIdGif from './assets/images/works/razer-id-web-app.gif';
-import qwerkImg from './assets/images/works/qwerk-web-app.png';
-import qwerkGif from './assets/images/works/qwerk-web-app.gif';
-import maybankFcBarcelonaImg from './assets/images/works/maybank-fc-barcelona-website.png';
-import maybankFcBarcelonaGif from './assets/images/works/maybank-fc-barcelona-website.gif';
-import foodRepublicCapsuleSurpriseImg from './assets/images/works/food-republic-capsule-surprise-web-app.png';
-import foodRepublicCapsuleSurpriseGif from './assets/images/works/food-republic-capsule-surprise-web-app.gif';
-import aptamilBuildYourBabysFoundationImg from './assets/images/works/aptamil-build-your-babys-foundation-web-app.png';
-import aptamilBuildYourBabysFoundationGif from './assets/images/works/aptamil-build-your-babys-foundation-web-app.gif';
-import kronenbourgImg from './assets/images/works/kronenbourg-website.png';
-import kronenbourgGif from './assets/images/works/kronenbourg-website.gif';
-import singtelDataXInfinityImg from './assets/images/works/singtel-data-x-infinity-web-app.png';
-import singtelDataXInfinityGif from './assets/images/works/singtel-data-x-infinity-web-app.gif';
-import cnbAntiDrugAbuseCampaignImg from './assets/images/works/cnb-anti-drug-abuse-campaign-web-app.png';
-import cnbAntiDrugAbuseCampaignGif from './assets/images/works/cnb-anti-drug-abuse-campaign-web-app.gif';
-import hashtagInteractiveImg from './assets/images/works/hashtag-interactive-website.png';
-import hashtagInteractiveGif from './assets/images/works/hashtag-interactive-website.gif';
-import hashtagInteractiveToMyValentineImg from './assets/images/works/hashtag-interactive-to-my-valentine-web-app.png';
-import hashtagInteractiveToMyValentineGif from './assets/images/works/hashtag-interactive-to-my-valentine-web-app.gif';
-import hashtagInteractiveCnyFortuneTellerImg from './assets/images/works/hashtag-interactive-cny-fortune-teller-web-app.png';
-import hashtagInteractiveCnyFortuneTellerGif from './assets/images/works/hashtag-interactive-cny-fortune-teller-web-app.gif';
-import hashtagInteractiveHollyJollyMemoryGameImg from './assets/images/works/hashtag-interactive-holly-jolly-memory-game-web-app.png';
-import hashtagInteractiveHollyJollyMemoryGameGif from './assets/images/works/hashtag-interactive-holly-jolly-memory-game-web-app.gif';
-import hashtagInteractiveWelcomeEmailImg from './assets/images/works/hashtag-interactive-welcome-email-template.png';
-import hashtagInteractiveWelcomeEmailGif from './assets/images/works/hashtag-interactive-welcome-email-template.gif';
-import m1EmailImg from './assets/images/works/m1-email-template.png';
-import m1EmailGif from './assets/images/works/m1-email-template.gif';
-import axaEmailImg from './assets/images/works/axa-email-template.png';
-import axaEmailGif from './assets/images/works/axa-email-template.gif';
-
-export const CURRENT_LOCATION = 'Singapore';
-export const COMPANY_NAME = 'Razer';
-export const COMPANY_URL = 'https://www.razer.com/';
-export const COMPANY_POSITION = 'Senior Software Engineer';
+import { getPublicURL } from './lib/common';
 
 export const SET_WORK_IN_VIEW_TIMEOUT = 500;
 export const DOWNLOAD_GIF_SPINNER_TIMEOUT = 300;
@@ -60,8 +14,8 @@ export const WORKS = [
         url: 'https://www.razer.com/thx-spatial-audio',
       },
     ],
-    img: thxSpatialAudioImg,
-    gif: thxSpatialAudioGif,
+    img: getPublicURL('/works/thx-spatial-audio-web-app.png'),
+    gif: getPublicURL('/works/thx-spatial-audio-web-app.gif'),
   },
   {
     title: 'Razer Training Mode: Virus Edition',
@@ -72,8 +26,8 @@ export const WORKS = [
         url: 'https://dominicarrojado.com/razer-mouse-accuracy-game/',
       },
     ],
-    img: razerTrainingModeVirusEditionImg,
-    gif: razerTrainingModeVirusEditionGif,
+    img: getPublicURL('/works/razer-training-mode-virus-edition-app.png'),
+    gif: getPublicURL('/works/razer-training-mode-virus-edition-app.gif'),
   },
   {
     title: 'Razer Chroma Studio Web',
@@ -85,8 +39,8 @@ export const WORKS = [
         url: 'https://youtu.be/kFBe_wSwIMQ',
       },
     ],
-    img: razerChromaStudioImg,
-    gif: razerChromaStudioGif,
+    img: getPublicURL('/works/razer-chroma-studio-web-app.png'),
+    gif: getPublicURL('/works/razer-chroma-studio-web-app.gif'),
     starred: true,
   },
   {
@@ -99,8 +53,8 @@ export const WORKS = [
         url: 'https://www.razer.com/streamer-companion-app/',
       },
     ],
-    img: razerStreamerCompanionAppImg,
-    gif: razerStreamerCompanionAppGif,
+    img: getPublicURL('/works/razer-streamer-companion-web-app.png'),
+    gif: getPublicURL('/works/razer-streamer-companion-web-app.gif'),
   },
   {
     title: 'Razer 7.1 Surround Sound',
@@ -112,8 +66,8 @@ export const WORKS = [
         url: 'https://www.razer.com/7.1-surround-sound/',
       },
     ],
-    img: razerSurroundSoundImg,
-    gif: razerSurroundSoundGif,
+    img: getPublicURL('/works/razer-7.1-surround-sound-web-app.png'),
+    gif: getPublicURL('/works/razer-7.1-surround-sound-web-app.gif'),
   },
   {
     title: 'Razer Developer Portal',
@@ -125,8 +79,8 @@ export const WORKS = [
         url: 'https://api.razer.com/',
       },
     ],
-    img: razerDeveloperPortalImg,
-    gif: razerDeveloperPortalGif,
+    img: getPublicURL('/works/razer-developer-portal-web-app.png'),
+    gif: getPublicURL('/works/razer-developer-portal-web-app.gif'),
   },
   {
     title: 'Razer ID',
@@ -138,8 +92,8 @@ export const WORKS = [
         url: 'https://razerid.razer.com/',
       },
     ],
-    img: razerIdImg,
-    gif: razerIdGif,
+    img: getPublicURL('/works/razer-id-web-app.png'),
+    gif: getPublicURL('/works/razer-id-web-app.gif'),
   },
   {
     title: 'Qwerk',
@@ -151,8 +105,8 @@ export const WORKS = [
         url: 'https://www.justqwerk.com/',
       },
     ],
-    img: qwerkImg,
-    gif: qwerkGif,
+    img: getPublicURL('/works/qwerk-web-app.png'),
+    gif: getPublicURL('/works/qwerk-web-app.gif'),
     starred: true,
   },
   {
@@ -165,8 +119,8 @@ export const WORKS = [
         url: 'https://dominicarrojado.com/maybank-fc-barcelona-website/',
       },
     ],
-    img: maybankFcBarcelonaImg,
-    gif: maybankFcBarcelonaGif,
+    img: getPublicURL('/works/maybank-fc-barcelona-website.png'),
+    gif: getPublicURL('/works/maybank-fc-barcelona-website.gif'),
   },
   {
     title: 'Food Republic: Capsule Surprise',
@@ -178,8 +132,8 @@ export const WORKS = [
         url: 'https://food-republic-capsule-surprise.herokuapp.com/',
       },
     ],
-    img: foodRepublicCapsuleSurpriseImg,
-    gif: foodRepublicCapsuleSurpriseGif,
+    img: getPublicURL('/works/food-republic-capsule-surprise-web-app.png'),
+    gif: getPublicURL('/works/food-republic-capsule-surprise-web-app.gif'),
   },
   {
     title: "Aptamil: Build Your Baby's Foundation to be One Step Ahead",
@@ -191,8 +145,8 @@ export const WORKS = [
         url: 'https://aptamil-bybftbosa.herokuapp.com/',
       },
     ],
-    img: aptamilBuildYourBabysFoundationImg,
-    gif: aptamilBuildYourBabysFoundationGif,
+    img: getPublicURL('/works/aptamil-build-your-babys-foundation-web-app.png'),
+    gif: getPublicURL('/works/aptamil-build-your-babys-foundation-web-app.gif'),
   },
   {
     title: 'Kronenbourg 1664',
@@ -204,8 +158,8 @@ export const WORKS = [
         url: 'https://dominicarrojado.com/kronenbourg-website/',
       },
     ],
-    img: kronenbourgImg,
-    gif: kronenbourgGif,
+    img: getPublicURL('/works/kronenbourg-website.png'),
+    gif: getPublicURL('/works/kronenbourg-website.gif'),
   },
   {
     title: 'Singtel: Data x Infinity',
@@ -221,8 +175,8 @@ export const WORKS = [
         url: 'https://singtel-data-x-infinity-ss.herokuapp.com/',
       },
     ],
-    img: singtelDataXInfinityImg,
-    gif: singtelDataXInfinityGif,
+    img: getPublicURL('/works/singtel-data-x-infinity-web-app.png'),
+    gif: getPublicURL('/works/singtel-data-x-infinity-web-app.gif'),
   },
   {
     title: 'CNB: Anti Drug Abuse Campaign',
@@ -238,8 +192,8 @@ export const WORKS = [
         url: 'https://cnb-adac-ss.herokuapp.com/',
       },
     ],
-    img: cnbAntiDrugAbuseCampaignImg,
-    gif: cnbAntiDrugAbuseCampaignGif,
+    img: getPublicURL('/works/cnb-anti-drug-abuse-campaign-web-app.png'),
+    gif: getPublicURL('/works/cnb-anti-drug-abuse-campaign-web-app.gif'),
   },
   {
     title: 'Hashtag Interactive',
@@ -251,8 +205,8 @@ export const WORKS = [
         url: 'https://www.hashtag-interactive.com/',
       },
     ],
-    img: hashtagInteractiveImg,
-    gif: hashtagInteractiveGif,
+    img: getPublicURL('/works/hashtag-interactive-website.png'),
+    gif: getPublicURL('/works/hashtag-interactive-website.gif'),
   },
   {
     title: 'To My Valentine',
@@ -264,8 +218,8 @@ export const WORKS = [
         url: 'https://hashtag-interactive-tmv.herokuapp.com/',
       },
     ],
-    img: hashtagInteractiveToMyValentineImg,
-    gif: hashtagInteractiveToMyValentineGif,
+    img: getPublicURL('/works/hashtag-interactive-to-my-valentine-web-app.png'),
+    gif: getPublicURL('/works/hashtag-interactive-to-my-valentine-web-app.gif'),
   },
   {
     title: 'CNY: Fortune Teller',
@@ -277,8 +231,12 @@ export const WORKS = [
         url: 'https://hashtag-interactive-cny.herokuapp.com/',
       },
     ],
-    img: hashtagInteractiveCnyFortuneTellerImg,
-    gif: hashtagInteractiveCnyFortuneTellerGif,
+    img: getPublicURL(
+      '/works/hashtag-interactive-cny-fortune-teller-web-app.png'
+    ),
+    gif: getPublicURL(
+      '/works/hashtag-interactive-cny-fortune-teller-web-app.gif'
+    ),
   },
   {
     title: 'Holly Jolly Memory Game',
@@ -289,8 +247,12 @@ export const WORKS = [
         url: 'https://hashtag-interactive-christmas.herokuapp.com/',
       },
     ],
-    img: hashtagInteractiveHollyJollyMemoryGameImg,
-    gif: hashtagInteractiveHollyJollyMemoryGameGif,
+    img: getPublicURL(
+      '/works/hashtag-interactive-holly-jolly-memory-game-web-app.png'
+    ),
+    gif: getPublicURL(
+      '/works/hashtag-interactive-holly-jolly-memory-game-web-app.gif'
+    ),
   },
   {
     title: 'Welcome to Hashtag!',
@@ -301,8 +263,8 @@ export const WORKS = [
         url: 'https://dominicarrojado.com/hashtag-interactive-welcome-edm/',
       },
     ],
-    img: hashtagInteractiveWelcomeEmailImg,
-    gif: hashtagInteractiveWelcomeEmailGif,
+    img: getPublicURL('/works/hashtag-interactive-welcome-email-template.png'),
+    gif: getPublicURL('/works/hashtag-interactive-welcome-email-template.gif'),
   },
   {
     title: 'M1 Email Templates',
@@ -326,8 +288,8 @@ export const WORKS = [
         url: 'https://dominicarrojado.com/m1-data-passport-4-edm/',
       },
     ],
-    img: m1EmailImg,
-    gif: m1EmailGif,
+    img: getPublicURL('/works/m1-email-template.png'),
+    gif: getPublicURL('/works/m1-email-template.gif'),
   },
   {
     title: 'AXA Email Templates',
@@ -363,8 +325,8 @@ export const WORKS = [
         url: 'https://dominicarrojado.com/axa-september-promo-edm/',
       },
     ],
-    img: axaEmailImg,
-    gif: axaEmailGif,
+    img: getPublicURL('/works/axa-email-template.png'),
+    gif: getPublicURL('/works/axa-email-template.gif'),
   },
 ];
 
