@@ -23,7 +23,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Game',
-        url: 'https://dominicarrojado.com/razer-mouse-accuracy-game/',
+        url: 'https://dominicarrojado.com/mouse-accuracy-game/',
       },
     ],
     img: getPublicURL('/works/razer-training-mode-virus-edition-app.png'),
