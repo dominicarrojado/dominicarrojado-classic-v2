@@ -1,9 +1,5 @@
 import Events from './Events';
 
-interface Callback {
-  (payload?: any): void;
-}
-
 class Window extends Events {
   loaded: boolean;
 

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { trackOutboundLink } from '../lib/google-analytics';
-
 import './AboutMe.css';
 
 function AboutMe() {
@@ -16,17 +14,8 @@ function AboutMe() {
           applications.
           <br />
           <br />
-          I'm currently based in Singapore and working at{' '}
-          <a
-            href="https://www.razer.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-text"
-            onClick={trackOutboundLink}
-          >
-            Razer
-          </a>{' '}
-          as a Senior Software Engineer.
+          I'm currently based in Singapore and working as a Senior Software
+          Engineer.
         </div>
       </div>
     </section>
