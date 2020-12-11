@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.e4716c81.chunk.css",
-    "main.js": "/static/js/main.a238a76c.chunk.js",
-    "main.js.map": "/static/js/main.a238a76c.chunk.js.map",
+    "main.css": "/static/css/main.d00037b4.chunk.css",
+    "main.js": "/static/js/main.0fa6fd88.chunk.js",
+    "main.js.map": "/static/js/main.0fa6fd88.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3b19d9b1.js",
     "runtime-main.js.map": "/static/js/runtime-main.3b19d9b1.js.map",
-    "static/js/2.bdcf35a2.chunk.js": "/static/js/2.bdcf35a2.chunk.js",
-    "static/js/2.bdcf35a2.chunk.js.map": "/static/js/2.bdcf35a2.chunk.js.map",
+    "static/js/2.4f4c178a.chunk.js": "/static/js/2.4f4c178a.chunk.js",
+    "static/js/2.4f4c178a.chunk.js.map": "/static/js/2.4f4c178a.chunk.js.map",
     "static/js/3.9075d9c4.chunk.js": "/static/js/3.9075d9c4.chunk.js",
     "static/js/3.9075d9c4.chunk.js.map": "/static/js/3.9075d9c4.chunk.js.map",
     "static/js/4.3295ff32.chunk.js": "/static/js/4.3295ff32.chunk.js",
     "static/js/4.3295ff32.chunk.js.map": "/static/js/4.3295ff32.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.8e509096070e4ce3803b57edc43005eb.js": "/precache-manifest.8e509096070e4ce3803b57edc43005eb.js",
+    "precache-manifest.7481700f7df0093c55ceb1474bb696ac.js": "/precache-manifest.7481700f7df0093c55ceb1474bb696ac.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.e4716c81.chunk.css.map": "/static/css/main.e4716c81.chunk.css.map",
-    "static/js/2.bdcf35a2.chunk.js.LICENSE.txt": "/static/js/2.bdcf35a2.chunk.js.LICENSE.txt",
+    "static/css/main.d00037b4.chunk.css.map": "/static/css/main.d00037b4.chunk.css.map",
+    "static/js/2.4f4c178a.chunk.js.LICENSE.txt": "/static/js/2.4f4c178a.chunk.js.LICENSE.txt",
     "static/js/4.3295ff32.chunk.js.LICENSE.txt": "/static/js/4.3295ff32.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Roboto-Regular.bafb105b.woff",
     "static/media/arrow-down-solid.dcbbc3e1.svg": "/static/media/arrow-down-solid.dcbbc3e1.svg",
@@ -28,8 +28,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.3b19d9b1.js",
-    "static/js/2.bdcf35a2.chunk.js",
-    "static/css/main.e4716c81.chunk.css",
-    "static/js/main.a238a76c.chunk.js"
+    "static/js/2.4f4c178a.chunk.js",
+    "static/css/main.d00037b4.chunk.css",
+    "static/js/main.0fa6fd88.chunk.js"
   ]
 }
