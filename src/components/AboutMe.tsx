@@ -1,4 +1,5 @@
 import React from 'react';
+import { trackOutboundLink } from '../lib/google-analytics';
 
 import './AboutMe.css';
 
@@ -14,8 +15,17 @@ function AboutMe() {
           applications.
           <br />
           <br />
-          I'm currently based in Singapore and working as a Senior Software
-          Engineer.
+          I'm currently based in Singapore and working at{' '}
+          <a
+            href="https://www.propertyguru.com.sg/mortgage"
+            target="_blank"
+            className="btn-text"
+            rel="noopener noreferrer"
+            onClick={trackOutboundLink}
+          >
+            PropertyGuru
+          </a>{' '}
+          as a Senior Software Engineer (FinTech).
         </div>
       </div>
     </section>
