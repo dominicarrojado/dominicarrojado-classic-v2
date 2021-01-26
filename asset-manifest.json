@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.956e9278.chunk.css",
-    "main.js": "/static/js/main.41818207.chunk.js",
-    "main.js.map": "/static/js/main.41818207.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6337df52.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6337df52.js.map",
+    "main.js": "/static/js/main.44326073.chunk.js",
+    "main.js.map": "/static/js/main.44326073.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.52780ebe.js",
+    "runtime-main.js.map": "/static/js/runtime-main.52780ebe.js.map",
     "static/js/2.48c2c98b.chunk.js": "/static/js/2.48c2c98b.chunk.js",
     "static/js/2.48c2c98b.chunk.js.map": "/static/js/2.48c2c98b.chunk.js.map",
-    "static/js/3.7c2611ee.chunk.js": "/static/js/3.7c2611ee.chunk.js",
-    "static/js/3.7c2611ee.chunk.js.map": "/static/js/3.7c2611ee.chunk.js.map",
-    "static/js/4.166524ad.chunk.js": "/static/js/4.166524ad.chunk.js",
-    "static/js/4.166524ad.chunk.js.map": "/static/js/4.166524ad.chunk.js.map",
+    "static/js/3.c77f0720.chunk.js": "/static/js/3.c77f0720.chunk.js",
+    "static/js/3.c77f0720.chunk.js.map": "/static/js/3.c77f0720.chunk.js.map",
+    "static/js/4.3f9d95fa.chunk.js": "/static/js/4.3f9d95fa.chunk.js",
+    "static/js/4.3f9d95fa.chunk.js.map": "/static/js/4.3f9d95fa.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.956e9278.chunk.css.map": "/static/css/main.956e9278.chunk.css.map",
     "static/js/2.48c2c98b.chunk.js.LICENSE.txt": "/static/js/2.48c2c98b.chunk.js.LICENSE.txt",
-    "static/js/4.166524ad.chunk.js.LICENSE.txt": "/static/js/4.166524ad.chunk.js.LICENSE.txt",
+    "static/js/4.3f9d95fa.chunk.js.LICENSE.txt": "/static/js/4.3f9d95fa.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/Roboto-Regular.fbebe708.woff",
     "static/media/arrow-down-solid.595d854f.svg": "/static/media/arrow-down-solid.595d854f.svg",
     "static/media/Hero.css": "/static/media/bg-pattern.0a295769.png",
@@ -25,9 +25,9 @@
     "static/media/star-solid.59dc4655.svg": "/static/media/star-solid.59dc4655.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6337df52.js",
+    "static/js/runtime-main.52780ebe.js",
     "static/js/2.48c2c98b.chunk.js",
     "static/css/main.956e9278.chunk.css",
-    "static/js/main.41818207.chunk.js"
+    "static/js/main.44326073.chunk.js"
   ]
 }
