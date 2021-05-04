@@ -129,7 +129,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://food-republic-capsule-surprise.herokuapp.com/',
+        url: 'https://food-republic-capsule-surprise.meteorapp.com/',
       },
     ],
     img: getPublicURL('/works/food-republic-capsule-surprise-web-app.png'),
@@ -142,7 +142,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://aptamil-bybftbosa.herokuapp.com/',
+        url: 'https://aptamil-bybftbosa.meteorapp.com/',
       },
     ],
     img: getPublicURL('/works/aptamil-build-your-babys-foundation-web-app.png'),
@@ -168,11 +168,11 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://singtel-data-x-infinity.herokuapp.com/',
+        url: 'https://singtel-data-x-infinity.meteorapp.com/',
       },
       {
         title: 'View Slideshow',
-        url: 'https://singtel-data-x-infinity-ss.herokuapp.com/',
+        url: 'https://singtel-data-x-infinity-ss.meteorapp.com/',
       },
     ],
     img: getPublicURL('/works/singtel-data-x-infinity-web-app.png'),
@@ -185,11 +185,11 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://cnb-adac.herokuapp.com/',
+        url: 'https://cnb-adac.meteorapp.com/',
       },
       {
         title: 'View Slideshow',
-        url: 'https://cnb-adac-ss.herokuapp.com/',
+        url: 'https://cnb-adac-ss.meteorapp.com/',
       },
     ],
     img: getPublicURL('/works/cnb-anti-drug-abuse-campaign-web-app.png'),
@@ -215,7 +215,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://hashtag-interactive-tmv.herokuapp.com/',
+        url: 'https://hashtag-interactive-tmv.meteorapp.com/',
       },
     ],
     img: getPublicURL('/works/hashtag-interactive-to-my-valentine-web-app.png'),
@@ -228,7 +228,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://hashtag-interactive-cny.herokuapp.com/',
+        url: 'https://hashtag-interactive-cny.meteorapp.com/',
       },
     ],
     img: getPublicURL(
@@ -244,7 +244,7 @@ export const WORKS = [
     urls: [
       {
         title: 'View Web App',
-        url: 'https://hashtag-interactive-christmas.herokuapp.com/',
+        url: 'https://hashtag-interactive-christmas.meteorapp.com/',
       },
     ],
     img: getPublicURL(
