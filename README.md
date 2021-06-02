@@ -1,6 +1,6 @@
 # Dominic Arrojado
 
-![CI/CD](https://github.com/dominicarrojado/dominicarrojado.github.io/workflows/CI/CD/badge.svg) [![codecov](https://codecov.io/gh/dominicarrojado/dominicarrojado.github.io/branch/develop/graph/badge.svg)](https://codecov.io/gh/dyarleniber/react-workflow-gh-actions)
+![CI/CD](https://github.com/dominicarrojado/dominicarrojado.github.io/workflows/CI/CD/badge.svg) [![codecov](https://codecov.io/gh/dominicarrojado/dominicarrojado.github.io/branch/develop/graph/badge.svg)](https://codecov.io/gh/dominicarrojado/dominicarrojado.github.io)
 
 My personal website which highlights the projects I've done.
 
