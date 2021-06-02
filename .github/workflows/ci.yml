@@ -58,7 +58,7 @@ jobs:
       env:
         user_name: 'github-actions[bot]'
         user_email: 'github-actions[bot]@users.noreply.github.com'
-        github_token: ${{ github.token }}
+        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
         repository: ${{ github.repository }}
 
     - name: Merge gh-pages -> master
@@ -67,4 +67,4 @@ jobs:
         type: now
         from_branch: gh-pages
         target_branch: master
-        github_token: ${{ github.token }}
+        github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
