@@ -1,3 +1,9 @@
+# Dominic Arrojado
+
+![CI/CD](https://github.com/dominicarrojado/dominicarrojado.github.io/workflows/CI/CD/badge.svg) [![codecov](https://codecov.io/gh/dominicarrojado/dominicarrojado.github.io/branch/develop/graph/badge.svg)](https://codecov.io/gh/dyarleniber/react-workflow-gh-actions)
+
+My personal website which highlights the projects I've done.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
