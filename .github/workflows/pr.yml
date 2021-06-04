@@ -1,7 +1,7 @@
-name: CI/CD
+name: PR
 
 on:
-  push:
+  pull_request:
     branches: [develop]
 
 jobs:
@@ -45,23 +45,3 @@ jobs:
 
       - name: Build
         run: yarn build
-
-      - name: Deploy
-        run: |
-          git config --global user.name $user_name
-          git config --global user.email $user_email
-          git remote set-url origin https://${github_token}@github.com/${repository}
-          yarn deploy
-        env:
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
-          repository: ${{ github.repository }}
-
-      - name: Merge gh-pages -> main
-        uses: devmasx/merge-branch@v1.3.1
-        with:
-          type: now
-          from_branch: gh-pages
-          target_branch: main
-          github_token: ${{ secrets.ACTIONS_DEPLOY_ACCESS_TOKEN }}
