@@ -19,7 +19,7 @@ function AboutMe() {
             href="https://www.propertyguru.com.sg/mortgage"
             target="_blank"
             className="btn-text"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             onClick={trackOutboundLink}
           >
             PropertyGuru

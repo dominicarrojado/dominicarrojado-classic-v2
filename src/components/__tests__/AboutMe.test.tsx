@@ -30,7 +30,7 @@ describe('AboutMe component', () => {
       'https://www.propertyguru.com.sg/mortgage'
     );
     expect(anchorEl).toHaveAttribute('target', '_blank');
-    expect(anchorEl).toHaveAttribute('rel', 'noopener noreferrer');
+    expect(anchorEl).toHaveAttribute('rel', 'noopener noreferrer nofollow');
   });
 
   it('should track work url click', () => {
