@@ -1,4 +1,4 @@
-import React from 'react';
+import { useMemo } from 'react';
 
 import './Footer.css';
 
@@ -8,6 +8,8 @@ import FooterSocialItem from './FooterSocialItem';
 import { SOCIAL_LINKS } from '../constants';
 
 function Footer() {
+  const currentYear = useMemo(() => new Date().getFullYear(), []);
+
   return (
     <footer className="footer-main">
       <FooterQuotes />
@@ -16,9 +18,7 @@ function Footer() {
           <FooterSocialItem key={item.name} social={item} />
         ))}
       </ul>
-      <div className="credits">
-        © Dominic Arrojado {new Date().getFullYear()}
-      </div>
+      <div className="credits">© Dominic Arrojado {currentYear}</div>
     </footer>
   );
 }

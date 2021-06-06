@@ -1,5 +1,3 @@
-import React from 'react';
-
 import './Index.css';
 
 import Hero from '../components/Hero';

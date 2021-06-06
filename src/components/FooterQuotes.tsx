@@ -1,25 +1,28 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import classnames from 'classnames';
+import { getRefValue } from '../lib/hooks';
 
 import './FooterQuotes.css';
 
-import { FAVORITE_QUOTES } from '../constants';
+import { FAVORITE_QUOTES, FOOTER_QUOTES_INTERVAL } from '../constants';
 
 function FooterQuotes() {
-  const interval = useRef<number>();
-  const quoteEl = useRef<HTMLLIElement | null>(null);
-  const [activeIndex, setActiveIndex] = useState<number>(0);
-  const [height, setHeight] = useState<number>(0);
+  const intervalRef = useRef<number>();
+  const quoteRef = useRef<HTMLLIElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [height, setHeight] = useState(0);
   const setQuoteHeight = () => {
-    if (quoteEl.current) {
-      setHeight(quoteEl.current.offsetHeight);
+    const quoteEl = getRefValue(quoteRef);
+
+    if (quoteEl) {
+      setHeight(quoteEl.offsetHeight);
     }
   };
 
   useEffect(() => {
     setQuoteHeight();
 
-    interval.current = window.setInterval(() => {
+    intervalRef.current = window.setInterval(() => {
       setActiveIndex((currentIndex) => {
         if (currentIndex < FAVORITE_QUOTES.length - 1) {
           return currentIndex + 1;
@@ -28,10 +31,10 @@ function FooterQuotes() {
         }
       });
       setQuoteHeight();
-    }, 5000);
+    }, FOOTER_QUOTES_INTERVAL);
 
     return () => {
-      clearInterval(interval.current);
+      clearInterval(getRefValue(intervalRef));
     };
   }, []);
 
@@ -39,7 +42,7 @@ function FooterQuotes() {
     <ul className="footer-quotes" style={{ height }}>
       {FAVORITE_QUOTES.map((item, index) => (
         <li
-          ref={activeIndex === index ? quoteEl : null}
+          ref={activeIndex === index ? quoteRef : null}
           key={index}
           className={classnames({ show: activeIndex === index })}
         >

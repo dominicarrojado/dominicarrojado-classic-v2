@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import Window from './modules/Window';
 import Index from './pages/Index';
 import PreLoader from './components/PreLoader';

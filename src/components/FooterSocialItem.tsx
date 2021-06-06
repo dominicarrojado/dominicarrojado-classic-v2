@@ -1,10 +1,10 @@
-import React, {
+import {
   Fragment,
   useRef,
   useState,
-  ReactNode,
+  useMemo,
+  useCallback,
   MouseEventHandler,
-  SyntheticEvent,
 } from 'react';
 
 import { trackOutboundLink } from '../lib/google-analytics';
@@ -18,89 +18,85 @@ import { ReactComponent as EnvelopeIcon } from '../assets/images/icons/envelope-
 
 import Tooltip from './Tooltip';
 
+import { Social } from '../types';
+import { getRefValue } from '../lib/hooks';
+
 type Props = {
-  social: {
-    name: string;
-    title: string;
-    url: string;
-  };
+  social: Social;
 };
 
-function FooterSocialItem(props: Props) {
-  const { social } = props;
-  const timeout = useRef<number>();
-  const [showTooltip, setShowTooltip] = useState<boolean>(false);
-  let target: string = '_blank';
-  let icon: ReactNode = null;
-  let onClick: MouseEventHandler<HTMLAnchorElement> | null = null;
+function FooterSocialItem({ social: { name, title, url } }: Props) {
+  const timeoutRef = useRef<number>();
+  const [showTooltip, setShowTooltip] = useState(false);
+  const target = useMemo(() => {
+    if (name === 'email') {
+      return '_self';
+    } else {
+      return '_blank';
+    }
+  }, [name]);
+  const icon = useMemo(() => {
+    switch (name) {
+      case 'linkedin':
+        return (
+          <Fragment>
+            <LinkedInIcon />
+            <Tooltip>{title}</Tooltip>
+          </Fragment>
+        );
 
-  switch (social.name) {
-    case 'linkedin':
-      icon = (
-        <Fragment>
-          <LinkedInIcon />
-          <Tooltip>{social.title}</Tooltip>
-        </Fragment>
-      );
-      break;
+      case 'github':
+        return (
+          <Fragment>
+            <GitHubIcon />
+            <Tooltip>{title}</Tooltip>
+          </Fragment>
+        );
 
-    case 'github':
-      icon = (
-        <Fragment>
-          <GitHubIcon />
-          <Tooltip>{social.title}</Tooltip>
-        </Fragment>
-      );
-      break;
+      case 'email': {
+        return (
+          <Fragment>
+            <EnvelopeIcon />
+            <Tooltip isMounted={showTooltip}>
+              {!showTooltip ? title : 'Copied!'}
+            </Tooltip>
+          </Fragment>
+        );
+      }
 
-    case 'email': {
-      target = '_self';
-      icon = (
-        <Fragment>
-          <EnvelopeIcon />
-          <Tooltip isMounted={showTooltip}>
-            {!showTooltip ? social.title : 'Copied!'}
-          </Tooltip>
-        </Fragment>
-      );
-      onClick = (e: SyntheticEvent) => {
-        const email = social.url.replace('mailto:', '');
+      default:
+        return null;
+    }
+  }, [name, title, showTooltip]);
+  const onClick = useCallback<MouseEventHandler<HTMLAnchorElement>>(
+    (e) => {
+      trackOutboundLink(e);
+
+      if (name === 'email') {
+        const email = url.replace('mailto:', '');
         const copied = copyTextToClipboard(email);
 
         if (copied) {
           e.preventDefault();
-          clearTimeout(timeout.current);
+          clearTimeout(getRefValue(timeoutRef));
           setShowTooltip(true);
         }
-      };
-      break;
-    }
-
-    default:
-      icon = null;
-  }
+      }
+    },
+    [name, url]
+  );
+  const onMouseLeave = () => {
+    timeoutRef.current = window.setTimeout(() => setShowTooltip(false), 200);
+  };
 
   return (
     <li className="footer-social-item">
       <a
-        href={social.url}
+        href={url}
         target={target}
-        rel="noopener noreferrer"
-        data-testid={social.name}
-        onClick={(e) => {
-          trackOutboundLink(e);
-
-          if (typeof onClick === 'function') {
-            onClick(e);
-          }
-        }}
-        onMouseEnter={() => {
-          clearTimeout(timeout.current);
-          setShowTooltip(false);
-        }}
-        onMouseLeave={() => {
-          timeout.current = window.setTimeout(() => setShowTooltip(false), 200);
-        }}
+        rel="noopener noreferrer nofollow"
+        onClick={onClick}
+        onMouseLeave={onMouseLeave}
       >
         {icon}
       </a>

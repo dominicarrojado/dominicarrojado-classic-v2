@@ -1,51 +1,52 @@
-import React, {
+import {
   useRef,
   useState,
   useEffect,
   useCallback,
   ReactNode,
+  CSSProperties,
 } from 'react';
 import classnames from 'classnames';
+import { CSSTransition } from 'react-transition-group';
+import { getRefValue } from '../lib/hooks';
 
 import './Tooltip.css';
 
-const TIMEOUT = 200; // CSS transition timeout
-const MAX_WIDTH = 300;
-
-type Props = {
+export type Props = {
   isMounted?: boolean;
   position?: 'top' | 'right' | 'bottom' | 'left';
+  maxWidth?: number;
   className?: string;
   children: ReactNode;
-} & typeof defaultProps;
-
-const defaultProps = {
-  className: '',
-  position: 'top',
 };
 
-const Tooltip = (props: Props) => {
-  const { isMounted, position, className, children } = props;
-  const timeout = useRef<number>();
+function Tooltip({
+  isMounted,
+  children,
+  maxWidth = 300,
+  className = '',
+  position = 'top',
+}: Props) {
   const positionRef = useRef<string>(position);
-  const tooltipEl = useRef<HTMLDivElement | null>(null);
-  const [style, setStyle] = useState<React.CSSProperties>({});
+  const tooltipRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef(null);
+  const [style, setStyle] = useState<CSSProperties>({});
   const [shouldRender, setShouldRender] = useState<boolean>(false);
-  const [show, setShow] = useState<boolean>(false);
-  const tooltipMain = useCallback(
-    (node) => {
-      if (node !== null && tooltipEl.current !== null) {
-        const newWidth = Math.min(node.offsetWidth, MAX_WIDTH);
-        const newStyle: { [key: string]: any } = { width: newWidth };
-        const currentPos = positionRef.current;
+  const tooltipMainRef = useCallback(
+    (tooltipMainEl) => {
+      const tooltipEl = getRefValue(tooltipRef);
+
+      if (tooltipMainEl && tooltipEl) {
+        const newWidth = Math.min(tooltipMainEl.offsetWidth, maxWidth);
+        const newStyle: CSSProperties = { width: newWidth };
+        const currentPos = getRefValue(positionRef);
 
         // Centralize tooltip
         if (currentPos === 'top' || currentPos === 'bottom') {
-          newStyle.left =
-            (newWidth / 2 - tooltipEl.current.offsetWidth / 2) * -1;
+          newStyle.left = (newWidth / 2 - tooltipEl.offsetWidth / 2) * -1;
         } else {
           newStyle.top =
-            (node.offsetHeight / 2 - tooltipEl.current.offsetHeight / 2) * -1;
+            (tooltipMainEl.offsetHeight / 2 - tooltipEl.offsetHeight / 2) * -1;
         }
 
         setStyle(newStyle);
@@ -53,24 +54,13 @@ const Tooltip = (props: Props) => {
     },
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [children]
+    [maxWidth, children]
   );
-  const showTooltip = () => {
-    clearTimeout(timeout.current);
-    setShouldRender(true);
-    timeout.current = window.setTimeout(() => setShow(true), 100);
-  };
-  const hideTooltip = () => {
-    clearTimeout(timeout.current);
-    setShow(false);
-    timeout.current = window.setTimeout(() => setShouldRender(false), TIMEOUT);
-  };
-
-  useEffect(() => {
-    return () => {
-      clearTimeout(timeout.current);
-    };
-  }, []);
+  const classNames = classnames('tooltip', { [position]: true }, className);
+  const contentStyle =
+    style.width === maxWidth ? ({ whiteSpace: 'normal' } as const) : undefined;
+  const showTooltip = () => setShouldRender(true);
+  const hideTooltip = () => setShouldRender(false);
 
   useEffect(() => {
     if (isMounted) {
@@ -86,36 +76,33 @@ const Tooltip = (props: Props) => {
 
   return (
     <div
-      ref={tooltipEl}
-      className={classnames(
-        'tooltip',
-        {
-          [position]: true,
-          [`${isMounted ? 'force-' : ''}show`]: show,
-        },
-        className
-      )}
+      ref={tooltipRef}
+      className={classNames}
       role="tooltip"
       onMouseEnter={showTooltip}
       onMouseLeave={hideTooltip}
     >
-      {shouldRender ? (
-        <div className="wrapper" style={style}>
+      <CSSTransition
+        in={shouldRender}
+        nodeRef={wrapperRef}
+        timeout={200}
+        classNames="tooltip"
+        mountOnEnter
+        unmountOnExit
+      >
+        <div ref={wrapperRef} className="wrapper" style={style}>
           <div
-            ref={tooltipMain}
+            ref={tooltipMainRef}
             className="main"
-            style={
-              style.width === MAX_WIDTH ? { whiteSpace: 'normal' } : undefined
-            }
+            data-testid="main"
+            style={contentStyle}
           >
             {children}
           </div>
         </div>
-      ) : null}
+      </CSSTransition>
     </div>
   );
-};
-
-Tooltip.defaultProps = defaultProps;
+}
 
 export default Tooltip;

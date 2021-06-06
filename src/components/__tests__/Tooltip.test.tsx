@@ -1,47 +1,60 @@
 import React from 'react';
-import {
-  render,
-  fireEvent,
-  waitForElementToBeRemoved,
-} from '@testing-library/react';
-import Tooltip from '../Tooltip';
+import { render, fireEvent, screen } from '@testing-library/react';
+import { config } from 'react-transition-group';
+import Tooltip, { Props as TooltipProps } from '../Tooltip';
 
-const children = "I'm a tooltip";
+config.disabled = true; // Disable react-transitions-group transitions
 
-describe('Tooltip', () => {
-  it('does not render its children by default', () => {
-    const { queryByText } = render(<Tooltip>{children}</Tooltip>);
+describe('Tooltip component', () => {
+  const children = "I'm a tooltip";
+  const renderComponent = (props: Omit<TooltipProps, 'children'> = {}) => {
+    render(<Tooltip {...props}>{children}</Tooltip>);
+  };
 
-    expect(queryByText(new RegExp(children))).not.toBeInTheDocument();
+  it("shouldn't render its children by default", () => {
+    renderComponent();
+
+    expect(screen.queryByText(children)).not.toBeInTheDocument();
   });
 
-  it('does render its children on prop "isMounted"', () => {
-    const { queryByText } = render(
-      <Tooltip isMounted={true}>{children}</Tooltip>
-    );
+  it('should render its children if isMounted is true', () => {
+    renderComponent({ isMounted: true });
 
-    expect(queryByText(new RegExp(children))).toBeInTheDocument();
+    expect(screen.queryByText(children)).toBeInTheDocument();
   });
 
-  it('does render its children on event "mouseEnter"', async () => {
-    const { getByRole, queryByText } = render(<Tooltip>{children}</Tooltip>);
+  it('should render its children on mouse enter', () => {
+    renderComponent();
 
-    fireEvent.mouseEnter(getByRole('tooltip'));
+    fireEvent.mouseEnter(screen.getByRole('tooltip'));
 
-    expect(queryByText(new RegExp(children))).toBeInTheDocument();
+    expect(screen.queryByText(children)).toBeInTheDocument();
   });
 
-  it('does unmount its children on event "mouseLeave"', async () => {
-    const { getByRole, queryByText } = render(<Tooltip>{children}</Tooltip>);
-    const tooltipEl = getByRole('tooltip');
+  it('should render its children on mouse enter (position left)', () => {
+    renderComponent({ position: 'left' });
+
+    fireEvent.mouseEnter(screen.getByRole('tooltip'));
+
+    expect(screen.queryByText(children)).toBeInTheDocument();
+  });
+
+  it('should hide its children on mouse leave', () => {
+    renderComponent();
+
+    const tooltipEl = screen.getByRole('tooltip');
 
     fireEvent.mouseEnter(tooltipEl);
     fireEvent.mouseLeave(tooltipEl);
 
-    const regex = new RegExp(children);
+    expect(screen.queryByText(children)).not.toBeInTheDocument();
+  });
 
-    await waitForElementToBeRemoved(() => queryByText(regex));
+  it('should have style "whiteSpace: normal" if text exceeds max width', () => {
+    renderComponent({ maxWidth: -1 });
 
-    expect(queryByText(regex)).not.toBeInTheDocument();
+    fireEvent.mouseEnter(screen.getByRole('tooltip'));
+
+    expect(screen.queryByTestId('main')).toHaveStyle({ whiteSpace: 'normal' });
   });
 });

@@ -10,12 +10,14 @@ interface Event {
   action: string;
   category: string;
   label: string;
+  value?: string;
   nonInteraction?: boolean;
 }
 
 interface GTagData {
   event_category: string;
   event_label: string;
+  value?: string;
   non_interaction: boolean;
 }
 
@@ -27,6 +29,7 @@ export function trackEvent(data: Event, forced?: boolean) {
   window.gtag('event', data.action, {
     event_category: data.category,
     event_label: data.label,
+    value: data.value,
     non_interaction: data.nonInteraction ? true : false,
   });
 }

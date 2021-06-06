@@ -1,93 +1,112 @@
-import React, { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import classnames from 'classnames';
 
 import Window from '../modules/Window';
 import { trackEvent } from '../lib/google-analytics';
+import { getRefValue } from '../lib/hooks';
 
 import './Hero.css';
 
 import { ReactComponent as Logo } from '../assets/images/icons/dominic-arrojado.svg';
 import { ReactComponent as ArrowDownIcon } from '../assets/images/icons/arrow-down-solid.svg';
 
+import { ABOUT_ME_ELEMENT_ID } from '../constants';
+
 function Hero() {
-  const aboutMeEl = useRef<HTMLElement | null>(null);
-  const moveTo = useRef<MoveTo>();
-  const heroImgEl = useRef<HTMLDivElement | null>(null);
-  const heroLogoEl = useRef<HTMLDivElement | null>(null);
-  const heroDescEl = useRef<HTMLDivElement | null>(null);
-  const [windowLoaded, setWindowLoaded] = useState<boolean>(Window.loaded);
+  const aboutMeRef = useRef<HTMLElement | null>(null);
+  const moveToRef = useRef<MoveTo>();
+  const heroImgRef = useRef<HTMLDivElement>(null);
+  const heroLogoRef = useRef<HTMLDivElement>(null);
+  const heroDescRef = useRef<HTMLDivElement>(null);
+  const [windowLoaded, setWindowLoaded] = useState(Window.loaded);
+  const scrollDownOnClick = () => {
+    let aboutMeEl: HTMLElement | null = getRefValue(aboutMeRef);
+
+    if (!aboutMeEl) {
+      aboutMeEl = document.getElementById(ABOUT_ME_ELEMENT_ID);
+      aboutMeRef.current = aboutMeEl;
+    }
+
+    const moveToFunc = getRefValue(moveToRef);
+
+    if (moveToFunc && aboutMeEl) {
+      moveToFunc.move(aboutMeEl);
+    }
+
+    trackEvent({
+      action: 'click',
+      category: 'user_interaction',
+      label: 'Scroll Down',
+    });
+  };
 
   useEffect(() => {
-    Window.on('load', () => {
+    const windowOnLoad = async () => {
       setWindowLoaded(true);
 
       // Dynamically import MoveTo
-      import('moveto')
-        .then(
-          ({ default: MoveTo }) =>
-            (moveTo.current = new MoveTo({ duration: 100 }))
-        )
-        .catch((err) => console.error('Error on MoveTo import:', err));
-    });
+      try {
+        const { default: MoveTo } = await import('moveto');
+        moveToRef.current = new MoveTo({ duration: 100 });
+      } catch (err) {
+        console.error('Error on MoveTo import:', err);
+      }
+    };
 
-    Window.on('scroll', () => {
+    const windowOnScroll = () => {
+      const heroImgEl = getRefValue(heroImgRef);
+      const heroLogoEl = getRefValue(heroLogoRef);
+      const heroDescEl = getRefValue(heroDescRef);
+
       if (
-        heroImgEl.current &&
-        heroLogoEl.current &&
-        heroDescEl.current &&
-        window.scrollY <= window.innerHeight
+        heroImgEl &&
+        heroLogoEl &&
+        heroDescEl &&
+        window.pageYOffset <= window.innerHeight
       ) {
-        // Parallax
-        heroImgEl.current.style.transform = `translate3d(0, ${
+        // Parallax effect
+        heroImgEl.style.transform = `translate3d(0, ${
           window.pageYOffset * 0.2
         }px, 0)`;
 
         // Opacity effect
-        const { offsetTop, offsetHeight } = heroDescEl.current;
+        const { offsetTop, offsetHeight } = heroDescEl;
         const opacity = Math.max(
-          1 - window.scrollY / (offsetTop + offsetHeight),
+          1 - window.pageYOffset / (offsetTop + offsetHeight),
           0
         );
 
-        heroLogoEl.current.style.opacity = `${opacity}`;
-        heroDescEl.current.style.opacity = `${opacity}`;
+        heroLogoEl.style.opacity = `${opacity}`;
+        heroDescEl.style.opacity = `${opacity}`;
       }
-    });
+    };
+
+    Window.on('load', windowOnLoad);
+    Window.on('scroll', windowOnScroll);
+
+    return () => {
+      Window.off('load', windowOnLoad);
+      Window.off('scroll', windowOnScroll);
+    };
   }, []);
 
   return (
-    <section className={`hero ${windowLoaded ? 'show' : ''}`}>
-      <div ref={heroImgEl} className="img"></div>
-      {!windowLoaded ? <div className="spinner" /> : null}
+    <section className={classnames('hero', { show: windowLoaded })}>
+      <div ref={heroImgRef} className="img" data-testid="img"></div>
+      {!windowLoaded && <div className="spinner" />}
       <div className="main">
-        <div ref={heroLogoEl} className="logo-container">
+        <div ref={heroLogoRef} className="logo-container" data-testid="logo">
           <Logo className="logo" />
         </div>
-        <div ref={heroDescEl} className="desc-container">
+        <div ref={heroDescRef} className="desc-container" data-testid="desc">
           <h1 className="desc">Dominic Arrojado · Senior Software Engineer</h1>
         </div>
       </div>
       <div className="btn">
         <span
-          role="button"
-          onClick={() => {
-            let aboutMe = aboutMeEl.current;
-
-            if (!aboutMe) {
-              aboutMe = document.getElementById('aboutMe');
-              aboutMeEl.current = aboutMe;
-            }
-
-            if (moveTo.current && aboutMe) {
-              moveTo.current.move(aboutMe);
-
-              trackEvent({
-                action: 'click',
-                category: 'user_interaction',
-                label: 'Scroll Down',
-              });
-            }
-          }}
           className="btn-text btn-white"
+          role="button"
+          onClick={scrollDownOnClick}
         >
           Scroll Down
         </span>

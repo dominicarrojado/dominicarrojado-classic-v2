@@ -3,7 +3,7 @@ interface Callback {
 }
 
 class Events {
-  events: { [k: string]: [Callback] };
+  events: Record<string, [Callback]>;
 
   constructor() {
     this.events = {};
@@ -35,9 +35,7 @@ class Events {
     }
 
     this.events[event].forEach((callback) => {
-      if (typeof callback === 'function') {
-        callback(payload);
-      }
+      callback(payload);
     });
   };
 }

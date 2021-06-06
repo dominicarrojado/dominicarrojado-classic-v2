@@ -1,13 +1,15 @@
 import { getPublicURL } from './lib/common';
+import { Quote, Social, Work } from './types';
 
 export const SET_WORK_IN_VIEW_TIMEOUT = 500;
 export const DOWNLOAD_GIF_SPINNER_TIMEOUT = 300;
+export const FOOTER_QUOTES_INTERVAL = 5000;
+export const ABOUT_ME_ELEMENT_ID = 'aboutMe';
 
-export const WORKS = [
+export const WORKS: Array<Work> = [
   {
     title: 'THX Spatial Audio',
-    desc:
-      'Web-based desktop application that delivers advanced 7.1 surround sound with pinpoint positional accuracy to make your game come alive.',
+    desc: 'Web-based desktop application that delivers advanced 7.1 surround sound with pinpoint positional accuracy to make your game come alive.',
     urls: [
       {
         title: 'View Page',
@@ -31,8 +33,7 @@ export const WORKS = [
   },
   {
     title: 'Razer Chroma Studio Web',
-    desc:
-      'A module of Razer Synapse recreated in web that allows you to create various lighting effects and synchronize across multiple devices, while allowing you to follow the exact placement of your devices on your desktop.',
+    desc: 'A module of Razer Synapse recreated in web that allows you to create various lighting effects and synchronize across multiple devices, while allowing you to follow the exact placement of your devices on your desktop.',
     urls: [
       {
         title: 'Watch Demo',
@@ -45,8 +46,7 @@ export const WORKS = [
   },
   {
     title: 'Razer Streamer Companion App',
-    desc:
-      'Web-based desktop application where you can create unique audience interactions with supported Razer hardware.',
+    desc: 'Web-based desktop application where you can create unique audience interactions with supported Razer hardware.',
     urls: [
       {
         title: 'View Page',
@@ -58,8 +58,7 @@ export const WORKS = [
   },
   {
     title: 'Razer 7.1 Surround Sound',
-    desc:
-      'Web-based desktop application for superior positional audio and a lifelike gaming experience.',
+    desc: 'Web-based desktop application for superior positional audio and a lifelike gaming experience.',
     urls: [
       {
         title: 'View Page',
@@ -71,8 +70,7 @@ export const WORKS = [
   },
   {
     title: 'Razer Developer Portal',
-    desc:
-      'A portal for third-party developers to manage their projects that uses Razer ID API.',
+    desc: 'A portal for third-party developers to manage their projects that uses Razer ID API.',
     urls: [
       {
         title: 'View Web App',
@@ -84,8 +82,7 @@ export const WORKS = [
   },
   {
     title: 'Razer ID',
-    desc:
-      'Profile management and authentication service tool for all Razer services. Built for web, desktop and mobile.',
+    desc: 'Profile management and authentication service tool for all Razer services. Built for web, desktop and mobile.',
     urls: [
       {
         title: 'View Web App',
@@ -97,8 +94,7 @@ export const WORKS = [
   },
   {
     title: 'Qwerk',
-    desc:
-      'Project management + chat tool for productivity. It has notes and timer feature as well.',
+    desc: 'Project management + chat tool for productivity. It has notes and timer feature as well.',
     urls: [
       {
         title: 'View Web App',
@@ -111,8 +107,7 @@ export const WORKS = [
   },
   {
     title: 'Maybank: FC Barcelona',
-    desc:
-      "Website for Maybank to introduce its FC Barcelona Visa Signature Card. Maybank is one of the world's most valuable bank brands.",
+    desc: "Website for Maybank to introduce its FC Barcelona Visa Signature Card. Maybank is one of the world's most valuable bank brands.",
     urls: [
       {
         title: 'View Website',
@@ -124,8 +119,7 @@ export const WORKS = [
   },
   {
     title: 'Food Republic: Capsule Surprise',
-    desc:
-      "A classic game for Food Republic's Wisma Atria re-opening. Food Republic is a food court chain run by the BreadTalk Group based in Singapore.",
+    desc: "A classic game for Food Republic's Wisma Atria re-opening. Food Republic is a food court chain run by the BreadTalk Group based in Singapore.",
     urls: [
       {
         title: 'View Web App',
@@ -137,8 +131,7 @@ export const WORKS = [
   },
   {
     title: "Aptamil: Build Your Baby's Foundation to be One Step Ahead",
-    desc:
-      'Campaign for Aptamil to promote the 2 key pillars of foundation: natural defences and brain development.',
+    desc: 'Campaign for Aptamil to promote the 2 key pillars of foundation: natural defences and brain development.',
     urls: [
       {
         title: 'View Web App',
@@ -150,8 +143,7 @@ export const WORKS = [
   },
   {
     title: 'Kronenbourg 1664',
-    desc:
-      'Website for the most sold French beer in the world and the market leader for high-end premium beers.',
+    desc: 'Website for the most sold French beer in the world and the market leader for high-end premium beers.',
     urls: [
       {
         title: 'View Website',
@@ -163,8 +155,7 @@ export const WORKS = [
   },
   {
     title: 'Singtel: Data x Infinity',
-    desc:
-      "Web app for Singtel's event promoting new mobile data add-on. Singtel is one of the four major telcos operating in  Singapore",
+    desc: "Web app for Singtel's event promoting new mobile data add-on. Singtel is one of the four major telcos operating in  Singapore",
     urls: [
       {
         title: 'View Web App',
@@ -180,8 +171,7 @@ export const WORKS = [
   },
   {
     title: 'CNB: Anti Drug Abuse Campaign',
-    desc:
-      'Campaign that aims to raise awareness and support for the anti-drug cause in Singapore.',
+    desc: 'Campaign that aims to raise awareness and support for the anti-drug cause in Singapore.',
     urls: [
       {
         title: 'View Web App',
@@ -197,8 +187,7 @@ export const WORKS = [
   },
   {
     title: 'Hashtag Interactive',
-    desc:
-      'Website for a boutique digital marketing agency that is optimised for a digital-centric world.',
+    desc: 'Website for a boutique digital marketing agency that is optimised for a digital-centric world.',
     urls: [
       {
         title: 'View Website',
@@ -210,8 +199,7 @@ export const WORKS = [
   },
   {
     title: 'To My Valentine',
-    desc:
-      "Valentine's day card app that lets you send cute e-cards to your special someone.",
+    desc: "Valentine's day card app that lets you send cute e-cards to your special someone.",
     urls: [
       {
         title: 'View Web App',
@@ -223,8 +211,7 @@ export const WORKS = [
   },
   {
     title: 'CNY: Fortune Teller',
-    desc:
-      "Quirky lil' 2017 horoscope app to see what the Year of the Rooster has in store for you.",
+    desc: "Quirky lil' 2017 horoscope app to see what the Year of the Rooster has in store for you.",
     urls: [
       {
         title: 'View Web App',
@@ -268,8 +255,7 @@ export const WORKS = [
   },
   {
     title: 'M1 Email Templates',
-    desc:
-      'HTML email templates for M1, one of the four major telcos operating in  Singapore.',
+    desc: 'HTML email templates for M1, one of the four major telcos operating in  Singapore.',
     urls: [
       {
         title: 'View Data Passport I',
@@ -293,8 +279,7 @@ export const WORKS = [
   },
   {
     title: 'AXA Email Templates',
-    desc:
-      "HTML email templates for AXA, one of the world's leading insurance companies.",
+    desc: "HTML email templates for AXA, one of the world's leading insurance companies.",
     urls: [
       {
         title: 'View Smart Travel I',
@@ -330,7 +315,7 @@ export const WORKS = [
   },
 ];
 
-export const SOCIAL_LINKS = [
+export const SOCIAL_LINKS: Array<Social> = [
   {
     name: 'linkedin',
     title: 'Connect with me @ LinkedIn!',
@@ -348,7 +333,7 @@ export const SOCIAL_LINKS = [
   },
 ];
 
-export const FAVORITE_QUOTES = [
+export const FAVORITE_QUOTES: Array<Quote> = [
   {
     quote: 'If there is no struggle, there is no progress.',
     author: 'Frederick Douglass',

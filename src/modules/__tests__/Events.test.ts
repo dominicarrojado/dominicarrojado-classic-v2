@@ -1,6 +1,6 @@
 import Events from '../Events';
 
-describe('Events', () => {
+describe('Events module', () => {
   it('can store events', () => {
     const events = new Events();
     const event = 'test';
@@ -41,5 +41,37 @@ describe('Events', () => {
 
     expect(callback).toBeCalledTimes(2);
     expect(callback2).toBeCalledTimes(1);
+  });
+
+  it('should handle remove events but event does not exist', () => {
+    const events = new Events();
+
+    expect(() => {
+      events.off('test', jest.fn());
+    }).not.toThrowError();
+  });
+
+  it('should handle remove events but callback does not exist', () => {
+    const events = new Events();
+    const event = 'test';
+    const callback = jest.fn();
+
+    events.on(event, callback);
+
+    expect(() => {
+      events.off(event, jest.fn());
+    }).not.toThrowError();
+
+    events.emit(event);
+
+    expect(callback).toBeCalledTimes(1);
+  });
+
+  it('should handle emit events but event does not exist', () => {
+    const events = new Events();
+
+    expect(() => {
+      events.emit('test');
+    }).not.toThrowError();
   });
 });

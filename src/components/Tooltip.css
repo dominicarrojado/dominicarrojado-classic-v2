@@ -39,40 +39,76 @@
   font-weight: 400;
   white-space: nowrap;
   background-color: #000000;
-  opacity: 0;
-  transition: opacity 0.15s linear, transform 0.2s ease-in-out;
   user-select: none;
 }
 
-.tooltip.top .main {
+.tooltip.top .tooltip-enter .main,
+.tooltip.right .tooltip-enter .main,
+.tooltip.bottom .tooltip-enter .main,
+.tooltip.left .tooltip-enter .main {
+  opacity: 0;
+}
+
+.tooltip.top .tooltip-enter .main {
   transform: translateY(4px);
 }
 
-.tooltip.right .main {
+.tooltip.right .tooltip-enter .main {
   transform: translateX(-4px);
 }
 
-.tooltip.bottom .main {
+.tooltip.bottom .tooltip-enter .main {
   transform: translateY(-4px);
 }
 
-.tooltip.left .main {
+.tooltip.left .tooltip-enter .main {
   transform: translateX(4px);
 }
 
-.tooltip.show .main,
-.tooltip.force-show .main {
+.tooltip.top .tooltip-enter-active .main,
+.tooltip.right .tooltip-enter-active .main,
+.tooltip.bottom .tooltip-enter-active .main,
+.tooltip.left .tooltip-enter-active .main {
   opacity: 1;
   transform: translate(0, 0);
+  transition: opacity 0.15s linear, transform 0.2s ease-in-out;
+}
+
+.tooltip.top .tooltip-exit .main,
+.tooltip.right .tooltip-exit .main,
+.tooltip.bottom .tooltip-exit .main,
+.tooltip.left .tooltip-exit .main {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.tooltip.top .tooltip-exit-active .main,
+.tooltip.right .tooltip-exit-active .main,
+.tooltip.bottom .tooltip-exit-active .main,
+.tooltip.left .tooltip-exit-active .main {
+  opacity: 0;
+  transition: opacity 0.15s linear, transform 0.2s ease-in-out;
+}
+
+.tooltip.top .tooltip-exit-active .main {
+  transform: translateY(4px);
+}
+
+.tooltip.right .tooltip-exit-active .main {
+  transform: translateX(-4px);
+}
+
+.tooltip.bottom .tooltip-exit-active .main {
+  transform: translateY(-4px);
+}
+
+.tooltip.left .tooltip-exit-active .main {
+  transform: translateX(4px);
 }
 
 @media only screen and (max-width: 767px) {
   .tooltip .main {
     padding: 6px 10px;
     font-size: 14px;
-  }
-
-  .tooltip.show:not(.force-show) .main {
-    opacity: 0;
   }
 }
