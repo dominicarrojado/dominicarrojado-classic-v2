@@ -7,8 +7,9 @@ import {
   MouseEventHandler,
 } from 'react';
 
-import { trackOutboundLink } from '../lib/google-analytics';
+import { trackHover, trackOutboundLink } from '../lib/google-analytics';
 import { copyTextToClipboard } from '../lib/dom';
+import { getRefValue } from '../lib/hooks';
 
 import './FooterSocialItem.css';
 
@@ -19,7 +20,6 @@ import { ReactComponent as EnvelopeIcon } from '../assets/images/icons/envelope-
 import Tooltip from './Tooltip';
 
 import { Social } from '../types';
-import { getRefValue } from '../lib/hooks';
 
 type Props = {
   social: Social;
@@ -85,6 +85,7 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
     },
     [name, url]
   );
+  const onMouseEnter = () => trackHover(title);
   const onMouseLeave = () => {
     timeoutRef.current = window.setTimeout(() => setShowTooltip(false), 200);
   };
@@ -96,6 +97,7 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
         target={target}
         rel="noopener noreferrer nofollow"
         onClick={onClick}
+        onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
         {icon}

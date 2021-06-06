@@ -82,6 +82,7 @@ describe('WorkItem component', () => {
       fireEvent.click(anchorEl);
 
       expect(trackOutboundLinkSpy).toBeCalledTimes(1);
+      expect(trackOutboundLinkSpy).toBeCalledWith(expect.any(Object));
 
       trackOutboundLinkSpy.mockClear();
     });

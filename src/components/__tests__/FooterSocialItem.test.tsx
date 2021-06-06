@@ -29,6 +29,24 @@ describe('FooterSocialItem component', () => {
     expect(anchorEl).toHaveAttribute('target', '_blank');
   });
 
+  it('should track hover', () => {
+    const trackHoverSpy = jest.spyOn(ga, 'trackHover');
+
+    const social = {
+      name: 'linkedin',
+      title: 'LinkedIn',
+      url: 'https://www.linkedin.com',
+    };
+    renderComponent(social);
+
+    const anchorEl = screen.queryByRole('link');
+
+    fireEvent.mouseEnter(anchorEl);
+
+    expect(trackHoverSpy).toBeCalledTimes(1);
+    expect(trackHoverSpy).toBeCalledWith(social.title);
+  });
+
   it('should track click', () => {
     const trackOutboundLinkSpy = jest.spyOn(ga, 'trackOutboundLink');
 
@@ -44,6 +62,7 @@ describe('FooterSocialItem component', () => {
     fireEvent.click(anchorEl);
 
     expect(trackOutboundLinkSpy).toBeCalledTimes(1);
+    expect(trackOutboundLinkSpy).toBeCalledWith(expect.any(Object));
   });
 
   it('should copy email if API is available', () => {
