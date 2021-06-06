@@ -19,7 +19,9 @@ describe('hooks utils', () => {
       const [_state, setState] = hook.result.current;
       const newValue = 3;
 
-      act(() => setState(newValue));
+      act(() => {
+        setState(newValue);
+      });
 
       const [state, _setState, ref] = hook.result.current;
 

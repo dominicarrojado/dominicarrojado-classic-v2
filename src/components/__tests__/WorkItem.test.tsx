@@ -351,6 +351,42 @@ describe('WorkItem component', () => {
     expect(screen.queryByTestId('gif-spinner')).not.toBeInTheDocument();
   });
 
+  it('should track GIF download cancel', async () => {
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
+    const durationMs = 6000;
+    const progress = 75;
+    let onCancelFunc: () => void;
+
+    jest
+      .spyOn(customHooks, 'useDownloadGif')
+      .mockImplementation(({ onCancel }) => {
+        onCancelFunc = () => onCancel({ durationMs, progress });
+        return {
+          startDownloadGif: jest.fn(),
+          cancelDownloadGif: jest.fn(),
+        };
+      });
+
+    renderComponent({
+      shouldShowImg: true,
+      shouldDownloadGif: true,
+    });
+
+    act(() => {
+      onCancelFunc();
+    });
+
+    expect(trackEventSpy).toBeCalledTimes(1);
+    expect(trackEventSpy).toBeCalledWith({
+      action: 'gif_auto_play_cancel',
+      category: 'gif_auto_play',
+      label: `Cancel Download GIF - ${workData.title}`,
+      nonInteraction: true,
+      gifCancelTime: durationMs / 1000,
+      gifCancelProgress: progress,
+    });
+  });
+
   it('should render GIF on download success', () => {
     const gifData = 'data:image/gif;base64';
     let onSuccessFunc: () => void;
@@ -378,6 +414,42 @@ describe('WorkItem component', () => {
     const gifEl = screen.queryByAltText(`${workData.title} GIF`);
 
     expect(gifEl).toHaveAttribute('src', gifData);
+  });
+
+  it('should track GIF download success', () => {
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
+    const durationMs = 3000;
+    let onSuccessFunc: () => void;
+
+    jest
+      .spyOn(customHooks, 'useDownloadGif')
+      .mockImplementation(({ onSuccess }) => {
+        onSuccessFunc = () =>
+          onSuccess({ durationMs, data: 'data:image/gif;base64' });
+        return {
+          startDownloadGif: jest.fn(),
+          cancelDownloadGif: jest.fn(),
+        };
+      });
+
+    renderComponent({
+      shouldShowImg: true,
+      shouldDownloadGif: true,
+      shouldShowGif: true,
+    });
+
+    act(() => {
+      onSuccessFunc();
+    });
+
+    expect(trackEventSpy).toBeCalledTimes(1);
+    expect(trackEventSpy).toBeCalledWith({
+      action: 'gif_auto_play_start',
+      category: 'gif_auto_play',
+      label: `Downloaded GIF - ${workData.title}`,
+      nonInteraction: true,
+      gifLoadTime: durationMs / 1000,
+    });
   });
 
   it('should log on download error', () => {

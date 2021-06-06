@@ -69,8 +69,8 @@ function WorkItem({
       action: 'gif_auto_play_start',
       category: 'gif_auto_play',
       label: `Downloaded GIF - ${title}`,
-      value: `${durationMs / 1000}s`,
       nonInteraction: true,
+      gifLoadTime: durationMs / 1000,
     });
   };
   const downloadGifOnCancel = ({
@@ -86,8 +86,9 @@ function WorkItem({
       action: 'gif_auto_play_cancel',
       category: 'gif_auto_play',
       label: `Cancel Download GIF - ${title}`,
-      value: `${durationMs / 1000}s (${progress}%)`,
       nonInteraction: true,
+      gifCancelTime: durationMs / 1000,
+      gifCancelProgress: progress,
     });
   };
   const downloadGifOnError = (err: any) =>
