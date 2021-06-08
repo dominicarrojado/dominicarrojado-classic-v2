@@ -29,6 +29,7 @@ function WorkItem({
   const timeoutRef = useRef<number>();
   const isDownloadingGifRef = useRef(false);
   const gifImgRef = useRef<HTMLImageElement>(null);
+  const clickTrackedRef = useRef(false);
   const windowInnerHeight = useMemo(() => window.innerHeight, []);
   const [isImgLoaded, setIsImgLoaded] = useState(false);
   const [isDownloadingGif, setIsDownloadingGif] = useState(false);
@@ -105,20 +106,25 @@ function WorkItem({
       projectTitle: title,
       hoverText: 'Best Project',
     });
-  const urlOnMouseEnter = (urlItem: WorkUrl) =>
-    trackEvent({
-      event: GoogleAnalyticsEvents.PROJECT_HOVER,
-      projectTitle: title,
-      hoverText: urlItem.title,
-      hoverUrl: urlItem.url,
-    });
-  const urlOnClick = (urlItem: WorkUrl) =>
+  const urlOnMouseLeave = (urlItem: WorkUrl) => {
+    if (!getRefValue(clickTrackedRef)) {
+      trackEvent({
+        event: GoogleAnalyticsEvents.PROJECT_HOVER,
+        projectTitle: title,
+        hoverText: urlItem.title,
+        hoverUrl: urlItem.url,
+      });
+    }
+  };
+  const urlOnClick = (urlItem: WorkUrl) => {
+    clickTrackedRef.current = true;
     trackEvent({
       event: GoogleAnalyticsEvents.PROJECT_CLICK,
       projectTitle: title,
       linkText: urlItem.title,
       linkUrl: urlItem.url,
     });
+  };
 
   useEffect(() => {
     if (!gifData && isImgLoaded) {
@@ -200,7 +206,7 @@ function WorkItem({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-text"
-                onMouseEnter={() => urlOnMouseEnter(urlItem)}
+                onMouseLeave={() => urlOnMouseLeave(urlItem)}
                 onClick={() => urlOnClick(urlItem)}
                 onContextMenu={() => urlOnClick(urlItem)}
               >

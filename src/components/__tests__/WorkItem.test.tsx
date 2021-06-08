@@ -72,7 +72,7 @@ describe('WorkItem component', () => {
     });
   });
 
-  it('should track url hover', () => {
+  it('should track url hover (mouse leave)', () => {
     const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     renderComponent();
@@ -80,10 +80,32 @@ describe('WorkItem component', () => {
     workData.urls.forEach((urlItem) => {
       const anchorEl = screen.getByText(urlItem.title);
 
-      fireEvent.mouseEnter(anchorEl);
+      fireEvent.mouseLeave(anchorEl);
 
       expect(trackEventSpy).toBeCalledTimes(1);
       expect(trackEventSpy).toBeCalledWith({
+        event: GoogleAnalyticsEvents.PROJECT_HOVER,
+        projectTitle: workData.title,
+        hoverText: urlItem.title,
+        hoverUrl: urlItem.url,
+      });
+
+      trackEventSpy.mockClear();
+    });
+  });
+
+  it("shouldn't track url hover if already clicked", () => {
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
+
+    renderComponent();
+
+    workData.urls.forEach((urlItem) => {
+      const anchorEl = screen.getByText(urlItem.title);
+
+      fireEvent.click(anchorEl);
+      fireEvent.mouseLeave(anchorEl);
+
+      expect(trackEventSpy).not.toBeCalledWith({
         event: GoogleAnalyticsEvents.PROJECT_HOVER,
         projectTitle: workData.title,
         hoverText: urlItem.title,

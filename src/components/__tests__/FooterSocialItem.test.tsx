@@ -29,7 +29,7 @@ describe('FooterSocialItem component', () => {
     expect(anchorEl).toHaveAttribute('target', '_blank');
   });
 
-  it('should track hover', () => {
+  it('should track hover (mouse leave)', () => {
     const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     const social = {
@@ -41,10 +41,33 @@ describe('FooterSocialItem component', () => {
 
     const anchorEl = screen.queryByRole('link');
 
-    fireEvent.mouseEnter(anchorEl);
+    fireEvent.mouseLeave(anchorEl);
 
     expect(trackEventSpy).toBeCalledTimes(1);
     expect(trackEventSpy).toBeCalledWith({
+      event: GoogleAnalyticsEvents.SOCIAL_HOVER,
+      socialName: social.name,
+      hoverText: social.title,
+      hoverUrl: social.url,
+    });
+  });
+
+  it("shouldn't track hover if already clicked", () => {
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
+
+    const social = {
+      name: 'twitter' as any,
+      title: 'Twitter',
+      url: 'https://www.twitter.com',
+    };
+    renderComponent(social);
+
+    const anchorEl = screen.queryByRole('link');
+
+    fireEvent.click(anchorEl);
+    fireEvent.mouseLeave(anchorEl);
+
+    expect(trackEventSpy).not.toBeCalledWith({
       event: GoogleAnalyticsEvents.SOCIAL_HOVER,
       socialName: social.name,
       hoverText: social.title,

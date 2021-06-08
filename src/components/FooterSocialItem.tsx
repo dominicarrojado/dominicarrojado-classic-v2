@@ -27,6 +27,7 @@ type Props = {
 
 function FooterSocialItem({ social: { name, title, url } }: Props) {
   const timeoutRef = useRef<number>();
+  const clickTrackedRef = useRef(false);
   const [showTooltip, setShowTooltip] = useState(false);
   const target = useMemo(() => {
     if (name === SocialNames.EMAIL) {
@@ -70,6 +71,7 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
   }, [name, title, showTooltip]);
   const onClick = useCallback<MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
+      clickTrackedRef.current = true;
       trackEvent({
         event: GoogleAnalyticsEvents.SOCIAL_CLICK,
         socialName: name,
@@ -90,17 +92,18 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
     },
     [name, title, url]
   );
-  const onMouseEnter = useCallback(() => {
-    trackEvent({
-      event: GoogleAnalyticsEvents.SOCIAL_HOVER,
-      socialName: name,
-      hoverText: title,
-      hoverUrl: url,
-    });
-  }, [name, title, url]);
   const onMouseLeave = useCallback(() => {
+    if (!getRefValue(clickTrackedRef)) {
+      trackEvent({
+        event: GoogleAnalyticsEvents.SOCIAL_HOVER,
+        socialName: name,
+        hoverText: title,
+        hoverUrl: url,
+      });
+    }
+
     timeoutRef.current = window.setTimeout(() => setShowTooltip(false), 200);
-  }, []);
+  }, [name, title, url]);
 
   return (
     <li className="footer-social-item">
@@ -109,7 +112,6 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
         target={target}
         rel="noopener noreferrer nofollow"
         onClick={onClick}
-        onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
         {icon}
