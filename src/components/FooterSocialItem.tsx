@@ -7,7 +7,7 @@ import {
   MouseEventHandler,
 } from 'react';
 
-import { trackHover, trackOutboundLink } from '../lib/google-analytics';
+import { trackEvent } from '../lib/google-analytics';
 import { copyTextToClipboard } from '../lib/dom';
 import { getRefValue } from '../lib/hooks';
 
@@ -19,7 +19,7 @@ import { ReactComponent as EnvelopeIcon } from '../assets/images/icons/envelope-
 
 import Tooltip from './Tooltip';
 
-import { Social } from '../types';
+import { GoogleAnalyticsEvents, Social, SocialNames } from '../types';
 
 type Props = {
   social: Social;
@@ -29,7 +29,7 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
   const timeoutRef = useRef<number>();
   const [showTooltip, setShowTooltip] = useState(false);
   const target = useMemo(() => {
-    if (name === 'email') {
+    if (name === SocialNames.EMAIL) {
       return '_self';
     } else {
       return '_blank';
@@ -37,7 +37,7 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
   }, [name]);
   const icon = useMemo(() => {
     switch (name) {
-      case 'linkedin':
+      case SocialNames.LINKEDIN:
         return (
           <Fragment>
             <LinkedInIcon />
@@ -45,7 +45,7 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
           </Fragment>
         );
 
-      case 'github':
+      case SocialNames.GITHUB:
         return (
           <Fragment>
             <GitHubIcon />
@@ -53,7 +53,7 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
           </Fragment>
         );
 
-      case 'email': {
+      case SocialNames.EMAIL: {
         return (
           <Fragment>
             <EnvelopeIcon />
@@ -70,9 +70,14 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
   }, [name, title, showTooltip]);
   const onClick = useCallback<MouseEventHandler<HTMLAnchorElement>>(
     (e) => {
-      trackOutboundLink(e);
+      trackEvent({
+        event: GoogleAnalyticsEvents.SOCIAL_CLICK,
+        socialName: name,
+        linkText: title,
+        linkUrl: url,
+      });
 
-      if (name === 'email') {
+      if (name === SocialNames.EMAIL) {
         const email = url.replace('mailto:', '');
         const copied = copyTextToClipboard(email);
 
@@ -83,12 +88,19 @@ function FooterSocialItem({ social: { name, title, url } }: Props) {
         }
       }
     },
-    [name, url]
+    [name, title, url]
   );
-  const onMouseEnter = () => trackHover(title);
-  const onMouseLeave = () => {
+  const onMouseEnter = useCallback(() => {
+    trackEvent({
+      event: GoogleAnalyticsEvents.SOCIAL_HOVER,
+      socialName: name,
+      hoverText: title,
+      hoverUrl: url,
+    });
+  }, [name, title, url]);
+  const onMouseLeave = useCallback(() => {
     timeoutRef.current = window.setTimeout(() => setShowTooltip(false), 200);
-  };
+  }, []);
 
   return (
     <li className="footer-social-item">

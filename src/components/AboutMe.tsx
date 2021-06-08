@@ -1,4 +1,3 @@
-import { trackOutboundLink } from '../lib/google-analytics';
 import { ABOUT_ME_ELEMENT_ID } from '../constants';
 
 import './AboutMe.css';
@@ -20,7 +19,6 @@ function AboutMe() {
             target="_blank"
             className="btn-text"
             rel="noopener noreferrer nofollow"
-            onClick={trackOutboundLink}
           >
             PropertyGuru
           </a>{' '}

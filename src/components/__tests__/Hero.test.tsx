@@ -4,6 +4,7 @@ import { setReadOnlyProperty } from '../../lib/test-helpers';
 import Window from '../../modules/Window';
 import * as hooks from '../../lib/hooks';
 import * as ga from '../../lib/google-analytics';
+import { GoogleAnalyticsEvents } from '../../types';
 import { ABOUT_ME_ELEMENT_ID } from '../../constants';
 import Hero from '../Hero';
 
@@ -175,9 +176,8 @@ describe('Hero component', () => {
 
     expect(trackEventSpy).toBeCalledTimes(1);
     expect(trackEventSpy).toBeCalledWith({
-      action: 'click',
-      category: 'user_interaction',
-      label: 'Scroll Down',
+      event: GoogleAnalyticsEvents.SCROLL_CLICK,
+      linkText: 'Scroll Down',
     });
   });
 });

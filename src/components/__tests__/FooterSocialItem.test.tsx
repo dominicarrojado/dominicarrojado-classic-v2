@@ -2,7 +2,7 @@ import React from 'react';
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import * as ga from '../../lib/google-analytics';
 import * as dom from '../../lib/dom';
-import { Social } from '../../types';
+import { GoogleAnalyticsEvents, Social, SocialNames } from '../../types';
 import FooterSocialItem from '../FooterSocialItem';
 
 describe('FooterSocialItem component', () => {
@@ -15,9 +15,9 @@ describe('FooterSocialItem component', () => {
 
   it('renders with correct attribute', () => {
     const social = {
-      name: 'twitter',
-      title: 'Twitter',
-      url: 'http://www.twitter.com',
+      name: SocialNames.LINKEDIN,
+      title: 'LinkedIn',
+      url: 'http://www.linkedin.com',
     };
     renderComponent(social);
 
@@ -30,12 +30,12 @@ describe('FooterSocialItem component', () => {
   });
 
   it('should track hover', () => {
-    const trackHoverSpy = jest.spyOn(ga, 'trackHover');
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     const social = {
-      name: 'linkedin',
-      title: 'LinkedIn',
-      url: 'https://www.linkedin.com',
+      name: 'twitter' as any,
+      title: 'Twitter',
+      url: 'https://www.twitter.com',
     };
     renderComponent(social);
 
@@ -43,17 +43,22 @@ describe('FooterSocialItem component', () => {
 
     fireEvent.mouseEnter(anchorEl);
 
-    expect(trackHoverSpy).toBeCalledTimes(1);
-    expect(trackHoverSpy).toBeCalledWith(social.title);
+    expect(trackEventSpy).toBeCalledTimes(1);
+    expect(trackEventSpy).toBeCalledWith({
+      event: GoogleAnalyticsEvents.SOCIAL_HOVER,
+      socialName: social.name,
+      hoverText: social.title,
+      hoverUrl: social.url,
+    });
   });
 
   it('should track click', () => {
-    const trackOutboundLinkSpy = jest.spyOn(ga, 'trackOutboundLink');
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     const social = {
-      name: 'github',
-      title: 'GitHub',
-      url: 'https://www.github.com',
+      name: 'facebook' as any,
+      title: 'Facebook',
+      url: 'https://www.facebook.com',
     };
     renderComponent(social);
 
@@ -61,8 +66,13 @@ describe('FooterSocialItem component', () => {
 
     fireEvent.click(anchorEl);
 
-    expect(trackOutboundLinkSpy).toBeCalledTimes(1);
-    expect(trackOutboundLinkSpy).toBeCalledWith(expect.any(Object));
+    expect(trackEventSpy).toBeCalledTimes(1);
+    expect(trackEventSpy).toBeCalledWith({
+      event: GoogleAnalyticsEvents.SOCIAL_CLICK,
+      socialName: social.name,
+      linkText: social.title,
+      linkUrl: social.url,
+    });
   });
 
   it('should copy email if API is available', () => {
@@ -72,7 +82,7 @@ describe('FooterSocialItem component', () => {
 
     const email = 'name@example.com';
     const social = {
-      name: 'email',
+      name: SocialNames.EMAIL,
       title: 'Email',
       url: `mailto:${email}`,
     };
@@ -92,7 +102,7 @@ describe('FooterSocialItem component', () => {
 
     const email = 'name@example.com';
     const social = {
-      name: 'email',
+      name: SocialNames.EMAIL,
       title: 'Email',
       url: `mailto:${email}`,
     };
@@ -111,7 +121,7 @@ describe('FooterSocialItem component', () => {
 
     const email = 'root@example.com';
     const social = {
-      name: 'email',
+      name: SocialNames.EMAIL,
       title: 'Email',
       url: `mailto:${email}`,
     };

@@ -10,6 +10,7 @@ import { forceVisible } from 'react-lazyload';
 import { config } from 'react-transition-group';
 import * as ga from '../../lib/google-analytics';
 import * as customHooks from '../../lib/custom-hooks';
+import { GoogleAnalyticsEvents } from '../../types';
 import WorkItem, { Props as WorkItemProps } from '../WorkItem';
 
 config.disabled = true; // Disable react-transitions-group transitions
@@ -71,8 +72,30 @@ describe('WorkItem component', () => {
     });
   });
 
+  it('should track url hover', () => {
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
+
+    renderComponent();
+
+    workData.urls.forEach((urlItem) => {
+      const anchorEl = screen.getByText(urlItem.title);
+
+      fireEvent.mouseEnter(anchorEl);
+
+      expect(trackEventSpy).toBeCalledTimes(1);
+      expect(trackEventSpy).toBeCalledWith({
+        event: GoogleAnalyticsEvents.PROJECT_HOVER,
+        projectTitle: workData.title,
+        hoverText: urlItem.title,
+        hoverUrl: urlItem.url,
+      });
+
+      trackEventSpy.mockClear();
+    });
+  });
+
   it('should track url click', () => {
-    const trackOutboundLinkSpy = jest.spyOn(ga, 'trackOutboundLink');
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     renderComponent();
 
@@ -81,15 +104,20 @@ describe('WorkItem component', () => {
 
       fireEvent.click(anchorEl);
 
-      expect(trackOutboundLinkSpy).toBeCalledTimes(1);
-      expect(trackOutboundLinkSpy).toBeCalledWith(expect.any(Object));
+      expect(trackEventSpy).toBeCalledTimes(1);
+      expect(trackEventSpy).toBeCalledWith({
+        event: GoogleAnalyticsEvents.PROJECT_CLICK,
+        projectTitle: workData.title,
+        linkText: urlItem.title,
+        linkUrl: urlItem.url,
+      });
 
-      trackOutboundLinkSpy.mockClear();
+      trackEventSpy.mockClear();
     });
   });
 
   it('should track url context menu', () => {
-    const trackOutboundLinkSpy = jest.spyOn(ga, 'trackOutboundLink');
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     renderComponent();
 
@@ -98,10 +126,15 @@ describe('WorkItem component', () => {
 
       fireEvent.contextMenu(anchorEl);
 
-      expect(trackOutboundLinkSpy).toBeCalledTimes(1);
-      expect(trackOutboundLinkSpy).toBeCalledWith(expect.any(Object));
+      expect(trackEventSpy).toBeCalledTimes(1);
+      expect(trackEventSpy).toBeCalledWith({
+        event: GoogleAnalyticsEvents.PROJECT_CLICK,
+        projectTitle: workData.title,
+        linkText: urlItem.title,
+        linkUrl: urlItem.url,
+      });
 
-      trackOutboundLinkSpy.mockClear();
+      trackEventSpy.mockClear();
     });
   });
 
@@ -129,7 +162,7 @@ describe('WorkItem component', () => {
   });
 
   it('should track star icon hover', () => {
-    const trackHoverSpy = jest.spyOn(ga, 'trackHover');
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     renderComponent({ work: { ...workData, starred: true } });
 
@@ -137,8 +170,12 @@ describe('WorkItem component', () => {
 
     fireEvent.mouseEnter(tooltipEl);
 
-    expect(trackHoverSpy).toBeCalledTimes(1);
-    expect(trackHoverSpy).toBeCalledWith(`Best Project - ${workData.title}`);
+    expect(trackEventSpy).toBeCalledTimes(1);
+    expect(trackEventSpy).toBeCalledWith({
+      event: GoogleAnalyticsEvents.PROJECT_INFO_HOVER,
+      projectTitle: workData.title,
+      hoverText: 'Best Project',
+    });
   });
 
   it('should render image', () => {
@@ -227,7 +264,7 @@ describe('WorkItem component', () => {
   it('should track GIF spinner hover', async () => {
     jest.useFakeTimers();
 
-    const trackHoverSpy = jest.spyOn(ga, 'trackHover');
+    const trackEventSpy = jest.spyOn(ga, 'trackEvent');
 
     let onStartFunc: () => void;
 
@@ -255,8 +292,12 @@ describe('WorkItem component', () => {
 
     fireEvent.mouseEnter(tooltipEl);
 
-    expect(trackHoverSpy).toBeCalledTimes(1);
-    expect(trackHoverSpy).toBeCalledWith(`Downloading GIF - ${workData.title}`);
+    expect(trackEventSpy).toBeCalledTimes(1);
+    expect(trackEventSpy).toBeCalledWith({
+      event: GoogleAnalyticsEvents.PROJECT_INFO_HOVER,
+      projectTitle: workData.title,
+      hoverText: 'Downloading GIF',
+    });
   });
 
   it('should download GIF on image load', () => {
@@ -378,11 +419,9 @@ describe('WorkItem component', () => {
 
     expect(trackEventSpy).toBeCalledTimes(1);
     expect(trackEventSpy).toBeCalledWith({
-      action: 'gif_auto_play_cancel',
-      category: 'gif_auto_play',
-      label: `Cancel Download GIF - ${workData.title}`,
-      nonInteraction: true,
-      gifCancelTime: durationMs / 1000,
+      event: GoogleAnalyticsEvents.GIF_AUTO_PLAY_CANCEL,
+      projectTitle: workData.title,
+      gifCancelTime: durationMs,
       gifCancelProgress: progress,
     });
   });
@@ -444,11 +483,9 @@ describe('WorkItem component', () => {
 
     expect(trackEventSpy).toBeCalledTimes(1);
     expect(trackEventSpy).toBeCalledWith({
-      action: 'gif_auto_play_start',
-      category: 'gif_auto_play',
-      label: `Downloaded GIF - ${workData.title}`,
-      nonInteraction: true,
-      gifLoadTime: durationMs / 1000,
+      event: GoogleAnalyticsEvents.GIF_AUTO_PLAY_START,
+      projectTitle: workData.title,
+      gifLoadTime: durationMs,
     });
   });
 

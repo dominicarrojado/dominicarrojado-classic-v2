@@ -1,6 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen } from '@testing-library/react';
-import * as ga from '../../lib/google-analytics';
+import { render, screen } from '@testing-library/react';
 import AboutMe from '../AboutMe';
 
 describe('AboutMe component', () => {
@@ -31,18 +30,5 @@ describe('AboutMe component', () => {
     );
     expect(anchorEl).toHaveAttribute('target', '_blank');
     expect(anchorEl).toHaveAttribute('rel', 'noopener noreferrer nofollow');
-  });
-
-  it('should track work url click', () => {
-    const trackOutboundLinkSpy = jest.spyOn(ga, 'trackOutboundLink');
-
-    renderComponent();
-
-    const anchorEl = screen.queryByText('PropertyGuru');
-
-    fireEvent.click(anchorEl);
-
-    expect(trackOutboundLinkSpy).toBeCalledTimes(1);
-    expect(trackOutboundLinkSpy).toBeCalledWith(expect.any(Object));
   });
 });

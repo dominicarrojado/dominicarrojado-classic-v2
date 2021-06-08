@@ -10,7 +10,10 @@ import './Hero.css';
 import { ReactComponent as Logo } from '../assets/images/icons/dominic-arrojado.svg';
 import { ReactComponent as ArrowDownIcon } from '../assets/images/icons/arrow-down-solid.svg';
 
+import { GoogleAnalyticsEvents } from '../types';
 import { ABOUT_ME_ELEMENT_ID } from '../constants';
+
+const SCROLL_DOWN_TEXT = 'Scroll Down';
 
 function Hero() {
   const aboutMeRef = useRef<HTMLElement | null>(null);
@@ -34,9 +37,8 @@ function Hero() {
     }
 
     trackEvent({
-      action: 'click',
-      category: 'user_interaction',
-      label: 'Scroll Down',
+      event: GoogleAnalyticsEvents.SCROLL_CLICK,
+      linkText: SCROLL_DOWN_TEXT,
     });
   };
 
@@ -108,7 +110,7 @@ function Hero() {
           role="button"
           onClick={scrollDownOnClick}
         >
-          Scroll Down
+          {SCROLL_DOWN_TEXT}
         </span>
         <div className="icon">
           <ArrowDownIcon />

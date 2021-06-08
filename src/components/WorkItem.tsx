@@ -3,18 +3,14 @@ import { CSSTransition } from 'react-transition-group';
 import LazyLoad from 'react-lazyload';
 import { getRefValue } from '../lib/hooks';
 import { useDownloadGif } from '../lib/custom-hooks';
-import {
-  trackEvent,
-  trackHover,
-  trackOutboundLink,
-} from '../lib/google-analytics';
+import { trackEvent } from '../lib/google-analytics';
 
 import './WorkItem.css';
 
 import Tooltip from './Tooltip';
 import { ReactComponent as StarIcon } from '../assets/images/icons/star-solid.svg';
 
-import { Work } from '../types';
+import { GoogleAnalyticsEvents, Work, WorkUrl } from '../types';
 import { DOWNLOAD_GIF_SPINNER_TIMEOUT } from '../constants';
 
 export type Props = {
@@ -66,11 +62,9 @@ function WorkItem({
     setGifData(data);
     setIsDownloadingGifFalse();
     trackEvent({
-      action: 'gif_auto_play_start',
-      category: 'gif_auto_play',
-      label: `Downloaded GIF - ${title}`,
-      nonInteraction: true,
-      gifLoadTime: durationMs / 1000,
+      event: GoogleAnalyticsEvents.GIF_AUTO_PLAY_START,
+      projectTitle: title,
+      gifLoadTime: durationMs,
     });
   };
   const downloadGifOnCancel = ({
@@ -83,11 +77,9 @@ function WorkItem({
     setIsDownloadingGifFalse();
     setProgress(0);
     trackEvent({
-      action: 'gif_auto_play_cancel',
-      category: 'gif_auto_play',
-      label: `Cancel Download GIF - ${title}`,
-      nonInteraction: true,
-      gifCancelTime: durationMs / 1000,
+      event: GoogleAnalyticsEvents.GIF_AUTO_PLAY_CANCEL,
+      projectTitle: title,
+      gifCancelTime: durationMs,
       gifCancelProgress: progress,
     });
   };
@@ -101,8 +93,32 @@ function WorkItem({
     onCancel: downloadGifOnCancel,
     onError: downloadGifOnError,
   });
-  const gifSpinnerOnMouseEnter = () => trackHover(`Downloading GIF - ${title}`);
-  const starIconOnMouseEnter = () => trackHover(`Best Project - ${title}`);
+  const gifSpinnerOnMouseEnter = () =>
+    trackEvent({
+      event: GoogleAnalyticsEvents.PROJECT_INFO_HOVER,
+      projectTitle: title,
+      hoverText: 'Downloading GIF',
+    });
+  const starIconOnMouseEnter = () =>
+    trackEvent({
+      event: GoogleAnalyticsEvents.PROJECT_INFO_HOVER,
+      projectTitle: title,
+      hoverText: 'Best Project',
+    });
+  const urlOnMouseEnter = (urlItem: WorkUrl) =>
+    trackEvent({
+      event: GoogleAnalyticsEvents.PROJECT_HOVER,
+      projectTitle: title,
+      hoverText: urlItem.title,
+      hoverUrl: urlItem.url,
+    });
+  const urlOnClick = (urlItem: WorkUrl) =>
+    trackEvent({
+      event: GoogleAnalyticsEvents.PROJECT_CLICK,
+      projectTitle: title,
+      linkText: urlItem.title,
+      linkUrl: urlItem.url,
+    });
 
   useEffect(() => {
     if (!gifData && isImgLoaded) {
@@ -184,8 +200,9 @@ function WorkItem({
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-text"
-                onClick={trackOutboundLink}
-                onContextMenu={trackOutboundLink}
+                onMouseEnter={() => urlOnMouseEnter(urlItem)}
+                onClick={() => urlOnClick(urlItem)}
+                onContextMenu={() => urlOnClick(urlItem)}
               >
                 {urlItem.title}
               </a>

@@ -1,5 +1,5 @@
 import { getPublicURL } from './lib/common';
-import { Quote, Social, Work } from './types';
+import { Quote, Social, SocialNames, Work } from './types';
 
 export const SET_WORK_IN_VIEW_TIMEOUT = 500;
 export const DOWNLOAD_GIF_SPINNER_TIMEOUT = 300;
@@ -317,17 +317,17 @@ export const WORKS: Array<Work> = [
 
 export const SOCIAL_LINKS: Array<Social> = [
   {
-    name: 'linkedin',
+    name: SocialNames.LINKEDIN,
     title: 'Connect with me @ LinkedIn!',
     url: 'https://www.linkedin.com/in/dominic-arrojado-75ba03a9/',
   },
   {
-    name: 'github',
+    name: SocialNames.GITHUB,
     title: 'Follow me @ GitHub!',
     url: 'https://github.com/dominicarrojado/',
   },
   {
-    name: 'email',
+    name: SocialNames.EMAIL,
     title: 'Email me!',
     url: 'mailto:dominicarrojado@gmail.com',
   },
