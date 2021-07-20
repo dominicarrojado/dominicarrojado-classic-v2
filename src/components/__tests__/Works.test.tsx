@@ -1,5 +1,5 @@
 import React from 'react';
-import { act, render, screen, waitFor, wait } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { setReadOnlyProperty } from '../../lib/test-helpers';
 import Window from '../../modules/Window';
 import * as WorkItem from '../WorkItem';

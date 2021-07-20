@@ -191,7 +191,7 @@ export const WORKS: Array<Work> = [
     urls: [
       {
         title: 'View Website',
-        url: 'https://www.hashtag-interactive.com/',
+        url: 'https://dominicarrojado.com/hashtag-interactive-website/',
       },
     ],
     img: getPublicURL('/works/hashtag-interactive-website.png'),
