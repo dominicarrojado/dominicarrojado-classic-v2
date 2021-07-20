@@ -21,7 +21,7 @@ describe('Works component', () => {
   it('renders the contents', () => {
     renderComponent();
 
-    expect(screen.queryByText('My Projects')).toBeInTheDocument();
+    expect(screen.queryByText('Featured Projects')).toBeInTheDocument();
     expect(
       screen.queryByText("A bunch of things I've done so far.")
     ).toBeInTheDocument();

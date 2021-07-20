@@ -68,7 +68,7 @@ function Works() {
   return (
     <section className="page-section">
       <div className="section-title">
-        <h2 className="title">My Projects</h2>
+        <h2 className="title">Featured Projects</h2>
         <div className="desc">A bunch of things I've done so far.</div>
       </div>
       <ul ref={worksRef}>
