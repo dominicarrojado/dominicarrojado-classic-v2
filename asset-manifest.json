@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/dominic-arrojado-classic-v2/static/css/main.58057ae6.chunk.css",
-    "main.js": "/dominic-arrojado-classic-v2/static/js/main.379ea110.chunk.js",
-    "main.js.map": "/dominic-arrojado-classic-v2/static/js/main.379ea110.chunk.js.map",
-    "runtime-main.js": "/dominic-arrojado-classic-v2/static/js/runtime-main.2c47b5a6.js",
-    "runtime-main.js.map": "/dominic-arrojado-classic-v2/static/js/runtime-main.2c47b5a6.js.map",
-    "static/js/2.05d4429a.chunk.js": "/dominic-arrojado-classic-v2/static/js/2.05d4429a.chunk.js",
-    "static/js/2.05d4429a.chunk.js.map": "/dominic-arrojado-classic-v2/static/js/2.05d4429a.chunk.js.map",
-    "static/js/3.f2ab8516.chunk.js": "/dominic-arrojado-classic-v2/static/js/3.f2ab8516.chunk.js",
-    "static/js/3.f2ab8516.chunk.js.map": "/dominic-arrojado-classic-v2/static/js/3.f2ab8516.chunk.js.map",
-    "static/js/4.0bbc267f.chunk.js": "/dominic-arrojado-classic-v2/static/js/4.0bbc267f.chunk.js",
-    "static/js/4.0bbc267f.chunk.js.map": "/dominic-arrojado-classic-v2/static/js/4.0bbc267f.chunk.js.map",
+    "main.css": "/dominic-arrojado-classic-v2/static/css/main.1e5f2a7d.chunk.css",
+    "main.js": "/dominic-arrojado-classic-v2/static/js/main.491bdc02.chunk.js",
+    "main.js.map": "/dominic-arrojado-classic-v2/static/js/main.491bdc02.chunk.js.map",
+    "runtime-main.js": "/dominic-arrojado-classic-v2/static/js/runtime-main.992469d8.js",
+    "runtime-main.js.map": "/dominic-arrojado-classic-v2/static/js/runtime-main.992469d8.js.map",
+    "static/js/2.3ae1f564.chunk.js": "/dominic-arrojado-classic-v2/static/js/2.3ae1f564.chunk.js",
+    "static/js/2.3ae1f564.chunk.js.map": "/dominic-arrojado-classic-v2/static/js/2.3ae1f564.chunk.js.map",
+    "static/js/3.c06a7402.chunk.js": "/dominic-arrojado-classic-v2/static/js/3.c06a7402.chunk.js",
+    "static/js/3.c06a7402.chunk.js.map": "/dominic-arrojado-classic-v2/static/js/3.c06a7402.chunk.js.map",
+    "static/js/4.1655fba7.chunk.js": "/dominic-arrojado-classic-v2/static/js/4.1655fba7.chunk.js",
+    "static/js/4.1655fba7.chunk.js.map": "/dominic-arrojado-classic-v2/static/js/4.1655fba7.chunk.js.map",
     "index.html": "/dominic-arrojado-classic-v2/index.html",
-    "static/css/main.58057ae6.chunk.css.map": "/dominic-arrojado-classic-v2/static/css/main.58057ae6.chunk.css.map",
-    "static/js/2.05d4429a.chunk.js.LICENSE.txt": "/dominic-arrojado-classic-v2/static/js/2.05d4429a.chunk.js.LICENSE.txt",
-    "static/js/4.0bbc267f.chunk.js.LICENSE.txt": "/dominic-arrojado-classic-v2/static/js/4.0bbc267f.chunk.js.LICENSE.txt",
+    "static/css/main.1e5f2a7d.chunk.css.map": "/dominic-arrojado-classic-v2/static/css/main.1e5f2a7d.chunk.css.map",
+    "static/js/2.3ae1f564.chunk.js.LICENSE.txt": "/dominic-arrojado-classic-v2/static/js/2.3ae1f564.chunk.js.LICENSE.txt",
+    "static/js/4.1655fba7.chunk.js.LICENSE.txt": "/dominic-arrojado-classic-v2/static/js/4.1655fba7.chunk.js.LICENSE.txt",
     "static/media/index.css": "/dominic-arrojado-classic-v2/static/media/Roboto-Regular.fbebe708.woff",
     "static/media/arrow-down-solid.595d854f.svg": "/dominic-arrojado-classic-v2/static/media/arrow-down-solid.595d854f.svg",
     "static/media/Hero.css": "/dominic-arrojado-classic-v2/static/media/bg-pattern.0a295769.png",
@@ -22,12 +22,13 @@
     "static/media/envelope-regular.56ab09fc.svg": "/dominic-arrojado-classic-v2/static/media/envelope-regular.56ab09fc.svg",
     "static/media/github-brands.9ac92cdb.svg": "/dominic-arrojado-classic-v2/static/media/github-brands.9ac92cdb.svg",
     "static/media/linkedin-brands.10afbbf6.svg": "/dominic-arrojado-classic-v2/static/media/linkedin-brands.10afbbf6.svg",
-    "static/media/star-solid.59dc4655.svg": "/dominic-arrojado-classic-v2/static/media/star-solid.59dc4655.svg"
+    "static/media/star-solid.59dc4655.svg": "/dominic-arrojado-classic-v2/static/media/star-solid.59dc4655.svg",
+    "static/media/warning-solid.d89c259b.svg": "/dominic-arrojado-classic-v2/static/media/warning-solid.d89c259b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.2c47b5a6.js",
-    "static/js/2.05d4429a.chunk.js",
-    "static/css/main.58057ae6.chunk.css",
-    "static/js/main.379ea110.chunk.js"
+    "static/js/runtime-main.992469d8.js",
+    "static/js/2.3ae1f564.chunk.js",
+    "static/css/main.1e5f2a7d.chunk.css",
+    "static/js/main.491bdc02.chunk.js"
   ]
 }
