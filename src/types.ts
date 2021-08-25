@@ -15,6 +15,8 @@ export enum GoogleAnalyticsEvents {
   GIF_AUTO_PLAY_CANCEL = 'gif_auto_play_cancel',
 }
 
+export type Nullish<T> = T | null | undefined;
+
 export type WorkUrl = {
   title: string;
   url: string;

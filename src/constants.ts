@@ -1,6 +1,7 @@
 import { getPublicURL } from './lib/common';
 import { Quote, Social, SocialNames, Work } from './types';
 
+export const MAIN_URL = 'https://dominicarrojado.com';
 export const SET_WORK_IN_VIEW_TIMEOUT = 500;
 export const DOWNLOAD_GIF_SPINNER_TIMEOUT = 300;
 export const FOOTER_QUOTES_INTERVAL = 5000;

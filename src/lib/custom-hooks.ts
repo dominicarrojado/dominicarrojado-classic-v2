@@ -1,7 +1,26 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AxiosStatic, CancelTokenSource } from 'axios';
+import Window from '../modules/Window';
 import { getRefValue } from './hooks';
 import { getImageDataFromResponse } from './axios';
+
+export function useWindowLoaded() {
+  const [isWindowLoaded, setIsWindowLoaded] = useState(false);
+
+  useEffect(() => {
+    setIsWindowLoaded(Window.loaded);
+
+    const windowOnLoad = () => setIsWindowLoaded(true);
+
+    Window.on('load', windowOnLoad);
+
+    return () => {
+      Window.off('load', windowOnLoad);
+    };
+  }, []);
+
+  return isWindowLoaded;
+}
 
 export function useDownloadGif({
   url,

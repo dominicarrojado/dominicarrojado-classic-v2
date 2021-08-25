@@ -1,11 +1,43 @@
 import { renderHook } from '@testing-library/react-hooks';
+import { act } from '@testing-library/react';
 import axios from 'axios';
+import Window from '../../modules/Window';
 import { setReadOnlyProperty } from '../test-helpers';
 import * as axiosHelpers from '../axios';
 import * as hooks from '../hooks';
-import { useDownloadGif } from '../custom-hooks';
+import { useDownloadGif, useWindowLoaded } from '../custom-hooks';
 
 describe('custom hooks utils', () => {
+  describe('useWindowLoaded()', () => {
+    afterEach(() => {
+      Window.loaded = false;
+    });
+
+    it('should return initial value', () => {
+      const hook = renderHook(() => useWindowLoaded());
+
+      expect(hook.result.current).toBe(false);
+    });
+
+    it('should return true if window is loaded', () => {
+      Window.loaded = true;
+
+      const hook = renderHook(() => useWindowLoaded());
+
+      expect(hook.result.current).toBe(true);
+    });
+
+    it('should update value on window load', () => {
+      const hook = renderHook(() => useWindowLoaded());
+
+      act(() => {
+        Window.emit('load');
+      });
+
+      expect(hook.result.current).toBe(true);
+    });
+  });
+
   describe('useDownloadGif()', () => {
     const axiosCancelTokenOrig = axios.CancelToken;
 

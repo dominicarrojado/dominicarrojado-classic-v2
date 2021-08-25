@@ -61,7 +61,8 @@
       "/node_modules/",
       "/src/index.tsx",
       "/src/serviceWorker.ts",
-      "/src/types.ts"
+      "/src/types.ts",
+      "/src/lib/test-helpers.ts"
     ]
   }
 }
