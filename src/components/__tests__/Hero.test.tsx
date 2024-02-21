@@ -19,7 +19,7 @@ describe('Hero component', () => {
     renderComponent();
 
     expect(
-      screen.queryByText('Dominic Arrojado · Senior Software Engineer')
+      screen.queryByText('Dominic Arrojado · Lead Engineer')
     ).toBeInTheDocument();
   });
 

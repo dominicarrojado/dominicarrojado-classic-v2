@@ -101,7 +101,7 @@ function Hero() {
           <Logo className="logo" />
         </div>
         <div ref={heroDescRef} className="desc-container" data-testid="desc">
-          <h1 className="desc">Dominic Arrojado · Senior Software Engineer</h1>
+          <h1 className="desc">Dominic Arrojado · Lead Engineer</h1>
         </div>
       </div>
       <div className="btn">

@@ -22,7 +22,7 @@ function AboutMe() {
           >
             PropertyGuru
           </a>{' '}
-          as a Senior Software Engineer (FinTech).
+          as a Lead Engineer (FinTech).
         </div>
       </div>
     </section>
