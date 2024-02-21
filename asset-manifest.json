@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/dominic-arrojado-classic-v2/static/css/main.1e5f2a7d.chunk.css",
-    "main.js": "/dominic-arrojado-classic-v2/static/js/main.577055a0.chunk.js",
-    "main.js.map": "/dominic-arrojado-classic-v2/static/js/main.577055a0.chunk.js.map",
+    "main.js": "/dominic-arrojado-classic-v2/static/js/main.48426e50.chunk.js",
+    "main.js.map": "/dominic-arrojado-classic-v2/static/js/main.48426e50.chunk.js.map",
     "runtime-main.js": "/dominic-arrojado-classic-v2/static/js/runtime-main.4762096a.js",
     "runtime-main.js.map": "/dominic-arrojado-classic-v2/static/js/runtime-main.4762096a.js.map",
     "static/js/2.06a7daa9.chunk.js": "/dominic-arrojado-classic-v2/static/js/2.06a7daa9.chunk.js",
@@ -29,6 +29,6 @@
     "static/js/runtime-main.4762096a.js",
     "static/js/2.06a7daa9.chunk.js",
     "static/css/main.1e5f2a7d.chunk.css",
-    "static/js/main.577055a0.chunk.js"
+    "static/js/main.48426e50.chunk.js"
   ]
 }
